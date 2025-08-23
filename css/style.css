@@ -40,6 +40,7 @@
 }
 
 
+
 section {
   scroll-margin-top: 100px; /* 根据你导航栏高度调整 */
 }
@@ -326,11 +327,18 @@ a {
 }
 
 /* Main styling */
+
 body {
   background: var(--bg-primary);
   color: var(--text-color);
   font-family: "Raleway", sans-serif;
   line-height: 1.5;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;  /* 你可以调整大小 */
+  line-height: 1.6; /* 调整行间距 */
+  color: #333;      /* 默认文字颜色 */
 }
 
 /* Navbar */
