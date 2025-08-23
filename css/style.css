@@ -31,6 +31,15 @@
   }
 }
 
+.email-link {
+  background-color: #e6f3fa; /* 浅蓝色背景，接近截图效果 */
+  padding: 2px 4px;
+  border-radius: 3px;
+  color: black;            /* 黑色文字 */
+  text-decoration: none;   /* 去掉下划线 */
+  font-weight: bold;       /* 粗体 */
+}
+
 
 section {
   scroll-margin-top: 100px; /* 根据你导航栏高度调整 */
@@ -586,3 +595,4 @@ body {
     width: 80%;
   }
 }
+
