@@ -1,0 +1,66 @@
+cv:
+  name: Zhenyu (Fischer) Lei
+  label: PhD Student, Electrical and Computer Engineering
+  email: vjd5zr@virginia.edu
+  location: Charlottesville, VA
+  image: ""
+  summary: PhD student at the University of Virginia working on LLM reasoning, memory, and distillation, with brain disorder prediction and AI for science as secondary interests.
+
+  social_networks:
+    - network: X
+      username: FicsherLzy
+    - network: GitHub
+      username: LzyFischer
+
+  sections:
+    Education:
+      - institution: University of Virginia
+        location: Charlottesville, VA
+        url: https://engineering.virginia.edu/departments/electrical-and-computer-engineering
+        area: Electrical and Computer Engineering
+        studyType: PhD
+        start_date: 2023-08
+        end_date: present
+        highlights:
+          - "Advisor: Prof. Jundong Li"
+
+      - institution: Xi'an Jiaotong University
+        location: Xi'an, China
+        area: Physics (Honors)
+        studyType: BS
+        start_date: 2019-08
+        end_date: 2023-07
+        score: "89.5/100.0"
+        highlights:
+          - "Advisor: Prof. Minnan Luo"
+
+    Experience:
+      - company: AT&T
+        position: Applied Scientist Intern
+        location: Bedminster, NJ
+        start_date: 2025-06
+        end_date: 2025-08
+        summary: "Host: Dr. Qiong Wu"
+
+    Awards:
+      - title: Capital One PhD Fellowship
+        date: 2025
+        awarder: Capital One
+        summary: 2025-26 Capital One PhD Fellowship.
+
+      - title: Presidential Fellowship in Collaborative Neuroscience
+        date: 2023
+        awarder: University of Virginia
+
+    Service:
+      - company: Reviewer
+        position: "CIKM (2025), COLM (2024, 2025), KDD (2024, 2025), ARR (Dec 2023-), NeurIPS (2023)"
+        location: ""
+        start_date: 2023
+        end_date: present
+
+      - company: Volunteer
+        position: "ACL 2023 (virtual)"
+        location: ""
+        start_date: 2023
+        end_date: 2023
