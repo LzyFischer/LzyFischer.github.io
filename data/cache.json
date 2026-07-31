@@ -1,0 +1,105 @@
+{
+  "Reforming the Mechanism: Editing Reasoning Patterns in LLMs with Circuit Reshaping": {
+    "title": "Reforming the Mechanism: Editing Reasoning Patterns in LLMs with Circuit Reshaping",
+    "venue": "ICLR",
+    "year": 2026,
+    "authors": [
+      "Zhenyu Lei",
+      "Qiong Wu",
+      "Jianxiong Dong",
+      "Yinhan He",
+      "Emily Dodwell",
+      "Yushun Dong",
+      "Jundong Li"
+    ],
+    "abstract": "Large language models can make systematic, pattern-specific reasoning mistakes, and broad training fixes are inefficient and often disrupt other abilities. This paper introduces Reasoning Editing, targeted edits to a specific reasoning pattern, highlighting a key trade-off between generality and locality. To reduce this trade-off, we propose REdit, which reshapes underlying reasoning circuits to limit interference before applying a lightweight edit."
+  },
+  "BrainTAP: Brain Disorder Prediction with Adaptive Distill and Selective Prior Integration": {
+    "title": "BrainTAP: Brain Disorder Prediction with Adaptive Distill and Selective Prior Integration",
+    "venue": "ISBI",
+    "year": 2026,
+    "authors": [
+      "Zhenyu Lei",
+      "Aiying Zhang",
+      "Song Wang",
+      "Han Fan",
+      "Jundong Li"
+    ],
+    "abstract": "This paper introduces BrainTAP, a transformer-based framework for brain disorder prediction that integrates functional and structural connectivity while preserving their heterogeneous properties. The model employs adaptive mutual distillation to enable controlled cross-modal interaction and selectively incorporates expert-defined neurobiological priors through learnable gates and personalized attention mechanisms, improving both representation quality and interpretability."
+  },
+  "MolEdit: Knowledge Editing for Multimodal Molecule Language Models": {
+    "title": "MolEdit: Knowledge Editing for Multimodal Molecule Language Models",
+    "venue": "WSDM",
+    "year": 2026,
+    "authors": [
+      "Zhenyu Lei",
+      "Patrick Soga",
+      "Yaochen Zhu",
+      "Yinhan He",
+      "Yushun Dong",
+      "Jundong Li"
+    ],
+    "abstract": "MolEdit is a framework for precisely editing facts inside multimodal molecule language models so they can fix outdated or wrong chemistry and biomedical knowledge without retraining. It uses a Multi-Expert Knowledge Adapter to edit specific facets such as functional groups and properties, plus an Expert-Aware Editing Switcher to trigger edits only on closely matching inputs, and MEBench to evaluate reliability, locality, and generality, showing sizable gains over prior editors."
+  },
+  "Learning from Diverse Reasoning Paths with Routing and Collaboration": {
+    "title": "Learning from Diverse Reasoning Paths with Routing and Collaboration",
+    "venue": "EMNLP",
+    "year": 2025,
+    "authors": [
+      "Zhenyu Lei",
+      "Zhen Tan",
+      "Song Wang",
+      "Yaochen Zhu",
+      "Zihan Chen",
+      "Yushun Dong",
+      "Jundong Li"
+    ],
+    "abstract": "This work proposes QR-Distill, a distillation framework that filters for correct, LLM-judged high-quality chains-of-thought, conditionally routes the remaining paths to students based on their current state, and enables mutual student collaboration via feature-level peer teaching. Across multiple reasoning datasets, it outperforms single- and multi-path baselines."
+  },
+  "ST-FiT: Inductive Spatial-Temporal Forecasting with Limited Training Data": {
+    "title": "ST-FiT: Inductive Spatial-Temporal Forecasting with Limited Training Data",
+    "venue": "AAAI (Oral)",
+    "year": 2025,
+    "authors": [
+      "Zhenyu Lei",
+      "Yushun Dong",
+      "Jundong Li",
+      "Chen Chen"
+    ],
+    "abstract": "This paper studies an under-explored problem of inductive forecasting with limited training data, which requires models to generalize learned spatial-temporal dependencies from nodes with available training data to nodes without. We propose ST-FiT, which achieves superior performance without additional fine-tuning."
+  },
+  "BrainMAP: Learning Multiple Activation Pathways in Brain Networks": {
+    "title": "BrainMAP: Learning Multiple Activation Pathways in Brain Networks",
+    "venue": "AAAI (Oral)",
+    "year": 2025,
+    "authors": [
+      "Song Wang",
+      "Zhenyu Lei",
+      "Zhen Tan",
+      "Jiaqi Ding",
+      "Xinyu Zhao",
+      "Yushun Dong",
+      "Guorong Wu",
+      "Tianlong Chen",
+      "Chen Chen",
+      "Aiying Zhang",
+      "Jundong Li"
+    ],
+    "abstract": "While significant progress has been made in understanding brain activity through functional connectivity graphs, challenges remain in capturing the complex, long-range dependencies and multiple pathways inherent in these graphs. We introduce BrainMAP, which extracts multiple long-range activation pathways with adaptive sequentialization and pathway aggregation."
+  },
+  "BIC: Twitter Bot Detection with Text-Graph Interaction and Semantic Consistency": {
+    "title": "BIC: Twitter Bot Detection with Text-Graph Interaction and Semantic Consistency",
+    "venue": "ACL",
+    "year": 2023,
+    "authors": [
+      "Zhenyu Lei",
+      "Herun Wan",
+      "Wenqian Zhang",
+      "Shangbin Feng",
+      "Jundong Li",
+      "Qinghua Zheng",
+      "Minnan Luo"
+    ],
+    "abstract": "We propose BIC, a bot-detection model that interacts and exchanges information across text modality and graph modality via a text-graph interaction module. BIC contains a semantic consistency module that derives inconsistency from tweets via attention weights to identify advanced bots."
+  }
+}

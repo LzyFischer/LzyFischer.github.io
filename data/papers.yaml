@@ -1,0 +1,26 @@
+# This is the ONLY file you edit to add a paper.
+#
+# Minimum: just the title. The build script looks it up on Semantic
+# Scholar and fills in authors, venue, year, and a short description.
+#
+#   - title: "Some New Paper Title"
+#
+# If the auto-lookup gets something wrong (wrong venue, paper not
+# indexed yet, co-first-author asterisks that no API knows about,
+# etc.), override just that field:
+#
+#   - title: "Some New Paper Title"
+#     venue: "ICLR 2027"
+#     authors: "Zhenyu Lei*, Jane Doe*, Jundong Li"
+#
+# Order in this file = order on the site (newest first).
+
+- title: "Reforming the Mechanism: Editing Reasoning Patterns in LLMs with Circuit Reshaping"
+- title: "BrainTAP: Brain Disorder Prediction with Adaptive Distill and Selective Prior Integration"
+- title: "MolEdit: Knowledge Editing for Multimodal Molecule Language Models"
+- title: "Learning from Diverse Reasoning Paths with Routing and Collaboration"
+- title: "ST-FiT: Inductive Spatial-Temporal Forecasting with Limited Training Data"
+- title: "BrainMAP: Learning Multiple Activation Pathways in Brain Networks"
+  authors: "Song Wang*, <b>Zhenyu Lei*</b>, Zhen Tan, Jiaqi Ding, Xinyu Zhao, Yushun Dong, Guorong Wu, Tianlong Chen, Chen Chen, Aiying Zhang, Jundong Li"
+- title: "BIC: Twitter Bot Detection with Text-Graph Interaction and Semantic Consistency"
+  authors: "<b>Zhenyu Lei*</b>, Herun Wan*, Wenqian Zhang, Shangbin Feng, Jundong Li, Qinghua Zheng, Minnan Luo"

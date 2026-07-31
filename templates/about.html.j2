@@ -1,0 +1,55 @@
+{% extends "_base.html.j2" %}
+
+{% block extra_css %}
+.fact-wrap{margin-top:8px;display:flex;flex-direction:column;align-items:flex-start;}
+.fact-card{width:100%;max-width:440px;height:120px;perspective:1000px;margin-bottom:14px;}
+.fact-card-inner{position:relative;width:100%;height:100%;transition:transform .5s ease;transform-style:preserve-3d;}
+.fact-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;box-shadow:0 0 0 1px var(--line);background:var(--paper-raised);display:flex;align-items:center;justify-content:center;padding:18px;text-align:center;}
+.fact-front{font-size:13px;color:var(--text-soft);font-family:'IBM Plex Mono',monospace;}
+.fact-back{transform:rotateY(180deg);font-family:'Newsreader',serif;font-size:16px;color:var(--text);line-height:1.55;}
+.fact-btn{padding:10px 20px;border-radius:20px;border:1px solid var(--line);background:var(--paper-raised);font-family:'IBM Plex Mono',monospace;font-size:12.5px;cursor:pointer;color:var(--text);transition:border-color .15s,color .15s;}
+.fact-btn:hover{border-color:var(--sage);color:var(--sage);}
+{% endblock %}
+
+{% block hero %}
+<div class="hero-band">
+  <div class="wrap">
+    <div class="hero">
+      <div class="eyebrow">Off the clock</div>
+      <h1>About</h1>
+      <p class="hero-sub">Not just papers — one random thing about me at a time.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section id="fact">
+  <div class="fact-wrap">
+    <div class="fact-card">
+      <div class="fact-card-inner" id="factInner">
+        <div class="fact-face fact-front">click the button ↓</div>
+        <div class="fact-face fact-back" id="factBack"></div>
+      </div>
+    </div>
+    <button class="fact-btn" id="factBtn">random fact</button>
+  </div>
+</section>
+
+<script>
+(function(){
+  var facts = {{ about_json | safe }};
+  var inner = document.getElementById('factInner');
+  var back = document.getElementById('factBack');
+  var btn = document.getElementById('factBtn');
+  var deg = 0;
+  btn.addEventListener('click', function(){
+    if (!facts.length) return;
+    var pick = facts[Math.floor(Math.random() * facts.length)];
+    back.innerHTML = pick;
+    deg += 180;
+    inner.style.transform = 'rotateY(' + deg + 'deg)';
+  });
+})();
+</script>
+{% endblock %}

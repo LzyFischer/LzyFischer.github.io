@@ -1,0 +1,65 @@
+profile:
+  name: "Zhenyu (Fischer) Lei"
+  tagline: "PhD student working on how LLMs reason, remember, and compress what they know — and turning the same tools on brain-disorder prediction."
+  bio: >
+    I'm a PhD student in Electrical and Computer Engineering at the University of Virginia,
+    advised by Jundong Li. My research centers on LLM reasoning, memory, and distillation,
+    with brain-disorder prediction and AI for science as secondary interests.
+  avatar: "assets/profile-image.jpeg"
+  email:
+    - "vjd5zr [at] virginia [dot] edu"
+    - "vjd5zr [at] outlook [dot] com"
+  links:
+    - { label: "CV", url: "assets/CV_lzy.pdf" }
+    - { label: "Google Scholar", url: "https://scholar.google.com/citations?user=y4uMsEIAAAAJ&hl=en" }
+    - { label: "Github", url: "https://github.com/LzyFischer" }
+    - { label: "Twitter", url: "https://x.com/FicsherLzy" }
+
+# "What's new" ticker — newest first. Just add a line.
+news:
+  - date: "2026.1"
+    text: "1 paper accepted to ICLR 2026!"
+  - date: "2026.1"
+    text: "1 paper accepted to ISBI 2026!"
+  - date: "2025.10"
+    text: "1 paper accepted to WSDM 2026! See you in Idaho (maybe)!"
+  - date: "2025.08"
+    text: "2 papers accepted to EMNLP! See you in Suzhou (maybe)!"
+  - date: "2024.11"
+    text: "2 papers accepted to AAAI 2025 Main (Oral) — ST-FiT, BrainMAP. See you in Philadelphia!"
+
+education:
+  - school: "University of Virginia"
+    degree: "Ph.D. in Electrical and Computer Engineering"
+    dates: "2023.08 – present"
+    meta: "Advisor: Prof. Jundong Li"
+  - school: "Xi'an Jiaotong University"
+    degree: "B.S. in Physics (Honor)"
+    dates: "2019.08 – 2023.07"
+    meta: "GPA: 89.5 / 100.0 · Advisor: Prof. Minnan Luo"
+
+experience:
+  - company: "AT&T"
+    role: "Applied Scientist Intern"
+    dates: "2025.06 – 2025.08"
+    meta: "Host: Dr. Qiong Wu · Bedminster, NJ"
+
+service:
+  - "Reviewer: CIKM (2025), COLM (2024, 2025), KDD (2024, 2025), ARR (Dec 2023–), NeurIPS (2023)"
+  - "Volunteer: ACL 2023 (virtual)"
+
+# Personal / "misc" — the human-not-just-a-paper-machine section.
+# Footer joke stats. last_badminton_date auto-computes "days since" on
+# every page load. reject_count_this_week is just a number you bump by
+# hand whenever it happens — that's the joke.
+fun_stats:
+  last_badminton_date: "2026-05-01"
+  reject_count_this_week: 0
+
+about:
+  - "I have the fortune to work with brilliant mentors, collaborators, and advisors during my research journey, and I'm truly grateful for their guidance. If I can be of help to your research career, feel free to reach out ☕"
+  - "I enjoy playing badminton 🏸 — won the William & Mary Open Group C Men's Doubles Championship 🏆"
+  - "I also love singing 🎤 and playing volleyball 🏐"
+  - "Favorite singers: Adele and Coldplay — \"lights will guide you home, I will try to fix you\""
+  - "Undergrad at Xi'an Jiaotong University, where I was lucky to join the LUD Lab"
+  - "Grateful to have learned from inspiring mentors including Shangbin Feng, Yushun Dong, Song Wang, and Zhen Tan"

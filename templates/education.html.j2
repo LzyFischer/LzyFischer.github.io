@@ -1,0 +1,64 @@
+{% extends "_base.html.j2" %}
+
+{% block extra_css %}
+.block{padding:16px 0;border-top:1px solid var(--line);}
+.block:first-of-type{border-top:none;padding-top:0;}
+.block-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;}
+.block-title{font-family:'Newsreader',serif;font-size:16.5px;font-weight:500;}
+.block-dates{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--text-soft);white-space:nowrap;}
+.block-sub{font-size:13.5px;color:var(--text-soft);margin-top:3px;}
+.block-meta{font-size:12.5px;color:var(--text-soft);margin-top:4px;}
+.plain-list{margin:0;padding:0;list-style:none;}
+.plain-list li{font-size:14px;color:var(--text-soft);line-height:1.7;padding:8px 0;border-top:1px solid var(--line);}
+.plain-list li:first-child{border-top:none;padding-top:0;}
+.plain-list b{color:var(--text);}
+{% endblock %}
+
+{% block hero %}
+<div class="hero-band">
+  <div class="wrap">
+    <div class="hero">
+      <div class="eyebrow">Background</div>
+      <h1>Education &amp; experience</h1>
+      <p class="hero-sub">Where I've studied, worked, and volunteered.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+{% if education %}
+<section id="education">
+  <div class="section-head"><h2>Education</h2></div>
+  {% for e in education %}
+  <div class="block">
+    <div class="block-head"><span class="block-title">{{ e.school }}</span><span class="block-dates">{{ e.dates }}</span></div>
+    <div class="block-sub">{{ e.degree }}</div>
+    {% if e.meta %}<div class="block-meta">{{ e.meta }}</div>{% endif %}
+  </div>
+  {% endfor %}
+</section>
+{% endif %}
+
+{% if experience %}
+<section id="experience">
+  <div class="section-head"><h2>Experience</h2></div>
+  {% for e in experience %}
+  <div class="block">
+    <div class="block-head"><span class="block-title">{{ e.company }}</span><span class="block-dates">{{ e.dates }}</span></div>
+    <div class="block-sub">{{ e.role }}</div>
+    {% if e.meta %}<div class="block-meta">{{ e.meta }}</div>{% endif %}
+  </div>
+  {% endfor %}
+</section>
+{% endif %}
+
+{% if service %}
+<section id="service">
+  <div class="section-head"><h2>Service</h2></div>
+  <ul class="plain-list">
+    {% for s in service %}<li>{{ s|safe }}</li>{% endfor %}
+  </ul>
+</section>
+{% endif %}
+{% endblock %}

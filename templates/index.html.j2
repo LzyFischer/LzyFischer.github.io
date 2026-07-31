@@ -1,0 +1,221 @@
+{% extends "_base.html.j2" %}
+
+{% block extra_css %}
+.hero-row{display:flex;gap:36px;align-items:flex-start;}
+.hero-text{flex:1;}
+.hero-text p{font-size:16px;line-height:1.7;color:var(--ink-soft);margin:0 0 14px;max-width:54ch;}
+.avatar-wrap{width:104px;height:104px;flex-shrink:0;position:relative;}
+.avatar{width:104px;height:104px;border-radius:50%;object-fit:cover;border:1px solid var(--hero-line);position:absolute;top:0;left:0;}
+.avatar-placeholder{display:none;width:100%;height:100%;border-radius:50%;border:1px dashed #4A544A;align-items:center;justify-content:center;flex-direction:column;gap:4px;text-align:center;color:#8B958B;font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:1.3;}
+.avatar-placeholder svg{width:22px;height:22px;stroke:#6E786E;fill:none;stroke-width:1.4;}
+.links{display:flex;gap:18px;margin-top:18px;flex-wrap:wrap;}
+.links a{font-size:13px;color:#D9DED2;text-decoration:none;border-bottom:1px solid #4A544A;padding-bottom:2px;transition:border-color .15s,color .15s;}
+.links a:hover{border-color:#8FA890;color:#FBFBF7;}
+.email-line{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8B958B;margin-top:14px;}
+.news{margin-top:32px;border-top:1px solid var(--hero-line);padding-top:20px;}
+.news-label{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8FA890;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;}
+.news ul{list-style:none;margin:0;padding:0;}
+.news li{font-size:13px;color:var(--ink-soft);padding:5px 0;display:flex;gap:10px;}
+.news .d{font-family:'IBM Plex Mono',monospace;color:#7C8A7C;flex-shrink:0;}
+
+/* ---- fullscreen easter egg: click anywhere, cat runs to fetch a shuttlecock ---- */
+#oneko{width:32px;height:32px;position:fixed;pointer-events:none;background-image:url('assets/oneko.gif');image-rendering:pixelated;z-index:9999;left:0;top:0;}
+.shuttle{position:fixed;width:22px;height:26px;pointer-events:none;z-index:9998;}
+.shuttle svg{width:100%;height:100%;}
+@keyframes toss{
+  0%{transform:translateY(0) rotate(0deg);}
+  45%{transform:translateY(-56px) rotate(200deg);}
+  100%{transform:translateY(0) rotate(360deg);}
+}
+.shuttle.toss{animation:toss .6s ease-out;}
+.shuttle.fade{transition:opacity .3s;opacity:0;}
+{% endblock %}
+
+{% block hero %}
+<div class="hero-band">
+  <div class="wrap">
+    <div class="hero">
+      <div class="hero-row">
+        <div class="hero-text">
+          <div class="eyebrow">PhD student · University of Virginia</div>
+          <h1>{{ profile.name }}</h1>
+          <p>{{ profile.tagline }}</p>
+          <p>{{ profile.bio }}</p>
+          <div class="links">
+            {% for l in profile.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}
+          </div>
+          <div class="email-line">{{ profile.email | join(' · ') }}</div>
+        </div>
+        <div class="avatar-wrap">
+          <img class="avatar" src="{{ profile.avatar }}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="avatar-placeholder">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="3.2"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg>
+            add photo<br>{{ profile.avatar }}
+          </div>
+        </div>
+      </div>
+
+      {% if news %}
+      <div class="news">
+        <div class="news-label">What's new</div>
+        <ul>
+          {% for n in news %}<li><span class="d">[{{ n.date }}]</span><span>{{ n.text }}</span></li>{% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<script>
+// Cat animation adapted from oneko.js (MIT) by adryd325: https://github.com/adryd325/oneko.js
+// Original chases the mouse; here it chases wherever you last clicked, and
+// fetches a badminton shuttlecock instead. Sprite sheet is the original
+// public-domain-derived oneko.gif, used under oneko.js's MIT license.
+(function(){
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reducedMotion) return;
+
+  var nekoEl = document.createElement('div');
+  nekoEl.id = 'oneko';
+  document.body.appendChild(nekoEl);
+
+  var nekoPosX = window.innerWidth - 40;
+  var nekoPosY = window.innerHeight - 40;
+  var targetX = nekoPosX;
+  var targetY = nekoPosY;
+  var nekoSpeed = 10;
+  var frameCount = 0, idleTime = 0, idleAnimation = null, idleAnimationFrame = 0;
+  var activeShuttle = null; // only one at a time; removed only when caught
+
+  var spriteSets = {
+    idle: [[-3, -3]],
+    alert: [[-7, -3]],
+    scratchSelf: [[-5, 0], [-6, 0], [-7, 0]],
+    scratchWallN: [[0, 0], [0, -1]],
+    scratchWallS: [[-7, -1], [-6, -2]],
+    scratchWallE: [[-2, -2], [-2, -3]],
+    scratchWallW: [[-4, 0], [-4, -1]],
+    tired: [[-3, -2]],
+    sleeping: [[-2, 0], [-2, -1]],
+    N: [[-1, -2], [-1, -3]], NE: [[0, -2], [0, -3]],
+    E: [[-3, 0], [-3, -1]], SE: [[-5, -1], [-5, -2]],
+    S: [[-6, -3], [-7, -2]], SW: [[-5, -3], [-6, -1]],
+    W: [[-4, -2], [-4, -3]], NW: [[-1, 0], [-1, -1]],
+  };
+
+  function setSprite(name, frame) {
+    var s = spriteSets[name][frame % spriteSets[name].length];
+    nekoEl.style.backgroundPosition = (s[0] * 32) + 'px ' + (s[1] * 32) + 'px';
+  }
+  function resetIdle(){ idleAnimation = null; idleAnimationFrame = 0; }
+
+  function idle() {
+    idleTime += 1;
+    if (idleTime > 10 && Math.floor(Math.random() * 200) === 0 && idleAnimation == null) {
+      var avail = ['sleeping', 'scratchSelf'];
+      if (nekoPosX < 32) avail.push('scratchWallW');
+      if (nekoPosY < 32) avail.push('scratchWallN');
+      if (nekoPosX > window.innerWidth - 32) avail.push('scratchWallE');
+      if (nekoPosY > window.innerHeight - 32) avail.push('scratchWallS');
+      idleAnimation = avail[Math.floor(Math.random() * avail.length)];
+    }
+    switch (idleAnimation) {
+      case 'sleeping':
+        if (idleAnimationFrame < 8) { setSprite('tired', 0); break; }
+        setSprite('sleeping', Math.floor(idleAnimationFrame / 4));
+        if (idleAnimationFrame > 192) resetIdle();
+        break;
+      case 'scratchWallN': case 'scratchWallS': case 'scratchWallE': case 'scratchWallW': case 'scratchSelf':
+        setSprite(idleAnimation, idleAnimationFrame);
+        if (idleAnimationFrame > 9) resetIdle();
+        break;
+      default:
+        setSprite('idle', 0);
+        return;
+    }
+    idleAnimationFrame += 1;
+  }
+
+  function frame() {
+    frameCount += 1;
+    var diffX = nekoPosX - targetX;
+    var diffY = nekoPosY - targetY;
+    var distance = Math.sqrt(diffX * diffX + diffY * diffY);
+    if (distance < nekoSpeed || distance < 48) {
+      if (activeShuttle) { catchShuttle(); }
+      idle();
+      return;
+    }
+    idleAnimation = null; idleAnimationFrame = 0;
+    if (idleTime > 1) {
+      setSprite('alert', 0);
+      idleTime = Math.min(idleTime, 7);
+      idleTime -= 1;
+      return;
+    }
+    var dir = '';
+    dir += diffY / distance > 0.5 ? 'N' : '';
+    dir += diffY / distance < -0.5 ? 'S' : '';
+    dir += diffX / distance > 0.5 ? 'W' : '';
+    dir += diffX / distance < -0.5 ? 'E' : '';
+    setSprite(dir, frameCount);
+    nekoPosX -= (diffX / distance) * nekoSpeed;
+    nekoPosY -= (diffY / distance) * nekoSpeed;
+    nekoPosX = Math.min(Math.max(16, nekoPosX), window.innerWidth - 16);
+    nekoPosY = Math.min(Math.max(16, nekoPosY), window.innerHeight - 16);
+    nekoEl.style.left = (nekoPosX - 16) + 'px';
+    nekoEl.style.top = (nekoPosY - 16) + 'px';
+  }
+
+  nekoEl.style.left = (nekoPosX - 16) + 'px';
+  nekoEl.style.top = (nekoPosY - 16) + 'px';
+  idleTime = 20; // starts already settled/resting, not mid-alert
+
+  var last;
+  function loop(ts) {
+    if (!last) last = ts;
+    if (ts - last > 100) { last = ts; frame(); }
+    window.requestAnimationFrame(loop);
+  }
+  window.requestAnimationFrame(loop);
+
+  function catchShuttle() {
+    if (!activeShuttle) return;
+    var s = activeShuttle;
+    activeShuttle = null;
+    s.classList.add('fade');
+    setTimeout(function(){ s.remove(); }, 300);
+  }
+
+  var BIRDIE_SVG =
+    '<svg viewBox="0 0 22 26" xmlns="http://www.w3.org/2000/svg">' +
+    '<g fill="none" stroke="#F4F3EE" stroke-width="1.1" stroke-linejoin="round">' +
+    '<path d="M11 2 L4 15 L11 12 L18 15 Z" fill="rgba(244,243,238,0.92)"/>' +
+    '<path d="M11 2 L11 12" />' +
+    '<path d="M11 2 L7 13.5" />' +
+    '<path d="M11 2 L15 13.5" />' +
+    '</g>' +
+    '<ellipse cx="11" cy="16.5" rx="4.2" ry="5" fill="#C9773F" stroke="#8A4E28" stroke-width="0.8"/>' +
+    '</svg>';
+
+  document.addEventListener('click', function(e){
+    if (activeShuttle) return; // one at a time — cat has to catch this one first
+
+    var shuttle = document.createElement('div');
+    shuttle.className = 'shuttle toss';
+    shuttle.innerHTML = BIRDIE_SVG;
+    shuttle.style.left = (e.clientX - 11) + 'px';
+    shuttle.style.top = (e.clientY - 40) + 'px';
+    document.body.appendChild(shuttle);
+    activeShuttle = shuttle;
+
+    targetX = e.clientX;
+    targetY = e.clientY;
+    idleTime = 0;
+  });
+})();
+</script>
+{% endblock %}

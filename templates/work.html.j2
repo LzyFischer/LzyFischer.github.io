@@ -1,0 +1,47 @@
+{% extends "_base.html.j2" %}
+
+{% block extra_css %}
+.sel{display:flex;gap:18px;padding:18px 20px;border-radius:12px;background:var(--paper-raised);box-shadow:0 0 0 1px var(--line);margin-bottom:12px;}
+.sel-fig{width:44px;height:44px;border-radius:9px;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.sel-fig svg{width:22px;height:22px;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+.sel-title{font-family:'Newsreader',serif;font-size:16.5px;font-weight:500;margin:0 0 5px;}
+.sel-authors{font-size:12.5px;color:var(--text-soft);margin:0 0 6px;}
+.sel-authors b{color:var(--text);font-weight:600;}
+.sel-pitch{font-size:13.5px;color:var(--text-soft);margin:0 0 6px;line-height:1.55;}
+.sel-venue{font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;}
+.c-navy .sel-fig{background:var(--navy-bg);} .c-navy svg{stroke:var(--navy);} .c-navy .sel-venue{color:var(--navy);}
+.c-sage .sel-fig{background:var(--sage-bg);} .c-sage svg{stroke:var(--sage);} .c-sage .sel-venue{color:var(--sage);}
+.c-rust .sel-fig{background:var(--rust-bg);} .c-rust svg{stroke:var(--rust);} .c-rust .sel-venue{color:var(--rust);}
+.c-plum .sel-fig{background:var(--plum-bg);} .c-plum svg{stroke:var(--plum);} .c-plum .sel-venue{color:var(--plum);}
+.c-slate .sel-fig{background:var(--slate-bg);} .c-slate svg{stroke:var(--slate);} .c-slate .sel-venue{color:var(--slate);}
+.cv-note{font-size:13px;color:var(--text-soft);margin-top:8px;}
+{% endblock %}
+
+{% block hero %}
+<div class="hero-band">
+  <div class="wrap">
+    <div class="hero">
+      <div class="eyebrow">Selected work</div>
+      <h1>What I'm working on</h1>
+      <p class="hero-sub">A few papers to start with, in plain language. Full list is in my CV.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section id="selected">
+  {% for p in selected %}
+  <div class="sel c-{{ p.color }}">
+    <div class="sel-fig"><svg viewBox="0 0 24 24">{{ p.icon_svg|safe }}</svg></div>
+    <div>
+      <span class="sel-venue">{{ p.venue }}</span>
+      <p class="sel-title">{{ p.title }}</p>
+      <p class="sel-authors">{{ p.authors_html|safe }}</p>
+      <p class="sel-pitch">{{ p.pitch }}</p>
+    </div>
+  </div>
+  {% endfor %}
+  <p class="cv-note">For the complete publication list, see my <a href="{{ cv_url }}">CV</a>.</p>
+</section>
+{% endblock %}

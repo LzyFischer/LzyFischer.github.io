@@ -1,0 +1,11 @@
+# Pick 3-5 papers you want a stranger to see first. `title` must match
+# an entry in papers.yaml exactly (so venue/authors are reused, not
+# retyped). `pitch` is the one thing you'd tell someone at a poster
+# session in 10 seconds — not the abstract.
+
+- title: "Reforming the Mechanism: Editing Reasoning Patterns in LLMs with Circuit Reshaping"
+  pitch: "Fixes one specific reasoning mistake in an LLM without retraining the whole model or breaking its other skills."
+- title: "BrainTAP: Brain Disorder Prediction with Adaptive Distill and Selective Prior Integration"
+  pitch: "Predicts brain disorders by teaching a model to fuse two very different kinds of brain-scan data."
+- title: "MolEdit: Knowledge Editing for Multimodal Molecule Language Models"
+  pitch: "Updates a single outdated chemistry fact inside a molecule-language model without retraining it."

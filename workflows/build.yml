@@ -1,0 +1,35 @@
+name: Rebuild site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+      - "templates/**"
+      - "build.py"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install -r requirements.txt
+
+      - run: python build.py
+
+      - name: Commit rebuilt site
+        run: |
+          git config user.name "site-bot"
+          git config user.email "actions@github.com"
+          git add index.html work.html education.html about.html data/cache.json
+          git diff --staged --quiet || git commit -m "Rebuild site from data files"
+          git push
