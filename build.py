@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Rebuilds the site's pages (index.html, work.html, education.html,
+Rebuilds the site's pages (index.html, research.html, education.html,
 about.html) from the files in data/.
 
 - data/site.yaml     -> home/hero text, news, education, experience, service, about
@@ -201,7 +201,7 @@ def main():
     pages = [
         ("index.html.j2", "index.html", "home", "Home",
          dict(news=site.get("news", []))),
-        ("work.html.j2", "work.html", "work", "Work",
+        ("research.html.j2", "research.html", "research", "Research",
          dict(selected=selected)),
         ("education.html.j2", "education.html", "education", "Education",
          dict(education=site.get("education", []), experience=site.get("experience", []), service=site.get("service", []))),
@@ -215,7 +215,7 @@ def main():
         (ROOT / out_name).write_text(html)
         print(f"  wrote {out_name}")
 
-    print(f"\nDone. {len(selected)} selected papers rendered on work.html; no full publications page (per request).")
+    print(f"\nDone. {len(selected)} selected papers rendered on research.html; no full publications page (per request).")
 
 
 if __name__ == "__main__":
