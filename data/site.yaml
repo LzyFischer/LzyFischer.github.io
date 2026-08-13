@@ -2,9 +2,9 @@ profile:
   name: "Zhenyu (Fischer) Lei"
   tagline: "PhD student working on how LLMs reason, remember, and compress what they know — and turning the same tools on brain-disorder prediction."
   bio: >
-    I'm a PhD student in Electrical and Computer Engineering at the University of Virginia,
-    advised by Jundong Li. My research centers on LLM reasoning, memory, and distillation,
-    with brain-disorder prediction and AI for science as secondary interests.
+    I'm a PhD student in Electrical and Computer Engineering at the University of Virginia.
+    # advised by Jundong Li. My research centers on LLM reasoning, memory, and distillation,
+    # with brain-disorder prediction and AI for science as secondary interests.
   avatar: "assets/profile-image.jpeg"
   email:
     - "vjd5zr [at] virginia [dot] edu"
