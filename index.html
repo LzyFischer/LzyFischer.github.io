@@ -65,20 +65,19 @@
   
 .hero-row{display:flex;gap:36px;align-items:flex-start;}
 .hero-text{flex:1;}
-.hero-text p{font-size:16px;line-height:1.7;color:var(--ink-soft);margin:0 0 14px;max-width:54ch;}
+.hero-text p{font-size:16px;line-height:1.7;color:var(--text-soft);margin:0 0 14px;max-width:54ch;}
 .avatar-wrap{width:104px;height:104px;flex-shrink:0;position:relative;}
-.avatar{width:104px;height:104px;border-radius:50%;object-fit:cover;border:1px solid var(--hero-line);position:absolute;top:0;left:0;}
-.avatar-placeholder{display:none;width:100%;height:100%;border-radius:50%;border:1px dashed #4A544A;align-items:center;justify-content:center;flex-direction:column;gap:4px;text-align:center;color:#8B958B;font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:1.3;}
-.avatar-placeholder svg{width:22px;height:22px;stroke:#6E786E;fill:none;stroke-width:1.4;}
+.avatar{width:104px;height:104px;border-radius:50%;object-fit:cover;border:1px solid var(--line);position:absolute;top:0;left:0;}
+.avatar-placeholder{display:none;width:100%;height:100%;border-radius:50%;border:1px dashed var(--line);align-items:center;justify-content:center;flex-direction:column;gap:4px;text-align:center;color:var(--text-soft);font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:1.3;}
+.avatar-placeholder svg{width:22px;height:22px;stroke:var(--text-soft);fill:none;stroke-width:1.4;}
 .links{display:flex;gap:18px;margin-top:18px;flex-wrap:wrap;}
-.links a{font-size:13px;color:#D9DED2;text-decoration:none;border-bottom:1px solid #4A544A;padding-bottom:2px;transition:border-color .15s,color .15s;}
-.links a:hover{border-color:#8FA890;color:#FBFBF7;}
-.email-line{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8B958B;margin-top:14px;}
-.news{margin-top:32px;border-top:1px solid var(--hero-line);padding-top:20px;}
-.news-label{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8FA890;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;}
+.links a{font-size:13px;color:var(--text);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .15s,color .15s;}
+.links a:hover{border-color:var(--sage);color:var(--sage);}
+.email-line{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-soft);margin-top:14px;}
+.news-label{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--sage);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;}
 .news ul{list-style:none;margin:0;padding:0;}
-.news li{font-size:13px;color:var(--ink-soft);padding:5px 0;display:flex;gap:10px;}
-.news .d{font-family:'IBM Plex Mono',monospace;color:#7C8A7C;flex-shrink:0;}
+.news li{font-size:13px;color:var(--text-soft);padding:5px 0;display:flex;gap:10px;}
+.news .d{font-family:'IBM Plex Mono',monospace;color:var(--text-soft);opacity:.75;flex-shrink:0;}
 
 /* ---- fullscreen easter egg: click anywhere, cat runs to fetch a shuttlecock ---- */
 #oneko{width:32px;height:32px;position:fixed;pointer-events:none;background-image:url('assets/oneko.gif');image-rendering:pixelated;z-index:9999;left:0;top:0;}
@@ -114,42 +113,46 @@
 <div class="hero-band">
   <div class="wrap">
     <div class="hero">
-      <div class="hero-row">
-        <div class="hero-text">
-          <div class="eyebrow">PhD student · University of Virginia</div>
-          <h1>Zhenyu (Fischer) Lei</h1>
-          <p>PhD student working on how LLMs reason, remember, and compress what they know — and turning the same tools on brain-disorder prediction.</p>
-          <p>I'm a PhD student in Electrical and Computer Engineering at the University of Virginia, advised by Jundong Li. My research centers on LLM reasoning, memory, and distillation, with brain-disorder prediction and AI for science as secondary interests.
-</p>
-          <div class="links">
-            <a href="assets/CV_lzy.pdf">CV</a><a href="https://scholar.google.com/citations?user=y4uMsEIAAAAJ&hl=en">Google Scholar</a><a href="https://github.com/LzyFischer">Github</a><a href="https://x.com/FicsherLzy">Twitter</a>
-          </div>
-          <div class="email-line">vjd5zr [at] virginia [dot] edu · vjd5zr [at] outlook [dot] com</div>
-        </div>
-        <div class="avatar-wrap">
-          <img class="avatar" src="assets/prof_pic.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div class="avatar-placeholder">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="3.2"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg>
-            add photo<br>assets/prof_pic.jpg
-          </div>
-        </div>
-      </div>
-
-      
-      <div class="news">
-        <div class="news-label">What's new</div>
-        <ul>
-          <li><span class="d">[2026.7]</span><span>Got Capital One fellowship!</span></li><li><span class="d">[2026.1]</span><span>1 paper accepted to ICLR 2026!</span></li><li><span class="d">[2025.10]</span><span>1 paper accepted to WSDM 2026! See you in Idaho (maybe)!</span></li><li><span class="d">[2025.08]</span><span>2 papers accepted to EMNLP! See you in Suzhou (maybe)!</span></li><li><span class="d">[2024.11]</span><span>2 papers accepted to AAAI 2025 Main (Oral) — ST-FiT, BrainMAP. See you in Philadelphia!</span></li>
-        </ul>
-      </div>
-      
+      <div class="eyebrow">PhD student · University of Virginia</div>
+      <h1>Zhenyu (Fischer) Lei</h1>
+      <p class="hero-sub">PhD student working on how LLMs reason, remember, and compress what they know — and turning the same tools on brain-disorder prediction.</p>
     </div>
   </div>
 </div>
 
 
 <main class="wrap">
-  
+
+<section id="profile">
+  <div class="hero-row">
+    <div class="hero-text">
+      <p>I'm a PhD student in Electrical and Computer Engineering at the University of Virginia, advised by Jundong Li. My research centers on LLM reasoning, memory, and distillation, with brain-disorder prediction and AI for science as secondary interests.</p>
+      <div class="links">
+        <a href="assets/CV_lzy.pdf">CV</a><a href="https://scholar.google.com/citations?user=y4uMsEIAAAAJ&hl=en">Google Scholar</a><a href="https://github.com/LzyFischer">Github</a><a href="https://x.com/FicsherLzy">Twitter</a>
+      </div>
+      <div class="email-line">vjd5zr [at] virginia [dot] edu · vjd5zr [at] outlook [dot] com</div>
+    </div>
+    <div class="avatar-wrap">
+      <img class="avatar" src="assets/prof_pic.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="avatar-placeholder">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="3.2"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg>
+        add photo<br>assets/prof_pic.jpg
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="news">
+  <div class="section-head">
+    <h2>What's new</h2>
+  </div>
+  <div class="news">
+    <ul>
+      <li><span class="d">[2026.7]</span><span>Got Capital One fellowship!</span></li><li><span class="d">[2026.1]</span><span>1 paper accepted to ICLR 2026!</span></li><li><span class="d">[2025.10]</span><span>1 paper accepted to WSDM 2026! See you in Idaho (maybe)!</span></li><li><span class="d">[2025.08]</span><span>2 papers accepted to EMNLP! See you in Suzhou (maybe)!</span></li><li><span class="d">[2024.11]</span><span>2 papers accepted to AAAI 2025 Main (Oral) — ST-FiT, BrainMAP. See you in Philadelphia!</span></li>
+    </ul>
+  </div>
+</section>
+
 <script>
 // Cat animation adapted from oneko.js (MIT) by adryd325: https://github.com/adryd325/oneko.js
 // Original chases the mouse; here it chases wherever you last clicked, and
