@@ -74,14 +74,15 @@
 .avatar-wrap{width:104px;height:104px;flex-shrink:0;position:relative;}
 .avatar{width:104px;height:104px;border-radius:50%;object-fit:cover;border:1px solid var(--line);position:absolute;top:0;left:0;}
 .avatar-placeholder{display:none;width:100%;height:100%;border-radius:50%;background:var(--sage-bg);align-items:center;justify-content:center;color:var(--sage);font-family:'Newsreader',serif;font-size:32px;font-weight:500;}
-.links{display:flex;gap:18px;margin-top:18px;flex-wrap:wrap;}
-.links a{font-size:13px;color:var(--text);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .15s,color .15s;}
-.links a:hover{border-color:var(--sage);color:var(--sage);}
+.links{display:flex;gap:14px;margin-top:18px;flex-wrap:wrap;}
+.links a{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--text-soft);text-decoration:none;transition:color .15s;}
+.links a:hover{color:var(--sage);}
+.links a svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
 .email-line{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-soft);margin-top:14px;}
 .news-label{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--sage);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;}
 .news ul{list-style:none;margin:0;padding:0;}
 .news li{font-size:13px;color:var(--text-soft);padding:6px 0;display:flex;gap:10px;border-top:1px solid var(--line);}
-.news li:first-child{border-top:none;}
+.news li:first-child{border-top:none;padding-left:10px;margin-left:-10px;border-left:2px solid var(--sage);}
 .news .d{font-family:'IBM Plex Mono',monospace;color:var(--sage);opacity:.85;flex-shrink:0;}
 
 /* ---- fullscreen easter egg: click anywhere, cat runs to fetch a shuttlecock ---- */
@@ -95,6 +96,18 @@
 }
 .shuttle.toss{animation:toss .6s ease-out;}
 .shuttle.fade{transition:opacity .3s;opacity:0;}
+
+@media (max-width:640px){
+  main.wrap{padding:36px 16px 32px;gap:16px;}
+  h1{font-size:29px;}
+  .hero-sub{font-size:14.5px;}
+  .card{padding:24px 20px;}
+  .hero-row{flex-direction:column-reverse;gap:16px;}
+  .avatar-wrap{width:72px;height:72px;}
+  .avatar,.avatar-placeholder{width:72px;height:72px;}
+  .avatar-placeholder{font-size:24px;}
+  .news li{flex-direction:column;gap:2px;}
+}
 
 </style>
 </head>
@@ -133,7 +146,7 @@
     <div class="hero-text">
       <p>I'm a PhD student in Electrical and Computer Engineering at the University of Virginia, advised by Jundong Li. My research centers on LLM reasoning, memory, and distillation, with brain-disorder prediction and AI for science as secondary interests.</p>
       <div class="links">
-        <a href="assets/CV_lzy.pdf">CV</a><a href="https://scholar.google.com/citations?user=y4uMsEIAAAAJ&hl=en">Google Scholar</a><a href="https://github.com/LzyFischer">Github</a><a href="https://x.com/FicsherLzy">Twitter</a>
+        <a href="assets/CV_lzy.pdf"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v5h5"/></svg>CV</a><a href="https://scholar.google.com/citations?user=y4uMsEIAAAAJ&hl=en"><svg viewBox="0 0 24 24"><path d="M12 4 2 9l10 5 10-5-10-5Z"/><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/></svg>Google Scholar</a><a href="https://github.com/LzyFischer"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03a9.53 9.53 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>Github</a><a href="https://x.com/FicsherLzy"><svg viewBox="0 0 24 24"><path d="m4 4 7.5 8.5L4.5 20h2l6-6.7L18 20h2l-8-9 7-7h-2l-5.5 6.2L6 4Z"/></svg>Twitter</a>
       </div>
       <div class="email-line">vjd5zr [at] virginia [dot] edu · vjd5zr [at] outlook [dot] com</div>
     </div>
