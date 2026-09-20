@@ -1,216 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Zhenyu (Fischer) Lei — Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zhenyu (Fischer) Lei</title>
+<meta name="description" content="Zhenyu (Fischer) Lei — Ph.D. Student · ECE · University of Virginia">
+<link rel="icon" href="assets/prof_pic.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#EDEDE6; --ink-soft:#B7BBB2;
-    --hero:#141914; --hero-line:#2B332B;
-    --paper:#F4F3EE; --paper-raised:#FFFFFF;
-    --text:#20241F; --text-soft:#565C53; --line:#E0DFD6;
-    --navy:#2C3E6B; --navy-bg:#E7EAF1;
-    --sage:#3F6B4F; --sage-bg:#E4EEE5;
-    --rust:#9A4B2E; --rust-bg:#F3E4DC;
-    --plum:#6B3F63; --plum-bg:#EFE2ED;
-    --slate:#42525A; --slate-bg:#E4E9EB;
+    --accent:#1d4f91; --accent-dark:#0f2f5c;
+    --ink:#162638; --ink-2:#24364d; --muted:#3d4f66; --soft:#5a6b80;
+    --line:#dde3ea; --line-2:#e8ecf1; --tint:#f1f5fa; --badge:#e6edf6;
+    --tag:#8a4b00; --btn-line:#c9d3e0;
+    --sans:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;background-color:var(--paper);color:var(--text);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;
-    background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220"><path d="M 71.2 33.2 Q 92.9 44.6 115.1 54.7" stroke="rgb(196,169,169)" stroke-width="14.5" stroke-linecap="round" fill="none" opacity="0.269"/><path d="M 47.2 18.9 Q 47.4 39.6 49.7 60.2" stroke="rgb(201,182,140)" stroke-width="9.7" stroke-linecap="round" fill="none" opacity="0.31"/><path d="M 49.1 138.0 Q 22.3 126.3 -2.5 110.9" stroke="rgb(176,196,178)" stroke-width="14.2" stroke-linecap="round" fill="none" opacity="0.19"/><path d="M 63.7 31.7 Q 52.1 44.3 52.3 61.4" stroke="rgb(176,196,178)" stroke-width="12.4" stroke-linecap="round" fill="none" opacity="0.2"/><path d="M 41.3 21.4 Q 18.9 9.3 -5.4 1.4" stroke="rgb(163,177,196)" stroke-width="11.6" stroke-linecap="round" fill="none" opacity="0.29"/><path d="M 69.1 128.8 Q 57.0 147.2 56.0 169.3" stroke="rgb(176,196,178)" stroke-width="10.8" stroke-linecap="round" fill="none" opacity="0.19"/><path d="M 108.9 75.6 Q 87.1 68.8 76.1 48.8" stroke="rgb(214,199,168)" stroke-width="13.5" stroke-linecap="round" fill="none" opacity="0.25"/><path d="M 33.4 107.6 Q 30.9 92.2 19.1 82.1" stroke="rgb(214,199,168)" stroke-width="13.9" stroke-linecap="round" fill="none" opacity="0.31"/><path d="M 74.8 77.0 Q 72.9 53.5 87.6 35.0" stroke="rgb(201,182,140)" stroke-width="11.8" stroke-linecap="round" fill="none" opacity="0.331"/><path d="M 146.1 13.3 Q 138.8 -12.7 115.7 -26.9" stroke="rgb(163,177,196)" stroke-width="11.3" stroke-linecap="round" fill="none" opacity="0.231"/><path d="M 147.1 5.0 Q 164.3 19.8 168.2 42.2" stroke="rgb(201,182,140)" stroke-width="10.7" stroke-linecap="round" fill="none" opacity="0.21"/><path d="M 162.4 87.5 Q 133.9 94.8 105.1 88.8" stroke="rgb(163,177,196)" stroke-width="14.3" stroke-linecap="round" fill="none" opacity="0.269"/><path d="M 180.2 190.1 Q 165.8 201.9 148.4 208.8" stroke="rgb(163,177,196)" stroke-width="9.9" stroke-linecap="round" fill="none" opacity="0.331"/><path d="M 38.8 51.0 Q 20.9 50.9 3.5 54.4" stroke="rgb(196,169,169)" stroke-width="9.9" stroke-linecap="round" fill="none" opacity="0.231"/><path d="M 117.6 134.2 Q 126.0 152.8 144.5 161.3" stroke="rgb(214,199,168)" stroke-width="13.4" stroke-linecap="round" fill="none" opacity="0.281"/><path d="M 100.5 191.6 Q 89.2 164.6 75.8 138.6" stroke="rgb(163,177,196)" stroke-width="9.6" stroke-linecap="round" fill="none" opacity="0.24"/><path d="M 139.5 13.7 Q 149.9 26.5 147.3 42.8" stroke="rgb(196,169,169)" stroke-width="9.6" stroke-linecap="round" fill="none" opacity="0.281"/><path d="M 124.7 118.1 Q 97.0 105.4 80.6 79.8" stroke="rgb(176,196,178)" stroke-width="9.9" stroke-linecap="round" fill="none" opacity="0.281"/><path d="M 55.5 76.4 Q 64.8 95.3 83.9 104.1" stroke="rgb(163,177,196)" stroke-width="10.9" stroke-linecap="round" fill="none" opacity="0.26"/><path d="M 31.7 164.9 Q 5.6 164.6 -19.5 171.9" stroke="rgb(214,199,168)" stroke-width="14.7" stroke-linecap="round" fill="none" opacity="0.181"/><path d="M 116.2 32.3 Q 138.5 36.6 160.9 39.9" stroke="rgb(201,182,140)" stroke-width="10.6" stroke-linecap="round" fill="none" opacity="0.29"/><path d="M 80.7 36.7 Q 56.0 25.9 29.1 26.0" stroke="rgb(196,169,169)" stroke-width="12.7" stroke-linecap="round" fill="none" opacity="0.281"/><path d="M 173.4 166.8 Q 176.6 183.8 175.7 201.0" stroke="rgb(176,196,178)" stroke-width="12.0" stroke-linecap="round" fill="none" opacity="0.21"/><path d="M 160.8 217.7 Q 135.6 228.4 108.3 227.0" stroke="rgb(214,199,168)" stroke-width="11.7" stroke-linecap="round" fill="none" opacity="0.331"/><path d="M 206.1 217.4 Q 191.0 243.1 167.5 261.4" stroke="rgb(176,196,178)" stroke-width="11.0" stroke-linecap="round" fill="none" opacity="0.26"/><path d="M 106.2 216.8 Q 129.8 225.2 153.7 217.3" stroke="rgb(196,169,169)" stroke-width="9.5" stroke-linecap="round" fill="none" opacity="0.31"/><path d="M 145.3 200.2 Q 144.9 173.6 145.4 147.1" stroke="rgb(176,196,178)" stroke-width="12.8" stroke-linecap="round" fill="none" opacity="0.25"/><path d="M 19.1 208.2 Q -6.9 209.3 -30.7 219.9" stroke="rgb(201,182,140)" stroke-width="10.0" stroke-linecap="round" fill="none" opacity="0.3"/><path d="M 27.9 33.3 Q 31.2 4.1 47.7 -20.2" stroke="rgb(214,199,168)" stroke-width="12.9" stroke-linecap="round" fill="none" opacity="0.34"/><path d="M 77.1 120.7 Q 92.3 131.5 109.2 123.6" stroke="rgb(201,182,140)" stroke-width="14.6" stroke-linecap="round" fill="none" opacity="0.26"/></svg>');
-    background-size:220px 220px;
-    background-attachment:fixed;
+  [hidden]{display:none !important;}
+  html{scroll-behavior:smooth;scroll-padding-top:88px;}
+  body{margin:0;background:#fff;color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;min-height:100vh;}
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{color:var(--accent-dark);text-decoration:underline;}
+  img{max-width:100%;}
+  .wrap{width:min(1160px, 100% - 48px);margin:0 auto;}
+
+  /* ---- header / nav (identical on every page) ---- */
+  .site-header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(6px);border-bottom:1px solid #e3e8ef;}
+  .site-header .wrap{height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .brand{display:flex;align-items:center;gap:12px;color:var(--ink);font-weight:800;font-size:18px;white-space:nowrap;}
+  .brand:hover{text-decoration:none;color:var(--ink);}
+  .brand-mark{width:36px;height:36px;border-radius:8px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;}
+  .nav{display:flex;align-items:center;gap:4px;font-size:15px;font-weight:500;overflow-x:auto;scrollbar-width:none;}
+  .nav::-webkit-scrollbar{display:none;}
+  .nav a{color:#2c3e55;padding:10px 14px;border-bottom:2px solid transparent;white-space:nowrap;}
+  .nav a:hover{color:var(--accent);text-decoration:none;}
+  .nav a.active{color:var(--accent);font-weight:700;border-bottom-color:var(--accent);}
+  .nav a.cv{color:var(--accent);border:1px solid var(--accent);padding:8px 16px;border-radius:6px;font-weight:700;margin-left:10px;}
+  .nav a.cv:hover{background:var(--accent);color:#fff;}
+
+  /* ---- shared pieces ---- */
+  main{flex:1;}
+  .eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);}
+  h1{margin:0;font-size:50px;line-height:1.08;font-weight:800;letter-spacing:-.02em;}
+  .sec{display:flex;flex-direction:column;gap:16px;}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-bottom:12px;border-bottom:1px solid var(--line);}
+  .sec-head .kicker{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);margin-bottom:6px;}
+  .sec-head h2{margin:0;font-size:30px;font-weight:800;letter-spacing:-.01em;}
+  .sec-head .more{font-weight:700;font-size:15px;white-space:nowrap;}
+  .btn{display:inline-block;font-weight:600;font-size:14px;padding:11px 18px;border-radius:6px;border:1px solid var(--btn-line);background:#fff;color:var(--ink);}
+  .btn:hover{text-decoration:none;border-color:var(--accent);color:var(--accent);}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff;}
+  .btn.primary:hover{background:var(--accent-dark);color:#fff;}
+
+  /* ---- paper row (homepage + publications) ---- */
+  .papers{display:flex;flex-direction:column;}
+  .paper{display:flex;gap:28px;padding:22px 4px;border-bottom:1px solid var(--line-2);}
+  .paper-meta{flex:0 0 172px;display:flex;flex-direction:column;align-items:flex-start;gap:6px;}
+  .venue{white-space:nowrap;font-family:var(--mono);font-size:13px;font-weight:500;color:var(--ink);background:var(--badge);padding:5px 10px;border-radius:4px;}
+  .tag{font-size:12px;font-weight:700;color:var(--tag);}
+  .paper-body{flex:1;display:flex;flex-direction:column;gap:6px;min-width:0;}
+  .paper-title{font-size:18px;font-weight:700;line-height:1.4;color:var(--ink);}
+  .paper-authors{font-size:15px;line-height:1.55;color:var(--soft);}
+  .paper-authors b{color:var(--ink);font-weight:700;}
+  .paper-links{display:flex;gap:16px;font-size:14px;font-weight:700;margin-top:2px;}
+
+  footer{background:var(--tint);border-top:1px solid #e3e8ef;padding:28px 0;margin-top:40px;}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:13px;color:var(--soft);}
+
+  @media (max-width: 760px){
+    h1{font-size:36px;}
+    .sec-head h2{font-size:24px;}
+    .brand .brand-name{display:none;}
+    .paper{flex-direction:column;gap:10px;}
+    .paper-meta{flex-direction:row;align-items:center;flex-basis:auto;}
   }
-  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
-  code{font-family:'IBM Plex Mono',monospace;}
-  a{color:inherit;}
+  
+.hero{padding:64px 0 8px;}
+.hero .wrap{display:flex;gap:48px;align-items:center;}
+.hero img{width:200px;height:200px;object-fit:cover;border-radius:12px;border:1px solid #d5dde8;flex-shrink:0;}
+.hero-text{display:flex;flex-direction:column;gap:12px;}
+.contact{display:flex;flex-direction:column;gap:4px;font-size:16px;color:var(--muted);}
+.contact b{color:var(--ink);}
+.buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;}
+.content{display:flex;flex-direction:column;gap:56px;padding:56px 0 32px;}
+.prose p{margin:0 0 14px;font-size:17px;line-height:1.75;color:var(--ink-2);}
+.prose p:last-child{margin-bottom:0;}
+.news-row{display:flex;gap:24px;padding:10px 0;font-size:17px;line-height:1.55;}
+.news-row .d{flex:0 0 96px;font-family:var(--mono);font-size:15px;font-weight:500;color:var(--accent);padding-top:1px;}
+.edu{display:flex;flex-direction:column;gap:22px;}
+.edu-row{display:flex;gap:24px;align-items:center;}
+.edu-mark{width:64px;height:64px;flex-shrink:0;border-radius:10px;border:1px solid var(--line);background:var(--tint);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:var(--accent);}
+.edu-text{flex:1;display:flex;flex-direction:column;gap:4px;font-size:17px;}
+.edu-text i{color:var(--muted);}
+.edu-dates{font-family:var(--mono);font-size:14px;color:var(--soft);white-space:nowrap;}
+.two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;align-items:start;}
+.panel{background:#f7f9fc;border:1px solid #e3e8ef;border-radius:10px;padding:20px 24px;display:flex;flex-direction:column;gap:10px;font-size:16px;line-height:1.55;}
+.misc{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;font-size:17px;line-height:1.6;color:var(--ink-2);}
+.note{font-size:14px;color:var(--soft);}
 
-  /* ---- top nav (every page) ---- */
-  .topnav-band{background-color:var(--hero);color:var(--ink);}
-  header{display:flex;justify-content:space-between;align-items:center;padding:20px 0;}
-  .brand{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink-soft);text-decoration:none;}
-  nav a{color:var(--ink-soft);text-decoration:none;font-size:12px;margin-left:22px;letter-spacing:.06em;text-transform:uppercase;transition:color .15s;}
-  nav a:hover, nav a.active{color:#FBFBF7;}
-
-  /* ---- page hero band (dark), used on every page but content differs ---- */
-  .hero-band{
-    color:var(--ink);border-top:1px solid var(--hero-line);
-    background-color:var(--hero);
-    background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220"><path d="M 95.4 191.8 Q 106.8 217.0 108.6 244.6" stroke="rgb(50,63,84)" stroke-width="13.6" stroke-linecap="round" fill="none" opacity="0.45"/><path d="M 71.7 119.8 Q 95.3 134.4 122.5 140.2" stroke="rgb(75,64,45)" stroke-width="13.9" stroke-linecap="round" fill="none" opacity="0.48"/><path d="M 113.7 182.0 Q 137.9 197.8 151.9 223.1" stroke="rgb(60,70,60)" stroke-width="11.6" stroke-linecap="round" fill="none" opacity="0.35"/><path d="M 40.3 0.9 Q 53.3 24.3 65.4 48.2" stroke="rgb(63,86,66)" stroke-width="11.0" stroke-linecap="round" fill="none" opacity="0.46"/><path d="M 114.0 122.2 Q 134.2 139.6 155.8 155.0" stroke="rgb(90,74,40)" stroke-width="9.3" stroke-linecap="round" fill="none" opacity="0.39"/><path d="M 21.5 99.5 Q 27.5 83.7 44.2 81.6" stroke="rgb(50,63,84)" stroke-width="12.0" stroke-linecap="round" fill="none" opacity="0.47"/><path d="M 112.7 152.4 Q 91.8 148.4 71.1 143.6" stroke="rgb(90,74,40)" stroke-width="14.3" stroke-linecap="round" fill="none" opacity="0.49"/><path d="M 207.3 57.1 Q 231.2 55.5 250.3 41.1" stroke="rgb(90,74,40)" stroke-width="11.4" stroke-linecap="round" fill="none" opacity="0.43"/><path d="M 69.5 147.7 Q 78.2 167.0 79.2 188.2" stroke="rgb(63,86,66)" stroke-width="9.9" stroke-linecap="round" fill="none" opacity="0.53"/><path d="M 157.5 145.3 Q 175.9 141.2 181.7 123.4" stroke="rgb(90,74,40)" stroke-width="9.6" stroke-linecap="round" fill="none" opacity="0.5"/><path d="M 194.7 35.8 Q 194.7 60.8 202.8 84.5" stroke="rgb(60,70,60)" stroke-width="11.5" stroke-linecap="round" fill="none" opacity="0.43"/><path d="M 78.5 20.3 Q 68.7 37.6 57.6 54.1" stroke="rgb(63,86,66)" stroke-width="12.1" stroke-linecap="round" fill="none" opacity="0.43"/><path d="M 65.0 211.4 Q 76.1 198.9 92.6 195.9" stroke="rgb(63,86,66)" stroke-width="10.6" stroke-linecap="round" fill="none" opacity="0.37"/><path d="M 199.3 39.9 Q 216.7 19.3 221.5 -7.3" stroke="rgb(50,63,84)" stroke-width="12.2" stroke-linecap="round" fill="none" opacity="0.43"/><path d="M 113.3 108.8 Q 103.9 126.6 106.3 146.6" stroke="rgb(90,74,40)" stroke-width="9.4" stroke-linecap="round" fill="none" opacity="0.44"/><path d="M 206.4 139.6 Q 226.1 159.2 252.8 166.5" stroke="rgb(63,86,66)" stroke-width="9.7" stroke-linecap="round" fill="none" opacity="0.4"/><path d="M 2.5 218.7 Q 21.6 210.4 38.2 197.8" stroke="rgb(63,86,66)" stroke-width="10.4" stroke-linecap="round" fill="none" opacity="0.46"/><path d="M 24.1 35.5 Q 32.1 48.5 32.9 63.8" stroke="rgb(50,63,84)" stroke-width="10.2" stroke-linecap="round" fill="none" opacity="0.46"/><path d="M 98.1 147.9 Q 113.4 133.9 110.2 113.3" stroke="rgb(63,86,66)" stroke-width="13.4" stroke-linecap="round" fill="none" opacity="0.35"/><path d="M 121.2 41.7 Q 137.9 25.8 160.8 24.4" stroke="rgb(75,64,45)" stroke-width="12.3" stroke-linecap="round" fill="none" opacity="0.48"/><path d="M 195.5 213.5 Q 204.9 230.8 203.7 250.4" stroke="rgb(90,74,40)" stroke-width="13.2" stroke-linecap="round" fill="none" opacity="0.52"/><path d="M 139.9 89.0 Q 160.8 88.6 176.8 102.1" stroke="rgb(63,86,66)" stroke-width="14.3" stroke-linecap="round" fill="none" opacity="0.48"/><path d="M 94.8 12.2 Q 76.6 28.9 58.6 45.7" stroke="rgb(50,63,84)" stroke-width="13.2" stroke-linecap="round" fill="none" opacity="0.47"/><path d="M 10.0 40.8 Q 28.3 38.5 46.6 41.6" stroke="rgb(50,63,84)" stroke-width="12.3" stroke-linecap="round" fill="none" opacity="0.54"/><path d="M 53.8 212.4 Q 49.8 233.5 30.2 242.2" stroke="rgb(75,64,45)" stroke-width="10.7" stroke-linecap="round" fill="none" opacity="0.37"/><path d="M 144.3 54.6 Q 163.1 74.2 188.8 83.2" stroke="rgb(90,74,40)" stroke-width="9.3" stroke-linecap="round" fill="none" opacity="0.43"/></svg>');
-    background-size:220px 220px;
-  }
-  .hero{padding:44px 0;}
-  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8FA890;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;}
-  h1{font-family:'Newsreader',serif;font-weight:500;font-size:38px;line-height:1.12;margin:0 0 14px;letter-spacing:-.01em;color:#FBFBF7;}
-  .hero-sub{font-size:15.5px;line-height:1.65;color:var(--ink-soft);margin:0;max-width:56ch;}
-
-  /* ---- generic section ---- */
-  main.wrap{padding:52px 24px 40px;display:flex;flex-direction:column;gap:22px;}
-  section{padding:0;}
-  .section-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;}
-  h2{font-family:'Newsreader',serif;font-weight:500;font-size:22px;margin:0;color:var(--text);}
-  .section-sub{font-size:13px;color:var(--text-soft);margin:0 0 22px;}
-
-  footer{padding:30px 0 60px;font-size:12px;color:var(--text-soft);text-align:center;}
-  .fun-stats{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--text-soft);margin-bottom:10px;}
-  .fun-stats .sep{margin:0 8px;opacity:.5;}
-  .fun-stats b{color:var(--text);}
-
-  .card{
-    background:var(--paper-raised);
-    border-radius:14px;
-    padding:32px 36px;
-    box-shadow:0 0 0 1px var(--line);
-  }
-
-.hero-row{display:flex;gap:36px;align-items:flex-start;}
-.hero-text{flex:1;}
-.hero-text p{font-size:16px;line-height:1.7;color:var(--text-soft);margin:0 0 14px;max-width:54ch;}
-.avatar-wrap{width:104px;height:104px;flex-shrink:0;position:relative;}
-.avatar{width:104px;height:104px;border-radius:50%;object-fit:cover;border:1px solid var(--line);position:absolute;top:0;left:0;}
-.avatar-placeholder{display:none;width:100%;height:100%;border-radius:50%;background:var(--sage-bg);align-items:center;justify-content:center;color:var(--sage);font-family:'Newsreader',serif;font-size:32px;font-weight:500;}
-.links{display:flex;gap:14px;margin-top:18px;flex-wrap:wrap;}
-.links a{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--text-soft);text-decoration:none;transition:color .15s;}
-.links a:hover{color:var(--sage);}
-.links a svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
-.email-line{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-soft);margin-top:14px;}
-.news-label{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--sage);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;}
-.news ul{list-style:none;margin:0;padding:0;}
-.news li{font-size:13px;color:var(--text-soft);padding:6px 0;display:flex;gap:10px;border-top:1px solid var(--line);}
-.news li:first-child{border-top:none;padding-left:10px;margin-left:-10px;border-left:2px solid var(--sage);}
-.news .d{font-family:'IBM Plex Mono',monospace;color:var(--sage);opacity:.85;flex-shrink:0;}
-
-/* ---- fullscreen easter egg: click anywhere, cat runs to fetch a shuttlecock ---- */
 #oneko{width:32px;height:32px;position:fixed;pointer-events:none;background-image:url('assets/oneko.gif');image-rendering:pixelated;z-index:9999;left:0;top:0;}
 .shuttle{position:fixed;width:22px;height:26px;pointer-events:none;z-index:9998;}
 .shuttle svg{width:100%;height:100%;}
-@keyframes toss{
-  0%{transform:translateY(0) rotate(0deg);}
-  45%{transform:translateY(-56px) rotate(200deg);}
-  100%{transform:translateY(0) rotate(360deg);}
-}
+@keyframes toss{0%{transform:translateY(0) rotate(0)}45%{transform:translateY(-56px) rotate(200deg)}100%{transform:translateY(0) rotate(360deg)}}
 .shuttle.toss{animation:toss .6s ease-out;}
 .shuttle.fade{transition:opacity .3s;opacity:0;}
 
-@media (max-width:640px){
-  main.wrap{padding:36px 16px 32px;gap:16px;}
-  h1{font-size:29px;}
-  .hero-sub{font-size:14.5px;}
-  .card{padding:24px 20px;}
-  .hero-row{flex-direction:column-reverse;gap:16px;}
-  .avatar-wrap{width:72px;height:72px;}
-  .avatar,.avatar-placeholder{width:72px;height:72px;}
-  .avatar-placeholder{font-size:24px;}
-  .news li{flex-direction:column;gap:2px;}
+@media (max-width: 760px){
+  .hero .wrap{flex-direction:column;align-items:flex-start;gap:24px;}
+  .hero img{width:140px;height:140px;}
+  .two-col{grid-template-columns:1fr;gap:40px;}
+  .news-row{flex-direction:column;gap:2px;}
+  .news-row .d{flex-basis:auto;}
+  .edu-row{flex-wrap:wrap;}
+  .edu-dates{width:100%;padding-left:88px;}
 }
 
 </style>
 </head>
 <body>
 
-<div class="topnav-band">
+<header class="site-header">
   <div class="wrap">
-    <header>
-      <a class="brand" href="index.html">zhenyu (fischer) lei</a>
-      <nav>
-        <a href="index.html" class="active">home</a>
-        <a href="research.html" class="">research</a>
-        <a href="education.html" class="">education</a>
-        <a href="about.html" class="">about</a>
-      </nav>
-    </header>
+    <a class="brand" href="index.html"><span class="brand-mark">ZL</span><span class="brand-name">Zhenyu Lei</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html" class="active">Home</a>
+      <a href="publications.html" class="">Publications</a>
+      <a href="index.html#news">News</a>
+      <a href="index.html#education">Education</a>
+      <a href="index.html#honors">Honors</a>
+      <a href="index.html#misc">Misc</a>
+      <a class="cv" href="assets/CV_lzy_.pdf">CV ↓</a>
+    </nav>
   </div>
-</div>
+</header>
 
+<main>
 
-<div class="hero-band">
+<section class="hero">
   <div class="wrap">
-    <div class="hero">
-      <div class="eyebrow">PhD student · University of Virginia</div>
-      <h1>Zhenyu (Fischer) Lei</h1>
-      <p class="hero-sub">PhD student working on how LLMs reason, remember, and compress what they know — and turning the same tools on brain-disorder prediction.</p>
-    </div>
-  </div>
-</div>
-
-
-<main class="wrap">
-
-<section id="profile" class="card">
-  <div class="hero-row">
+    <img src="assets/prof_pic.jpg" alt="Portrait of Zhenyu Lei">
     <div class="hero-text">
-      <p>I'm a PhD student in Electrical and Computer Engineering at the University of Virginia, advised by Jundong Li. My research centers on LLM reasoning, memory, and distillation, with brain-disorder prediction and AI for science as secondary interests.</p>
-      <div class="links">
-        <a href="assets/CV_lzy.pdf"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v5h5"/></svg>CV</a><a href="https://scholar.google.com/citations?user=y4uMsEIAAAAJ&hl=en"><svg viewBox="0 0 24 24"><path d="M12 4 2 9l10 5 10-5-10-5Z"/><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/></svg>Google Scholar</a><a href="https://github.com/LzyFischer"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03a9.53 9.53 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>Github</a><a href="https://x.com/FicsherLzy"><svg viewBox="0 0 24 24"><path d="m4 4 7.5 8.5L4.5 20h2l6-6.7L18 20h2l-8-9 7-7h-2l-5.5 6.2L6 4Z"/></svg>Twitter</a>
+      <div class="eyebrow">Ph.D. Student · ECE · University of Virginia</div>
+      <h1>Zhenyu (Fischer) Lei</h1>
+      <div class="contact">
+        <span><b>E-mail:</b> vjd5zr [at] virginia [dot] edu</span>
+        <span><b>Address:</b> Charlottesville, VA, USA</span>
       </div>
-      <div class="email-line">vjd5zr [at] virginia [dot] edu · vjd5zr [at] outlook [dot] com</div>
-    </div>
-    <div class="avatar-wrap">
-      <img class="avatar" src="assets/prof_pic.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-      <div class="avatar-placeholder">ZL</div>
+      <div class="buttons">
+        <a class="btn primary" href="assets/CV_lzy_.pdf">CV</a>
+        <a class="btn" href="https://scholar.google.com/citations?user=y4uMsEIAAAAJ&hl=en">Google Scholar</a><a class="btn" href="https://github.com/LzyFischer">GitHub</a><a class="btn" href="https://x.com/FicsherLzy">Twitter / X</a>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="news" class="card">
-  <div class="section-head">
-    <h2>What's new</h2>
+<div class="wrap content">
+
+  <section id="about" class="sec">
+    <div class="sec-head"><div><span class="kicker">About</span><h2>About me</h2></div></div>
+    <div class="prose"><p>I am a Ph.D. student in Electrical and Computer Engineering at the <a href="https://www.virginia.edu/">University of Virginia</a>, advised by Prof. <a href="https://jundongli.github.io/">Jundong Li</a>. Before that, I received my B.S. in Physics from Xi'an Jiaotong University, where I was lucky to join the LUD Lab. I have also interned at AT&amp;T as an Applied Scientist.
+</p><p>My research centers on <i>LLM reasoning</i>, <i>memory</i>, and <i>distillation</i> — how models reason, remember, and compress what they know — with <i>brain-disorder prediction</i> and <i>AI for science</i> as secondary interests. <b>I am open to collaborations and discussions — feel free to reach out via email!</b>
+</p></div>
+  </section>
+
+  
+  <section id="news" class="sec">
+    <div class="sec-head"><div><span class="kicker">News &amp; notices</span><h2>News</h2></div></div>
+    <div><div class="news-row"><span class="d">Jan 2026</span><span>One paper accepted at ICLR 2026.</span></div><div class="news-row"><span class="d">Jan 2026</span><span>One paper accepted at ISBI 2026.</span></div><div class="news-row"><span class="d">Oct 2025</span><span>One paper accepted at WSDM 2026. See you in Idaho (maybe)!</span></div><div class="news-row"><span class="d">Aug 2025</span><span>Two papers accepted at EMNLP 2025. See you in Suzhou (maybe)!</span></div><div class="news-row"><span class="d">Nov 2024</span><span>Two papers accepted at AAAI 2025 Main (Oral) — ST-FiT and BrainMAP. See you in Philadelphia!</span></div></div>
+  </section>
+  
+
+  <section id="research" class="sec">
+    <div class="sec-head">
+      <div><span class="kicker">Publications</span><h2>Selected Research</h2></div>
+      <a class="more" href="publications.html">All publications →</a>
+    </div>
+    <div class="papers"><article class="paper" data-topic="llm">
+  <div class="paper-meta">
+    <span class="venue">ICLR 2026</span>
+    <span class="tag">Reasoning</span>
   </div>
-  <div class="news">
-    <ul>
-      <li><span class="d">[2026.7]</span><span>Got Capital One fellowship!</span></li><li><span class="d">[2026.1]</span><span>1 paper accepted to ICLR 2026!</span></li><li><span class="d">[2025.10]</span><span>1 paper accepted to WSDM 2026! See you in Idaho (maybe)!</span></li><li><span class="d">[2025.08]</span><span>2 papers accepted to EMNLP! See you in Suzhou (maybe)!</span></li><li><span class="d">[2024.11]</span><span>2 papers accepted to AAAI 2025 Main (Oral) — ST-FiT, BrainMAP. See you in Philadelphia!</span></li>
-    </ul>
+  <div class="paper-body">
+    
+    <span class="paper-title">Reforming the Mechanism: Editing Reasoning Patterns in LLMs with Circuit Reshaping</span>
+    <div class="paper-authors"><b>Zhenyu Lei</b>, Qiong Wu, Jianxiong Dong, Yinhan He, Emily Dodwell, Yushun Dong, Jundong Li</div>
+    
   </div>
-</section>
+</article><article class="paper" data-topic="brain">
+  <div class="paper-meta">
+    <span class="venue">ISBI 2026</span>
+    <span class="tag">Brain</span>
+  </div>
+  <div class="paper-body">
+    
+    <span class="paper-title">BrainTAP: Brain Disorder Prediction with Adaptive Distill and Selective Prior Integration</span>
+    <div class="paper-authors"><b>Zhenyu Lei</b>, Aiying Zhang, Song Wang, Han Fan, Jundong Li</div>
+    
+  </div>
+</article><article class="paper" data-topic="edit">
+  <div class="paper-meta">
+    <span class="venue">WSDM 2026</span>
+    <span class="tag">Knowledge editing</span>
+  </div>
+  <div class="paper-body">
+    
+    <a class="paper-title" href="https://arxiv.org/abs/2511.12770">MolEdit: Knowledge Editing for Multimodal Molecule Language Models</a>
+    <div class="paper-authors"><b>Zhenyu Lei</b>, Patrick Soga, Yaochen Zhu, Yinhan He, Yushun Dong, Jundong Li</div>
+    <div class="paper-links"><a href="https://arxiv.org/abs/2511.12770">Paper</a></div>
+  </div>
+</article><article class="paper" data-topic="llm">
+  <div class="paper-meta">
+    <span class="venue">EMNLP 2025</span>
+    <span class="tag">Distillation</span>
+  </div>
+  <div class="paper-body">
+    
+    <a class="paper-title" href="https://arxiv.org/abs/2508.16861">Learning from Diverse Reasoning Paths with Routing and Collaboration</a>
+    <div class="paper-authors"><b>Zhenyu Lei</b>, Zhen Tan, Song Wang, Yaochen Zhu, Zihan Chen, Yushun Dong, Jundong Li</div>
+    <div class="paper-links"><a href="https://arxiv.org/abs/2508.16861">Paper</a></div>
+  </div>
+</article><article class="paper" data-topic="graph">
+  <div class="paper-meta">
+    <span class="venue">AAAI 2025</span>
+    <span class="tag">Oral</span>
+  </div>
+  <div class="paper-body">
+    
+    <a class="paper-title" href="https://arxiv.org/abs/2412.10912">ST-FiT: Inductive Spatial-Temporal Forecasting with Limited Training Data</a>
+    <div class="paper-authors"><b>Zhenyu Lei</b>, Yushun Dong, Jundong Li, Chen Chen</div>
+    <div class="paper-links"><a href="https://arxiv.org/abs/2412.10912">Paper</a></div>
+  </div>
+</article><article class="paper" data-topic="brain">
+  <div class="paper-meta">
+    <span class="venue">AAAI 2025</span>
+    <span class="tag">Oral</span>
+  </div>
+  <div class="paper-body">
+    
+    <a class="paper-title" href="https://arxiv.org/abs/2412.17404">BrainMAP: Learning Multiple Activation Pathways in Brain Networks</a>
+    <div class="paper-authors">Song Wang*, <b>Zhenyu Lei*</b>, Zhen Tan, Jiaqi Ding, Xinyu Zhao, Yushun Dong, Guorong Wu, Tianlong Chen, Chen Chen, Aiying Zhang, Jundong Li</div>
+    <div class="paper-links"><a href="https://arxiv.org/abs/2412.17404">Paper</a></div>
+  </div>
+</article><article class="paper" data-topic="graph">
+  <div class="paper-meta">
+    <span class="venue">ACL 2023</span>
+    <span class="tag">Graph + text</span>
+  </div>
+  <div class="paper-body">
+    
+    <a class="paper-title" href="https://arxiv.org/abs/2208.08320">BIC: Twitter Bot Detection with Text-Graph Interaction and Semantic Consistency</a>
+    <div class="paper-authors"><b>Zhenyu Lei*</b>, Herun Wan*, Wenqian Zhang, Shangbin Feng, Jundong Li, Qinghua Zheng, Minnan Luo</div>
+    <div class="paper-links"><a href="https://arxiv.org/abs/2208.08320">Paper</a></div>
+  </div>
+</article></div>
+    <div class="note">* equal contribution</div>
+  </section>
+
+  
+  <section id="education" class="sec">
+    <div class="sec-head"><div><span class="kicker">Background</span><h2>Education &amp; Experience</h2></div></div>
+    <div class="edu">
+      
+      <div class="edu-row">
+        <div class="edu-mark">UVA</div>
+        <div class="edu-text"><span><b>University of Virginia</b>, USA</span><i>Ph.D. in Electrical and Computer Engineering · Advisor: Prof. Jundong Li</i></div>
+        <span class="edu-dates">2023.08 – present</span>
+      </div>
+      
+      <div class="edu-row">
+        <div class="edu-mark">XJTU</div>
+        <div class="edu-text"><span><b>Xi'an Jiaotong University</b>, China</span><i>B.S. in Physics (Honor) · GPA 89.5/100 · Advisor: Prof. Minnan Luo</i></div>
+        <span class="edu-dates">2019.08 – 2023.07</span>
+      </div>
+      
+      <div class="edu-row">
+        <div class="edu-mark">AT&amp;T</div>
+        <div class="edu-text"><span><b>AT&amp;T</b>, Bedminster, NJ</span><i>Applied Scientist Intern · Host: Dr. Qiong Wu</i></div>
+        <span class="edu-dates">2025.06 – 2025.08</span>
+      </div>
+      
+    </div>
+  </section>
+  
+
+  <div class="two-col">
+    <section id="honors" class="sec">
+      <div class="sec-head"><div><span class="kicker">Recognition</span><h2>Selected Honors &amp; Awards</h2></div></div>
+      <div class="panel"><span>Capital One PhD Fellowship, 2025–26</span><span>Presidential Fellowship in Collaborative Neuroscience, UVA</span><span>AAAI 2025 Oral × 2 (ST-FiT, BrainMAP)</span></div>
+    </section>
+    <section id="service" class="sec">
+      <div class="sec-head"><div><span class="kicker">Community</span><h2>Service</h2></div></div>
+      <div class="panel"><span><b>Reviewer:</b> CIKM (2025), COLM (2024, 2025), KDD (2024, 2025), ARR (Dec 2023–), NeurIPS (2023)</span><span><b>Volunteer:</b> ACL 2023 (virtual)</span></div>
+    </section>
+  </div>
+
+  
+  <section id="misc" class="sec">
+    <div class="sec-head"><div><span class="kicker">Off the clock</span><h2>Misc</h2></div></div>
+    <ul class="misc"><li>I play badminton — William &amp; Mary Open Group C Men's Doubles champion.</li><li>I also love singing and volleyball. Favorite singers: Adele and Coldplay.</li><li>Grateful to have learned from inspiring mentors including Shangbin Feng, Yushun Dong, Song Wang, and Zhen Tan. If I can help with your research journey, feel free to reach out.</li></ul>
+  </section>
+  
+
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Zhenyu Lei</span>
+    <span>Last update: Sep 2026</span>
+  </div>
+</footer>
+
 
 <script>
+// Easter egg: click anywhere and the cat fetches a badminton shuttlecock.
 // Cat animation adapted from oneko.js (MIT) by adryd325: https://github.com/adryd325/oneko.js
-// Original chases the mouse; here it chases wherever you last clicked, and
-// fetches a badminton shuttlecock instead. Sprite sheet is the original
-// public-domain-derived oneko.gif, used under oneko.js's MIT license.
 (function(){
-  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reducedMotion) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (window.matchMedia('(pointer: coarse)').matches) return; // skip on touch screens
 
   var nekoEl = document.createElement('div');
   nekoEl.id = 'oneko';
   document.body.appendChild(nekoEl);
 
-  var nekoPosX = window.innerWidth - 40;
-  var nekoPosY = window.innerHeight - 40;
-  var targetX = nekoPosX;
-  var targetY = nekoPosY;
-  var nekoSpeed = 10;
-  var frameCount = 0, idleTime = 0, idleAnimation = null, idleAnimationFrame = 0;
-  var activeShuttle = null; // only one at a time; removed only when caught
+  var nekoPosX = window.innerWidth - 40, nekoPosY = window.innerHeight - 40;
+  var targetX = nekoPosX, targetY = nekoPosY, nekoSpeed = 10;
+  var frameCount = 0, idleTime = 20, idleAnimation = null, idleAnimationFrame = 0;
+  var activeShuttle = null;
 
   var spriteSets = {
-    idle: [[-3, -3]],
-    alert: [[-7, -3]],
+    idle: [[-3, -3]], alert: [[-7, -3]],
     scratchSelf: [[-5, 0], [-6, 0], [-7, 0]],
-    scratchWallN: [[0, 0], [0, -1]],
-    scratchWallS: [[-7, -1], [-6, -2]],
-    scratchWallE: [[-2, -2], [-2, -3]],
-    scratchWallW: [[-4, 0], [-4, -1]],
-    tired: [[-3, -2]],
-    sleeping: [[-2, 0], [-2, -1]],
-    N: [[-1, -2], [-1, -3]], NE: [[0, -2], [0, -3]],
-    E: [[-3, 0], [-3, -1]], SE: [[-5, -1], [-5, -2]],
-    S: [[-6, -3], [-7, -2]], SW: [[-5, -3], [-6, -1]],
-    W: [[-4, -2], [-4, -3]], NW: [[-1, 0], [-1, -1]],
+    scratchWallN: [[0, 0], [0, -1]], scratchWallS: [[-7, -1], [-6, -2]],
+    scratchWallE: [[-2, -2], [-2, -3]], scratchWallW: [[-4, 0], [-4, -1]],
+    tired: [[-3, -2]], sleeping: [[-2, 0], [-2, -1]],
+    N: [[-1, -2], [-1, -3]], NE: [[0, -2], [0, -3]], E: [[-3, 0], [-3, -1]], SE: [[-5, -1], [-5, -2]],
+    S: [[-6, -3], [-7, -2]], SW: [[-5, -3], [-6, -1]], W: [[-4, -2], [-4, -3]], NW: [[-1, 0], [-1, -1]]
   };
-
   function setSprite(name, frame) {
     var s = spriteSets[name][frame % spriteSets[name].length];
     nekoEl.style.backgroundPosition = (s[0] * 32) + 'px ' + (s[1] * 32) + 'px';
   }
   function resetIdle(){ idleAnimation = null; idleAnimationFrame = 0; }
-
   function idle() {
     idleTime += 1;
     if (idleTime > 10 && Math.floor(Math.random() * 200) === 0 && idleAnimation == null) {
@@ -237,24 +372,13 @@
     }
     idleAnimationFrame += 1;
   }
-
   function frame() {
     frameCount += 1;
-    var diffX = nekoPosX - targetX;
-    var diffY = nekoPosY - targetY;
+    var diffX = nekoPosX - targetX, diffY = nekoPosY - targetY;
     var distance = Math.sqrt(diffX * diffX + diffY * diffY);
-    if (distance < nekoSpeed || distance < 48) {
-      if (activeShuttle) { catchShuttle(); }
-      idle();
-      return;
-    }
+    if (distance < nekoSpeed || distance < 48) { if (activeShuttle) catchShuttle(); idle(); return; }
     idleAnimation = null; idleAnimationFrame = 0;
-    if (idleTime > 1) {
-      setSprite('alert', 0);
-      idleTime = Math.min(idleTime, 7);
-      idleTime -= 1;
-      return;
-    }
+    if (idleTime > 1) { setSprite('alert', 0); idleTime = Math.min(idleTime, 7); idleTime -= 1; return; }
     var dir = '';
     dir += diffY / distance > 0.5 ? 'N' : '';
     dir += diffY / distance < -0.5 ? 'S' : '';
@@ -268,41 +392,23 @@
     nekoEl.style.left = (nekoPosX - 16) + 'px';
     nekoEl.style.top = (nekoPosY - 16) + 'px';
   }
-
   nekoEl.style.left = (nekoPosX - 16) + 'px';
   nekoEl.style.top = (nekoPosY - 16) + 'px';
-  idleTime = 20; // starts already settled/resting, not mid-alert
-
   var last;
-  function loop(ts) {
-    if (!last) last = ts;
-    if (ts - last > 100) { last = ts; frame(); }
-    window.requestAnimationFrame(loop);
-  }
+  function loop(ts) { if (!last) last = ts; if (ts - last > 100) { last = ts; frame(); } window.requestAnimationFrame(loop); }
   window.requestAnimationFrame(loop);
 
   function catchShuttle() {
-    if (!activeShuttle) return;
-    var s = activeShuttle;
-    activeShuttle = null;
-    s.classList.add('fade');
-    setTimeout(function(){ s.remove(); }, 300);
+    var s = activeShuttle; activeShuttle = null;
+    s.classList.add('fade'); setTimeout(function(){ s.remove(); }, 300);
   }
-
   var BIRDIE_SVG =
     '<svg viewBox="0 0 22 26" xmlns="http://www.w3.org/2000/svg">' +
-    '<g fill="none" stroke="#F4F3EE" stroke-width="1.1" stroke-linejoin="round">' +
-    '<path d="M11 2 L4 15 L11 12 L18 15 Z" fill="rgba(244,243,238,0.92)"/>' +
-    '<path d="M11 2 L11 12" />' +
-    '<path d="M11 2 L7 13.5" />' +
-    '<path d="M11 2 L15 13.5" />' +
-    '</g>' +
-    '<ellipse cx="11" cy="16.5" rx="4.2" ry="5" fill="#C9773F" stroke="#8A4E28" stroke-width="0.8"/>' +
-    '</svg>';
-
+    '<g fill="none" stroke="#8a97a8" stroke-width="1.1" stroke-linejoin="round">' +
+    '<path d="M11 2 L4 15 L11 12 L18 15 Z" fill="#ffffff"/><path d="M11 2 L11 12"/><path d="M11 2 L7 13.5"/><path d="M11 2 L15 13.5"/></g>' +
+    '<ellipse cx="11" cy="16.5" rx="4.2" ry="5" fill="#C9773F" stroke="#8A4E28" stroke-width="0.8"/></svg>';
   document.addEventListener('click', function(e){
-    if (activeShuttle) return; // one at a time — cat has to catch this one first
-
+    if (activeShuttle || e.target.closest('a, button')) return;
     var shuttle = document.createElement('div');
     shuttle.className = 'shuttle toss';
     shuttle.innerHTML = BIRDIE_SVG;
@@ -310,41 +416,10 @@
     shuttle.style.top = (e.clientY - 40) + 'px';
     document.body.appendChild(shuttle);
     activeShuttle = shuttle;
-
-    targetX = e.clientX;
-    targetY = e.clientY;
-    idleTime = 0;
+    targetX = e.clientX; targetY = e.clientY; idleTime = 0;
   });
 })();
 </script>
-
-</main>
-
-<footer>
-  
-  <div class="fun-stats">
-    <!-- <span>距离上次打羽毛球 <b id="badmintonDays">–</b> 天</span>
-    
-    <span class="sep">·</span> -->
-    <span>Paper Rejected Times: <b>6</b></span>
-    <br class="sep" />
-    <span>Click anywhere to throw a shuttlecock</span>
-    
-  </div>
-  
-  <!-- <div>built from data — edit the files in <code>data/</code>, push, done</div> -->
-</footer>
-
-
-<script>
-  (function(){
-    var last = new Date("2026-05-01T00:00:00");
-    var days = Math.floor((Date.now() - last.getTime()) / 86400000);
-    var el = document.getElementById('badmintonDays');
-    if (el) el.textContent = days;
-  })();
-</script>
-
 
 </body>
 </html>
