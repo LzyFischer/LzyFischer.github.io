@@ -1,26 +1,138 @@
-# This is the ONLY file you edit to add a paper.
+# The full publication list (publications.html). Newest first within a year;
+# the page groups by `year` automatically.
 #
-# Minimum: just the title. The build script looks it up on Semantic
-# Scholar and fills in authors, venue, year, and a short description.
+# Fields:
+#   title    (required)
+#   venue    e.g. "ICLR 2026"          -> the blue badge
+#   year     e.g. 2026                 -> year grouping
+#   authors  plain text; "Zhenyu Lei" is bolded automatically; use * for equal contribution
+#   topic    one of: llm | edit | brain | graph   -> the filter buttons
+#   tag      short label under the badge, e.g. "Oral", "Reasoning"
+#   links    { Paper: url, Code: url, ... }  (only the ones you list are shown)
 #
-#   - title: "Some New Paper Title"
-#
-# If the auto-lookup gets something wrong (wrong venue, paper not
-# indexed yet, co-first-author asterisks that no API knows about,
-# etc.), override just that field:
-#
-#   - title: "Some New Paper Title"
-#     venue: "ICLR 2027"
-#     authors: "Zhenyu Lei*, Jane Doe*, Jundong Li"
-#
-# Order in this file = order on the site (newest first).
+# Minimum is just `title`: missing venue/year/authors are looked up on
+# Semantic Scholar at build time and cached in data/cache.json.
 
 - title: "Reforming the Mechanism: Editing Reasoning Patterns in LLMs with Circuit Reshaping"
+  venue: "ICLR 2026"
+  year: 2026
+  authors: "Zhenyu Lei, Qiong Wu, Jianxiong Dong, Yinhan He, Emily Dodwell, Yushun Dong, Jundong Li"
+  topic: llm
+  tag: "Reasoning"
+
 - title: "BrainTAP: Brain Disorder Prediction with Adaptive Distill and Selective Prior Integration"
+  venue: "ISBI 2026"
+  year: 2026
+  authors: "Zhenyu Lei, Aiying Zhang, Song Wang, Han Fan, Jundong Li"
+  topic: brain
+  tag: "Brain"
+
 - title: "MolEdit: Knowledge Editing for Multimodal Molecule Language Models"
+  venue: "WSDM 2026"
+  year: 2026
+  authors: "Zhenyu Lei, Patrick Soga, Yaochen Zhu, Yinhan He, Yushun Dong, Jundong Li"
+  topic: edit
+  tag: "Knowledge editing"
+  links: { Paper: "https://arxiv.org/abs/2511.12770" }
+
+- title: "A Survey of Scaling in Large Language Model Reasoning"
+  venue: "SIGKDD Explor. 2026"
+  year: 2026
+  authors: "Zihan Chen, Song Wang, Zhen Tan, Xingbo Fu, Zhenyu Lei, Peng Wang, Huan Liu, Cong Shen, Jundong Li"
+  topic: llm
+  tag: "Survey"
+  links: { Paper: "https://arxiv.org/abs/2504.02181" }
+
+- title: "MoCo: A One-Stop Shop for Model Collaboration Research"
+  venue: "arXiv 2026"
+  year: 2026
+  authors: "Shangbin Feng, Yuyang Bai, Ziyuan Yang, Yike Wang, …, Zhenyu Lei, …"
+  topic: llm
+  tag: "Model collaboration"
+  links: { Paper: "https://arxiv.org/abs/2601.21257" }
+
 - title: "Learning from Diverse Reasoning Paths with Routing and Collaboration"
+  venue: "EMNLP 2025"
+  year: 2025
+  authors: "Zhenyu Lei, Zhen Tan, Song Wang, Yaochen Zhu, Zihan Chen, Yushun Dong, Jundong Li"
+  topic: llm
+  tag: "Distillation"
+  links: { Paper: "https://arxiv.org/abs/2508.16861" }
+
+- title: "GraphTOP: Graph Topology-Oriented Prompting for Graph Neural Networks"
+  venue: "NeurIPS 2025"
+  year: 2025
+  authors: "Xingbo Fu, Zhenyu Lei, Zihan Chen, Binchi Zhang, Chuxu Zhang, Jundong Li"
+  topic: graph
+  tag: "Graph prompting"
+  links: { Paper: "https://arxiv.org/abs/2510.22451" }
+
+- title: "Energy-Based Models for Predicting Mutational Effects on Proteins"
+  venue: "KDD 2025"
+  year: 2025
+  authors: "Patrick Soga, Zhenyu Lei, Yinhan He, Camille L. Bilodeau, Jundong Li"
+  topic: brain
+  tag: "AI for science"
+
 - title: "ST-FiT: Inductive Spatial-Temporal Forecasting with Limited Training Data"
+  venue: "AAAI 2025"
+  year: 2025
+  authors: "Zhenyu Lei, Yushun Dong, Jundong Li, Chen Chen"
+  topic: graph
+  tag: "Oral"
+  links: { Paper: "https://arxiv.org/abs/2412.10912" }
+
 - title: "BrainMAP: Learning Multiple Activation Pathways in Brain Networks"
-  authors: "Song Wang*, <b>Zhenyu Lei*</b>, Zhen Tan, Jiaqi Ding, Xinyu Zhao, Yushun Dong, Guorong Wu, Tianlong Chen, Chen Chen, Aiying Zhang, Jundong Li"
+  venue: "AAAI 2025"
+  year: 2025
+  authors: "Song Wang*, Zhenyu Lei*, Zhen Tan, Jiaqi Ding, Xinyu Zhao, Yushun Dong, Guorong Wu, Tianlong Chen, Chen Chen, Aiying Zhang, Jundong Li"
+  topic: brain
+  tag: "Oral"
+  links: { Paper: "https://arxiv.org/abs/2412.17404" }
+
+- title: "Deep Interactions for Multimodal Molecular Property Prediction"
+  venue: "PAKDD 2025"
+  year: 2025
+  authors: "Patrick Soga, Zhenyu Lei, Camille L. Bilodeau, Jundong Li"
+  topic: brain
+  tag: "AI for science"
+
+- title: "Harnessing Large Language Models for Disaster Management: A Survey"
+  venue: "arXiv 2025"
+  year: 2025
+  authors: "Zhenyu Lei, Yushun Dong, Weiyu Li, Rong Ding, Qi Wang, Jundong Li"
+  topic: llm
+  tag: "Survey"
+  links: { Paper: "https://arxiv.org/abs/2501.06932" }
+
+- title: "IDEA: A Flexible Framework of Certified Unlearning for Graph Neural Networks"
+  venue: "KDD 2024"
+  year: 2024
+  authors: "Yushun Dong, Binchi Zhang, Zhenyu Lei, Na Zou, Jundong Li"
+  topic: graph
+  tag: "Unlearning"
+  links: { Paper: "https://arxiv.org/abs/2407.19398" }
+
+- title: "LMBot: Distilling Graph Knowledge into Language Model for Graph-less Deployment in Twitter Bot Detection"
+  venue: "WSDM 2024"
+  year: 2024
+  authors: "Zijian Cai, Zhaoxuan Tan, Zhenyu Lei, Zifeng Zhu, Hongrui Wang, Qinghua Zheng, Minnan Luo"
+  topic: graph
+  tag: "Distillation"
+  links: { Paper: "https://arxiv.org/abs/2306.17408" }
+
 - title: "BIC: Twitter Bot Detection with Text-Graph Interaction and Semantic Consistency"
-  authors: "<b>Zhenyu Lei*</b>, Herun Wan*, Wenqian Zhang, Shangbin Feng, Jundong Li, Qinghua Zheng, Minnan Luo"
+  venue: "ACL 2023"
+  year: 2023
+  authors: "Zhenyu Lei*, Herun Wan*, Wenqian Zhang, Shangbin Feng, Jundong Li, Qinghua Zheng, Minnan Luo"
+  topic: graph
+  tag: "Graph + text"
+  links: { Paper: "https://arxiv.org/abs/2208.08320" }
+
+- title: "TwiBot-22: Towards Graph-Based Twitter Bot Detection"
+  venue: "NeurIPS 2022 D&B"
+  year: 2022
+  authors: "Shangbin Feng, Zhaoxuan Tan, Herun Wan, …, Zhenyu Lei, …, Jundong Li, Minnan Luo"
+  topic: graph
+  tag: "Benchmark"
+  links: { Paper: "https://arxiv.org/abs/2206.04564" }

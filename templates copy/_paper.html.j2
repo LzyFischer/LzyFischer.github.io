@@ -1,0 +1,14 @@
+{% macro paper_row(p) -%}
+<article class="paper" data-topic="{{ p.topic }}">
+  <div class="paper-meta">
+    <span class="venue">{{ p.venue }}</span>
+    {% if p.tag %}<span class="tag">{{ p.tag }}</span>{% endif %}
+  </div>
+  <div class="paper-body">
+    {% set main_link = p.links.get('Paper') %}
+    {% if main_link %}<a class="paper-title" href="{{ main_link }}">{{ p.title }}</a>{% else %}<span class="paper-title">{{ p.title }}</span>{% endif %}
+    <div class="paper-authors">{{ p.authors_html }}</div>
+    {% if p.links %}<div class="paper-links">{% for label, url in p.links.items() %}<a href="{{ url }}">{{ label }}</a>{% endfor %}</div>{% endif %}
+  </div>
+</article>
+{%- endmacro %}
