@@ -36,10 +36,11 @@ resources:
 #   where       e.g. "Zhihu"
 #   summary     optional one-liner
 posts:
-  - title: "Post on X"
+  - title: "ICLR 2025 acceptance rates by hot topic"
     url: "https://x.com/FicsherLzy/status/1894123788574359635"
     date: "Feb 2025"
     where: "X"
+    summary: "Acceptance rates of ICLR 2025 papers across popular keywords, from brain (~43%) to explanation (~23%). Popularity != acceptance & meaningfulness."
 
   # - title: "Post title"
   #   url: "https://zhuanlan.zhihu.com/p/..."
