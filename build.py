@@ -30,12 +30,14 @@ CACHE = DATA / "cache.json"
 
 SITE_OWNER = "Zhenyu Lei"  # bolded in every author list
 
-# Filter buttons on publications.html: topic id -> label
+# Filter buttons on publications.html: topic id -> label (in display order)
 TOPICS = {
-    "llm": "LLM reasoning & distillation",
-    "edit": "Knowledge editing",
+    "reasoning": "LLM reasoning",
+    "memory": "LLM memory",
+    "distill": "Distillation",
+    "edit": "Model editing",
+    "graph": "Graph & time series",
     "brain": "Brain & science",
-    "graph": "Graph learning",
 }
 
 
@@ -70,6 +72,16 @@ def fetch_from_semantic_scholar(title):
         return None
 
 
+def is_first_author(authors_text):
+    """True if the site owner is first author, or a co-first author marked with *."""
+    names = [n.strip() for n in authors_text.split(",")]
+    if not names:
+        return False
+    if names[0].rstrip("*") == SITE_OWNER:
+        return True
+    return names[0].endswith("*") and f"{SITE_OWNER}*" in names
+
+
 def bold_owner(authors_text):
     """Escape the author string and bold the site owner (keeps a trailing *)."""
     escaped = html.escape(authors_text)
@@ -102,15 +114,20 @@ def build_paper(raw, cache):
         p.setdefault("venue", venue or "Preprint")
         p.setdefault("authors", ", ".join(authors) or SITE_OWNER)
 
-    topic = p.get("topic") or "llm"
+    topics = p.get("topic") or "reasoning"
+    topics = [topics] if isinstance(topics, str) else list(topics)
+    for t in topics:
+        if t not in TOPICS:
+            print(f"  WARNING: unknown topic '{t}' on: {title}")
     return {
         "title": title,
         "venue": p.get("venue", ""),
         "year": int(p["year"]) if str(p.get("year", "")).isdigit() else 0,
         "authors_html": bold_owner(p.get("authors", "")),
-        "topic": topic,
+        "topics": topics,
         "tag": p.get("tag", ""),
         "links": p.get("links") or {},
+        "first_author": is_first_author(p.get("authors", "")),
     }
 
 
@@ -121,6 +138,7 @@ def main():
 
     cache = load_cache()
     papers = [build_paper(p, cache) for p in papers_raw]
+    stats = {"first_author": sum(p["first_author"] for p in papers)}
     CACHE.write_text(json.dumps(cache, indent=2))
 
     by_title = {p["title"]: p for p in papers}
@@ -136,7 +154,7 @@ def main():
     years = sorted({p["year"] for p in papers}, reverse=True)
     groups = [{"year": y or "Other", "papers": [p for p in papers if p["year"] == y]} for y in years]
     topic_counts = [
-        {"id": tid, "label": label, "count": sum(p["topic"] == tid for p in papers)}
+        {"id": tid, "label": label, "count": sum(tid in p["topics"] for p in papers)}
         for tid, label in TOPICS.items()
     ]
     topic_counts = [t for t in topic_counts if t["count"]]
@@ -149,7 +167,7 @@ def main():
         year_now=datetime.date.today().year,
     )
     pages = [
-        ("index.html.j2", "index.html", "home", dict(selected=selected)),
+        ("index.html.j2", "index.html", "home", dict(selected=selected, stats=stats)),
         ("publications.html.j2", "publications.html", "publications",
          dict(groups=groups, total=len(papers), topics=topic_counts)),
     ]
@@ -158,6 +176,7 @@ def main():
         print(f"  wrote {out}")
 
     print(f"\nDone: {len(selected)} selected on the homepage, {len(papers)} papers on publications.html.")
+    print(f"      first-author papers: {stats['first_author']}")
 
 
 if __name__ == "__main__":

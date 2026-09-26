@@ -100,6 +100,10 @@
 .panel{background:#f7f9fc;border:1px solid #e3e8ef;border-radius:10px;padding:20px 24px;display:flex;flex-direction:column;gap:10px;font-size:16px;line-height:1.55;}
 .misc{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;font-size:17px;line-height:1.6;color:var(--ink-2);}
 .note{font-size:14px;color:var(--soft);}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{display:flex;align-items:baseline;gap:8px;padding:10px 16px;border:1px solid var(--line);border-radius:10px;background:var(--tint);color:var(--ink-2);font-size:15px;text-decoration:none;}
+.stat b{font-family:var(--mono);font-size:22px;font-weight:700;color:var(--accent);}
+a.stat:hover{border-color:var(--accent);}
 
 #oneko{width:32px;height:32px;position:fixed;pointer-events:none;background-image:url('assets/oneko.gif');image-rendering:pixelated;z-index:9999;left:0;top:0;}
 .shuttle{position:fixed;width:22px;height:26px;pointer-events:none;z-index:9998;}
@@ -169,7 +173,7 @@
   
   <section id="news" class="sec">
     <div class="sec-head"><div><span class="kicker">News &amp; notices</span><h2>News</h2></div></div>
-    <div><div class="news-row"><span class="d">Jan 2026</span><span>One paper accepted at ICLR 2026.</span></div><div class="news-row"><span class="d">Jan 2026</span><span>One paper accepted at ISBI 2026.</span></div><div class="news-row"><span class="d">Oct 2025</span><span>One paper accepted at WSDM 2026. See you in Idaho (maybe)!</span></div><div class="news-row"><span class="d">Aug 2025</span><span>Two papers accepted at EMNLP 2025. See you in Suzhou (maybe)!</span></div><div class="news-row"><span class="d">Nov 2024</span><span>Two papers accepted at AAAI 2025 Main (Oral) — ST-FiT and BrainMAP. See you in Philadelphia!</span></div></div>
+    <div><div class="news-row"><span class="d">Sep 2026</span><span>One paper accepted at NeurIPS 2026 (AdaST).</span></div><div class="news-row"><span class="d">Sep 2026</span><span>Two papers accepted at EMNLP 2026 (one Main, one Findings).</span></div><div class="news-row"><span class="d">Jan 2026</span><span>One paper accepted at ICLR 2026.</span></div><div class="news-row"><span class="d">Jan 2026</span><span>One paper accepted at ISBI 2026.</span></div><div class="news-row"><span class="d">Oct 2025</span><span>One paper accepted at WSDM 2026. See you in Idaho (maybe)!</span></div><div class="news-row"><span class="d">Aug 2025</span><span>Two papers accepted at EMNLP 2025. See you in Suzhou (maybe)!</span></div><div class="news-row"><span class="d">Nov 2024</span><span>Two papers accepted at AAAI 2025 Main (Oral) — ST-FiT and BrainMAP. See you in Philadelphia!</span></div></div>
   </section>
   
 
@@ -178,7 +182,10 @@
       <div><span class="kicker">Publications</span><h2>Selected Research</h2></div>
       <a class="more" href="publications.html">All publications →</a>
     </div>
-    <div class="papers"><article class="paper" data-topic="llm">
+    <div class="stats">
+      <a class="stat" href="publications.html"><b>11</b><span>first-author papers</span></a>
+    </div>
+    <div class="papers"><article class="paper" data-topic="reasoning edit">
   <div class="paper-meta">
     <span class="venue">ICLR 2026</span>
     <span class="tag">Reasoning</span>
@@ -189,29 +196,18 @@
     <div class="paper-authors"><b>Zhenyu Lei</b>, Qiong Wu, Jianxiong Dong, Yinhan He, Emily Dodwell, Yushun Dong, Jundong Li</div>
     
   </div>
-</article><article class="paper" data-topic="brain">
+</article><article class="paper" data-topic="memory">
   <div class="paper-meta">
-    <span class="venue">ISBI 2026</span>
-    <span class="tag">Brain</span>
+    <span class="venue">EMNLP 2026</span>
+    <span class="tag">Memory</span>
   </div>
   <div class="paper-body">
     
-    <span class="paper-title">BrainTAP: Brain Disorder Prediction with Adaptive Distill and Selective Prior Integration</span>
-    <div class="paper-authors"><b>Zhenyu Lei</b>, Aiying Zhang, Song Wang, Han Fan, Jundong Li</div>
+    <span class="paper-title">Grounding Memory Summarization in Utility Intent</span>
+    <div class="paper-authors"><b>Zhenyu Lei</b>, Mingjia Shi, Xingbo Fu, Haoyu He, Qi R. Wang, Jundong Li</div>
     
   </div>
-</article><article class="paper" data-topic="edit">
-  <div class="paper-meta">
-    <span class="venue">WSDM 2026</span>
-    <span class="tag">Knowledge editing</span>
-  </div>
-  <div class="paper-body">
-    
-    <a class="paper-title" href="https://arxiv.org/abs/2511.12770">MolEdit: Knowledge Editing for Multimodal Molecule Language Models</a>
-    <div class="paper-authors"><b>Zhenyu Lei</b>, Patrick Soga, Yaochen Zhu, Yinhan He, Yushun Dong, Jundong Li</div>
-    <div class="paper-links"><a href="https://arxiv.org/abs/2511.12770">Paper</a></div>
-  </div>
-</article><article class="paper" data-topic="llm">
+</article><article class="paper" data-topic="distill reasoning">
   <div class="paper-meta">
     <span class="venue">EMNLP 2025</span>
     <span class="tag">Distillation</span>
@@ -221,6 +217,28 @@
     <a class="paper-title" href="https://arxiv.org/abs/2508.16861">Learning from Diverse Reasoning Paths with Routing and Collaboration</a>
     <div class="paper-authors"><b>Zhenyu Lei</b>, Zhen Tan, Song Wang, Yaochen Zhu, Zihan Chen, Yushun Dong, Jundong Li</div>
     <div class="paper-links"><a href="https://arxiv.org/abs/2508.16861">Paper</a></div>
+  </div>
+</article><article class="paper" data-topic="edit">
+  <div class="paper-meta">
+    <span class="venue">WSDM 2026</span>
+    <span class="tag">Oral</span>
+  </div>
+  <div class="paper-body">
+    
+    <a class="paper-title" href="https://arxiv.org/abs/2511.12770">MolEdit: Knowledge Editing for Multimodal Molecule Language Models</a>
+    <div class="paper-authors"><b>Zhenyu Lei</b>, Patrick Soga, Yaochen Zhu, Yinhan He, Yushun Dong, Jundong Li</div>
+    <div class="paper-links"><a href="https://arxiv.org/abs/2511.12770">Paper</a></div>
+  </div>
+</article><article class="paper" data-topic="graph">
+  <div class="paper-meta">
+    <span class="venue">NeurIPS 2026</span>
+    <span class="tag">Spatial-temporal</span>
+  </div>
+  <div class="paper-body">
+    
+    <span class="paper-title">AdaST: Adaptive Coupling for Spatial-Temporal Forecasting</span>
+    <div class="paper-authors"><b>Zhenyu Lei</b>, Chenghao Liu, Yushun Dong, Qi R. Wang, Jundong Li</div>
+    
   </div>
 </article><article class="paper" data-topic="graph">
   <div class="paper-meta">
@@ -232,28 +250,6 @@
     <a class="paper-title" href="https://arxiv.org/abs/2412.10912">ST-FiT: Inductive Spatial-Temporal Forecasting with Limited Training Data</a>
     <div class="paper-authors"><b>Zhenyu Lei</b>, Yushun Dong, Jundong Li, Chen Chen</div>
     <div class="paper-links"><a href="https://arxiv.org/abs/2412.10912">Paper</a></div>
-  </div>
-</article><article class="paper" data-topic="brain">
-  <div class="paper-meta">
-    <span class="venue">AAAI 2025</span>
-    <span class="tag">Oral</span>
-  </div>
-  <div class="paper-body">
-    
-    <a class="paper-title" href="https://arxiv.org/abs/2412.17404">BrainMAP: Learning Multiple Activation Pathways in Brain Networks</a>
-    <div class="paper-authors">Song Wang*, <b>Zhenyu Lei*</b>, Zhen Tan, Jiaqi Ding, Xinyu Zhao, Yushun Dong, Guorong Wu, Tianlong Chen, Chen Chen, Aiying Zhang, Jundong Li</div>
-    <div class="paper-links"><a href="https://arxiv.org/abs/2412.17404">Paper</a></div>
-  </div>
-</article><article class="paper" data-topic="graph">
-  <div class="paper-meta">
-    <span class="venue">ACL 2023</span>
-    <span class="tag">Graph + text</span>
-  </div>
-  <div class="paper-body">
-    
-    <a class="paper-title" href="https://arxiv.org/abs/2208.08320">BIC: Twitter Bot Detection with Text-Graph Interaction and Semantic Consistency</a>
-    <div class="paper-authors"><b>Zhenyu Lei*</b>, Herun Wan*, Wenqian Zhang, Shangbin Feng, Jundong Li, Qinghua Zheng, Minnan Luo</div>
-    <div class="paper-links"><a href="https://arxiv.org/abs/2208.08320">Paper</a></div>
   </div>
 </article></div>
     <div class="note">* equal contribution</div>

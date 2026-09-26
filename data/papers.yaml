@@ -6,18 +6,40 @@
 #   venue    e.g. "ICLR 2026"          -> the blue badge
 #   year     e.g. 2026                 -> year grouping
 #   authors  plain text; "Zhenyu Lei" is bolded automatically; use * for equal contribution
-#   topic    one of: llm | edit | brain | graph   -> the filter buttons
+#   topic    one topic or a list, e.g. reasoning  or  [distill, reasoning]   -> the filter buttons
+#            reasoning | memory | distill | edit (model editing) | graph (graph & time series) | brain (brain & science)
 #   tag      short label under the badge, e.g. "Oral", "Reasoning"
 #   links    { Paper: url, Code: url, ... }  (only the ones you list are shown)
 #
 # Minimum is just `title`: missing venue/year/authors are looked up on
 # Semantic Scholar at build time and cached in data/cache.json.
 
+- title: "AdaST: Adaptive Coupling for Spatial-Temporal Forecasting"
+  venue: "NeurIPS 2026"
+  year: 2026
+  authors: "Zhenyu Lei, Chenghao Liu, Yushun Dong, Qi R. Wang, Jundong Li"
+  topic: graph
+  tag: "Spatial-temporal"
+
+- title: "Grounding Memory Summarization in Utility Intent"
+  venue: "EMNLP 2026"
+  year: 2026
+  authors: "Zhenyu Lei, Mingjia Shi, Xingbo Fu, Haoyu He, Qi R. Wang, Jundong Li"
+  topic: memory
+  tag: "Memory"
+
+- title: "TeacherGRPO: Closing the Capacity Gap in Reasoning Distillation via Teacher Alignment"
+  venue: "EMNLP 2026 Findings"
+  year: 2026
+  authors: "Zhenyu Lei, Zihan Chen, Yaochen Zhu, Shangbin Feng, Zaiyi Zheng, Ruocheng Guo, Yushun Dong, Jundong Li"
+  topic: [distill, reasoning]
+  tag: "Distillation"
+
 - title: "Reforming the Mechanism: Editing Reasoning Patterns in LLMs with Circuit Reshaping"
   venue: "ICLR 2026"
   year: 2026
   authors: "Zhenyu Lei, Qiong Wu, Jianxiong Dong, Yinhan He, Emily Dodwell, Yushun Dong, Jundong Li"
-  topic: llm
+  topic: [reasoning, edit]
   tag: "Reasoning"
 
 - title: "BrainTAP: Brain Disorder Prediction with Adaptive Distill and Selective Prior Integration"
@@ -32,14 +54,14 @@
   year: 2026
   authors: "Zhenyu Lei, Patrick Soga, Yaochen Zhu, Yinhan He, Yushun Dong, Jundong Li"
   topic: edit
-  tag: "Knowledge editing"
+  tag: "Oral"
   links: { Paper: "https://arxiv.org/abs/2511.12770" }
 
 - title: "A Survey of Scaling in Large Language Model Reasoning"
   venue: "SIGKDD Explor. 2026"
   year: 2026
   authors: "Zihan Chen, Song Wang, Zhen Tan, Xingbo Fu, Zhenyu Lei, Peng Wang, Huan Liu, Cong Shen, Jundong Li"
-  topic: llm
+  topic: reasoning
   tag: "Survey"
   links: { Paper: "https://arxiv.org/abs/2504.02181" }
 
@@ -47,7 +69,7 @@
   venue: "arXiv 2026"
   year: 2026
   authors: "Shangbin Feng, Yuyang Bai, Ziyuan Yang, Yike Wang, …, Zhenyu Lei, …"
-  topic: llm
+  topic: reasoning
   tag: "Model collaboration"
   links: { Paper: "https://arxiv.org/abs/2601.21257" }
 
@@ -55,7 +77,7 @@
   venue: "EMNLP 2025"
   year: 2025
   authors: "Zhenyu Lei, Zhen Tan, Song Wang, Yaochen Zhu, Zihan Chen, Yushun Dong, Jundong Li"
-  topic: llm
+  topic: [distill, reasoning]
   tag: "Distillation"
   links: { Paper: "https://arxiv.org/abs/2508.16861" }
 
@@ -98,12 +120,12 @@
   tag: "AI for science"
 
 - title: "Harnessing Large Language Models for Disaster Management: A Survey"
-  venue: "arXiv 2025"
+  venue: "ACL 2025 Findings"
   year: 2025
-  authors: "Zhenyu Lei, Yushun Dong, Weiyu Li, Rong Ding, Qi Wang, Jundong Li"
-  topic: llm
+  authors: "Zhenyu Lei, Yushun Dong, Weiyu Li, Rong Ding, Qi R. Wang, Jundong Li"
+  topic: brain
   tag: "Survey"
-  links: { Paper: "https://arxiv.org/abs/2501.06932" }
+  links: { Paper: "https://aclanthology.org/2025.findings-acl.750/" }
 
 - title: "IDEA: A Flexible Framework of Certified Unlearning for Graph Neural Networks"
   venue: "KDD 2024"
@@ -117,7 +139,7 @@
   venue: "WSDM 2024"
   year: 2024
   authors: "Zijian Cai, Zhaoxuan Tan, Zhenyu Lei, Zifeng Zhu, Hongrui Wang, Qinghua Zheng, Minnan Luo"
-  topic: graph
+  topic: [distill, graph]
   tag: "Distillation"
   links: { Paper: "https://arxiv.org/abs/2306.17408" }
 
