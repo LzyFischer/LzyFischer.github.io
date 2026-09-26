@@ -7,7 +7,7 @@
 #   year     e.g. 2026                 -> year grouping
 #   authors  plain text; "Zhenyu Lei" is bolded automatically; use * for equal contribution
 #   topic    one topic or a list, e.g. reasoning  or  [distill, reasoning]   -> the filter buttons
-#            reasoning | memory | distill | edit | llm (other LLM) | graph (graph & time series) | brain
+#            reasoning | memory | distill | edit (model editing) | graph (graph & time series) | brain (brain & science)
 #   tag      short label under the badge, e.g. "Oral", "Reasoning"
 #   links    { Paper: url, Code: url, ... }  (only the ones you list are shown)
 #
@@ -69,7 +69,7 @@
   venue: "arXiv 2026"
   year: 2026
   authors: "Shangbin Feng, Yuyang Bai, Ziyuan Yang, Yike Wang, …, Zhenyu Lei, …"
-  topic: llm
+  topic: reasoning
   tag: "Model collaboration"
   links: { Paper: "https://arxiv.org/abs/2601.21257" }
 
@@ -123,7 +123,7 @@
   venue: "ACL 2025 Findings"
   year: 2025
   authors: "Zhenyu Lei, Yushun Dong, Weiyu Li, Rong Ding, Qi R. Wang, Jundong Li"
-  topic: llm
+  topic: brain
   tag: "Survey"
   links: { Paper: "https://aclanthology.org/2025.findings-acl.750/" }
 

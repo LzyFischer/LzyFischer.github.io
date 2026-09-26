@@ -35,8 +35,7 @@ TOPICS = {
     "reasoning": "LLM reasoning",
     "memory": "LLM memory",
     "distill": "Distillation",
-    "edit": "Knowledge editing",
-    "llm": "Other LLM",
+    "edit": "Model editing",
     "graph": "Graph & time series",
     "brain": "Brain & science",
 }
@@ -115,7 +114,7 @@ def build_paper(raw, cache):
         p.setdefault("venue", venue or "Preprint")
         p.setdefault("authors", ", ".join(authors) or SITE_OWNER)
 
-    topics = p.get("topic") or "llm"
+    topics = p.get("topic") or "reasoning"
     topics = [topics] if isinstance(topics, str) else list(topics)
     for t in topics:
         if t not in TOPICS:
