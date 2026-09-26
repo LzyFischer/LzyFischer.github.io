@@ -25,20 +25,18 @@ about:
     B.S. in Physics from Xi'an Jiaotong University, where I was lucky to join the LUD Lab.
     I have also interned at AT&amp;T as an Applied Scientist.
   - >
-    My research centers on <i>LLM reasoning</i>, <i>memory</i>, and <i>distillation</i> —
-    how models reason, remember, and compress what they know — with
-    <i>brain-disorder prediction</i> and <i>AI for science</i> as secondary interests.
+    My research centers on LLM continual learning, with a broad interest in graph and time series.
     <b>I am open to collaborations and discussions — feel free to reach out via email!</b>
+    <b>Actively looking for intern!</b>
 
 # Newest first. Just add a line.
 news:
   - { date: "Sep 2026", text: "One paper accepted at NeurIPS 2026 (AdaST)." }
-  - { date: "Sep 2026", text: "Two papers accepted at EMNLP 2026 (one Main, one Findings)." }
-  - { date: "Jan 2026", text: "One paper accepted at ICLR 2026." }
-  - { date: "Jan 2026", text: "One paper accepted at ISBI 2026." }
-  - { date: "Oct 2025", text: "One paper accepted at WSDM 2026. See you in Idaho (maybe)!" }
-  - { date: "Aug 2025", text: "Two papers accepted at EMNLP 2025. See you in Suzhou (maybe)!" }
-  - { date: "Nov 2024", text: "Two papers accepted at AAAI 2025 Main (Oral) — ST-FiT and BrainMAP. See you in Philadelphia!" }
+  - { date: "Aug 2026", text: "Two papers accepted at EMNLP 2026 (one Main (MemSuit), one Findings (TeacherGRPO))." }
+  - { date: "June 2026", text: "Honored to recieve <b>Capital One Fellow</b>" }
+  - { date: "Jan 2026", text: "One paper accepted at ICLR 2026 (REdit)." }
+  - { date: "Jan 2026", text: "One paper accepted at ISBI 2026 (BrainTAP)." }
+  - { date: "Oct 2025", text: "One paper accepted at WSDM 2026 (MolEdit)." }
 
 # Education & experience, shown together. `mark` is the short text in the logo box.
 education:
@@ -57,10 +55,11 @@ education:
 
 honors:
   - "Capital One PhD Fellowship, 2025–26"
+  - "WSDM Student Travel Award"
   - "Presidential Fellowship in Collaborative Neuroscience, UVA"
-  - "AAAI 2025 Oral × 2 (ST-FiT, BrainMAP)"
-  - "Presidential Fellowship in Collaborative Neuroscience, UVA"
-  - "AAAI 2025 Oral × 2 (ST-FiT, BrainMAP)"
+  - "Precision Health Initiative Trainee Travel Stipend, UVA"
+  - "TYDE Student Training Award, UVA"
+  - "Engineering Academic Commitment to Excellence (ACE) Fellowship, UVA"
 
 service:
   - "<b>Reviewer:</b> CIKM (2025), COLM (2024, 2025), KDD (2024, 2025), ARR (Dec 2023–), NeurIPS (2023)"
