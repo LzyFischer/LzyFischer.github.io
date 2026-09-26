@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ profile.name }}{% if page_title %} — {{ page_title }}{% endif %}</title>
-<meta name="description" content="{{ profile.name }} — {{ profile.eyebrow }}">
-<link rel="icon" href="{{ root }}{{ profile.favicon }}">
+<title>Zhenyu (Fischer) Lei — Playground</title>
+<meta name="description" content="Zhenyu (Fischer) Lei — Ph.D. Student · Capital One Fellow">
+<link rel="icon" href="assets/oneko.gif">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -77,35 +77,99 @@
     .paper{flex-direction:column;gap:10px;}
     .paper-meta{flex-direction:row;align-items:center;flex-basis:auto;}
   }
-  {% block extra_css %}{% endblock %}
+  
+.pg-head{padding:56px 0 8px;}
+.pg-head .wrap{display:flex;flex-direction:column;gap:16px;}
+.lede{margin:0;font-size:17px;line-height:1.7;color:var(--muted);max-width:820px;}
+.jump{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;}
+.jump a{font-size:14px;font-weight:700;padding:10px 16px;border-radius:999px;border:1px solid var(--btn-line);color:var(--ink-2);}
+.jump a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none;}
+.content{display:flex;flex-direction:column;gap:56px;padding:40px 0 32px;}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;}
+.card{display:flex;flex-direction:column;gap:10px;padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:#fff;}
+.card h3{margin:0;font-size:18px;font-weight:700;}
+.card p{margin:0;font-size:15px;line-height:1.6;color:var(--muted);flex:1;}
+.chips{display:flex;gap:6px;flex-wrap:wrap;}
+.chips span{font-family:var(--mono);font-size:12px;color:var(--ink-2);background:var(--badge);padding:3px 8px;border-radius:4px;}
+.card-links{display:flex;gap:16px;font-size:14px;font-weight:700;}
+.posts{display:flex;flex-direction:column;}
+.post{display:flex;gap:28px;padding:20px 4px;border-bottom:1px solid var(--line-2);}
+.post-date{flex:0 0 120px;font-family:var(--mono);font-size:14px;color:var(--accent);padding-top:3px;}
+.post-body{flex:1;display:flex;flex-direction:column;gap:6px;min-width:0;}
+.post-title{font-size:18px;font-weight:700;line-height:1.4;color:var(--ink);}
+.post-summary{margin:0;font-size:15px;line-height:1.6;color:var(--soft);}
+.misc{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;font-size:17px;line-height:1.6;color:var(--ink-2);}
+@media (max-width: 760px){
+  .cards{grid-template-columns:1fr;}
+  .post{flex-direction:column;gap:4px;}
+  .post-date{flex-basis:auto;}
+}
+
 </style>
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="{{ root }}index.html"><span class="brand-mark">{{ profile.initials }}</span><span class="brand-name">{{ profile.short_name }}</span></a>
+    <a class="brand" href="index.html"><span class="brand-mark">ZL</span><span class="brand-name">Zhenyu Lei</span></a>
     <nav class="nav" aria-label="Main">
-      <a href="{{ root }}index.html" class="{{ 'active' if active == 'home' }}">Home</a>
-      <a href="{{ root }}index.html#education">Experience</a>
-      <a href="{{ root }}publications.html" class="{{ 'active' if active == 'publications' }}">Publications</a>
-      <a href="{{ root }}playground.html" class="{{ 'active' if active == 'playground' }}">Playground</a>
-      <a class="cv" href="{{ root }}{{ profile.cv }}">CV ↓</a>
+      <a href="index.html" class="">Home</a>
+      <a href="index.html#education">Experience</a>
+      <a href="publications.html" class="">Publications</a>
+      <a href="playground.html" class="active">Playground</a>
+      <a class="cv" href="assets/CV_lzy_.pdf">CV ↓</a>
     </nav>
   </div>
 </header>
 
 <main>
-{% block content %}{% endblock %}
+
+
+<section class="pg-head">
+  <div class="wrap">
+    <div class="eyebrow">Beyond papers</div>
+    <h1>Playground</h1>
+    <p class="lede">Side projects, things you can reuse, occasional writing, and life off the clock.</p>
+    <div class="jump"><a href="#resources">Resources</a><a href="#misc">Misc</a></div>
+  </div>
+</section>
+
+<div class="wrap content">
+  
+
+  
+
+  
+  <section id="resources" class="sec">
+    <div class="sec-head"><div><span class="kicker">Free to reuse</span><h2>Resources</h2></div></div>
+    <div class="cards"><article class="card">
+    <h3><a href="https://github.com/LzyFischer/LzyFischer.github.io">This website</a></h3>
+    <p>Source of this homepage — a YAML + Jinja static site with publication filters and a Markdown blog. Fork it and edit the data/ folder to make your own.</p>
+    <div class="chips"><span>Template</span><span>Python</span><span>GitHub Pages</span></div>
+    <div class="card-links"><a href="https://github.com/LzyFischer/LzyFischer.github.io">GitHub ↗</a></div>
+  </article></div>
+  </section>
+  
+
+  
+
+  
+  <section id="misc" class="sec">
+    <div class="sec-head"><div><span class="kicker">Off the clock</span><h2>Misc</h2></div></div>
+    <ul class="misc"><li>I play badminton — William &amp; Mary Open Group C Men's Doubles champion.</li><li>I also love singing and volleyball. Favorite singers: Adele and Coldplay.</li><li>Grateful to have learned from inspiring mentors including Shangbin Feng, Yushun Dong, Song Wang, and Zhen Tan. If I can help with your research journey, feel free to reach out.</li></ul>
+  </section>
+  
+</div>
+
 </main>
 
 <footer>
   <div class="wrap">
-    <span>© {{ year_now }} {{ profile.short_name }}</span>
-    <span>Last update: {{ updated }}</span>
+    <span>© 2026 Zhenyu Lei</span>
+    <span>Last update: Sep 2026</span>
   </div>
 </footer>
 
-{% block scripts %}{% endblock %}
+
 </body>
 </html>

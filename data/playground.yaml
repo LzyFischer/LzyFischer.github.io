@@ -1,0 +1,27 @@
+# Everything on playground.html except posts (posts live in posts/*.md).
+# Empty sections are hidden automatically.
+
+# Software, tools and GitHub projects.
+#   name, desc     (required)
+#   tags           short labels, e.g. ["Python", "LLM"]
+#   links          { GitHub: url, Demo: url, ... }
+# Tip: a static web app in its own repo can be served for free at
+# https://lzyfischer.github.io/<repo>/ by turning on GitHub Pages for that repo.
+projects:
+  # - name: "My Tool"
+  #   desc: "One sentence on what it does."
+  #   tags: ["Python"]
+  #   links: { GitHub: "https://github.com/LzyFischer/my-tool", Demo: "https://lzyfischer.github.io/my-tool/" }
+
+# Things other people can reuse: templates, reading lists, slides, advice.
+resources:
+  - name: "This website"
+    desc: "Source of this homepage — a YAML + Jinja static site with publication filters and a Markdown blog. Fork it and edit the data/ folder to make your own."
+    tags: ["Template", "Python", "GitHub Pages"]
+    links: { GitHub: "https://github.com/LzyFischer/LzyFischer.github.io" }
+
+# Off the clock. HTML is allowed.
+misc:
+  - "I play badminton — William &amp; Mary Open Group C Men's Doubles champion."
+  - "I also love singing and volleyball. Favorite singers: Adele and Coldplay."
+  - "Grateful to have learned from inspiring mentors including Shangbin Feng, Yushun Dong, Song Wang, and Zhen Tan. If I can help with your research journey, feel free to reach out."

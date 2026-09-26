@@ -1,0 +1,38 @@
+{% extends "_base.html.j2" %}
+{% set page_title = post.title %}
+
+{% block extra_css %}
+.post-head{padding:56px 0 8px;}
+.post-head .wrap,.post-wrap{max-width:760px;}
+.post-head .wrap{display:flex;flex-direction:column;gap:14px;}
+.post-head h1{font-size:40px;}
+.meta{display:flex;gap:12px;flex-wrap:wrap;align-items:center;font-family:var(--mono);font-size:14px;color:var(--soft);}
+.meta span.t{font-size:12px;color:var(--ink-2);background:var(--badge);padding:3px 8px;border-radius:4px;}
+.article{padding:24px 0 16px;font-size:17px;line-height:1.8;color:var(--ink-2);}
+.article h2{font-size:26px;margin:40px 0 12px;color:var(--ink);}
+.article h3{font-size:20px;margin:32px 0 10px;color:var(--ink);}
+.article a{text-decoration:underline;}
+.article code{font-family:var(--mono);font-size:.88em;background:var(--tint);padding:2px 5px;border-radius:4px;}
+.article pre{background:var(--tint);border:1px solid var(--line);border-radius:8px;padding:16px 18px;overflow-x:auto;line-height:1.55;}
+.article pre code{background:none;padding:0;}
+.article blockquote{margin:20px 0;padding:4px 18px;border-left:3px solid var(--accent);color:var(--muted);}
+.article table{border-collapse:collapse;display:block;overflow-x:auto;}
+.article th,.article td{border:1px solid var(--line);padding:8px 12px;text-align:left;}
+.article img{border-radius:8px;}
+.back{display:inline-block;margin:8px 0 24px;font-weight:700;font-size:15px;}
+@media (max-width: 760px){ .post-head h1{font-size:30px;} }
+{% endblock %}
+
+{% block content %}
+<section class="post-head">
+  <div class="wrap">
+    <div class="eyebrow"><a href="{{ root }}playground.html#posts">Playground · Posts</a></div>
+    <h1>{{ post.title }}</h1>
+    <div class="meta"><span>{{ post.date_str }}</span>{% for t in post.tags %}<span class="t">{{ t }}</span>{% endfor %}</div>
+  </div>
+</section>
+<div class="wrap post-wrap">
+  <article class="article">{{ post.html }}</article>
+  <a class="back" href="{{ root }}playground.html#posts">← All posts</a>
+</div>
+{% endblock %}

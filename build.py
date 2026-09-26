@@ -5,6 +5,8 @@ Builds index.html and publications.html from the files in data/.
   data/site.yaml      profile, about, news, education, honors, service, misc
   data/papers.yaml    the full publication list (publications.html)
   data/selected.yaml  which papers appear under "Selected Research" on the homepage
+  data/playground.yaml projects, resources and misc on playground.html
+  posts/*.md          blog posts -> posts/<slug>.html, listed on playground.html
 
 Any paper in papers.yaml that is missing venue / year / authors is looked up
 on Semantic Scholar and cached in data/cache.json, so the build still works
@@ -20,6 +22,7 @@ import json
 import re
 from pathlib import Path
 
+import markdown
 import requests
 import yaml
 from jinja2 import Environment, FileSystemLoader
@@ -27,6 +30,7 @@ from jinja2 import Environment, FileSystemLoader
 ROOT = Path(__file__).parent
 DATA = ROOT / "data"
 CACHE = DATA / "cache.json"
+POSTS = ROOT / "posts"
 
 SITE_OWNER = "Zhenyu Lei"  # bolded in every author list
 
@@ -132,10 +136,44 @@ def build_paper(raw, cache):
     }
 
 
+def load_posts():
+    """Markdown files in posts/ with a YAML front-matter block; newest first.
+    Files starting with "_" and posts marked `draft: true` are skipped."""
+    posts = []
+    for path in sorted(POSTS.glob("*.md")) if POSTS.exists() else []:
+        if path.name.startswith("_"):
+            continue
+        text = path.read_text(encoding="utf-8")
+        meta, body = {}, text
+        m = re.match(r"^---\s*\n(.*?)\n---\s*\n", text, re.S)
+        if m:
+            meta = yaml.safe_load(m.group(1)) or {}
+            body = text[m.end():]
+        if meta.get("draft"):
+            continue
+        date = meta.get("date")
+        if isinstance(date, str):
+            date = datetime.date.fromisoformat(date)
+        posts.append({
+            "slug": path.stem,
+            "title": meta.get("title") or path.stem,
+            "date": date,
+            "date_str": date.strftime("%b %d, %Y") if date else "",
+            "summary": meta.get("summary", ""),
+            "tags": meta.get("tags") or [],
+            "url": f"posts/{path.stem}.html",
+            "html": markdown.markdown(body, extensions=["fenced_code", "tables", "toc", "sane_lists"]),
+        })
+    posts.sort(key=lambda p: p["date"] or datetime.date.min, reverse=True)
+    return posts
+
+
 def main():
     site = load_yaml("site.yaml", {})
     papers_raw = load_yaml("papers.yaml", [])
     selected_raw = load_yaml("selected.yaml", [])
+    playground = load_yaml("playground.yaml", {})
+    posts = load_posts()
 
     cache = load_cache()
     papers = [build_paper(p, cache) for p in papers_raw]
@@ -166,17 +204,22 @@ def main():
         profile=site.get("profile", {}),
         updated=datetime.date.today().strftime("%b %Y"),
         year_now=datetime.date.today().year,
+        root="",
     )
     pages = [
         ("index.html.j2", "index.html", "home", dict(selected=selected, stats=stats)),
         ("publications.html.j2", "publications.html", "publications",
          dict(groups=groups, total=len(papers), topics=topic_counts)),
+        ("playground.html.j2", "playground.html", "playground", dict(pg=playground, posts=posts)),
     ]
+    for post in posts:
+        pages.append(("post.html.j2", f"posts/{post['slug']}.html", "playground", dict(post=post, root="../")))
     for tpl, out, active, ctx in pages:
-        (ROOT / out).write_text(env.get_template(tpl).render(active=active, **common, **ctx), encoding="utf-8")
+        (ROOT / out).write_text(env.get_template(tpl).render(**{**common, "active": active, **ctx}), encoding="utf-8")
         print(f"  wrote {out}")
 
-    print(f"\nDone: {len(selected)} selected on the homepage, {len(papers)} papers on publications.html.")
+    print(f"\nDone: {len(selected)} selected on the homepage, {len(papers)} papers on publications.html, "
+          f"{len(posts)} posts.")
     print(f"      first-author papers: {stats['first_author']} / {stats['total']}")
 
 

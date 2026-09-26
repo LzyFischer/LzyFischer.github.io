@@ -1,0 +1,98 @@
+{% extends "_base.html.j2" %}
+{% set page_title = "Playground" %}
+
+{% block extra_css %}
+.pg-head{padding:56px 0 8px;}
+.pg-head .wrap{display:flex;flex-direction:column;gap:16px;}
+.lede{margin:0;font-size:17px;line-height:1.7;color:var(--muted);max-width:820px;}
+.jump{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;}
+.jump a{font-size:14px;font-weight:700;padding:10px 16px;border-radius:999px;border:1px solid var(--btn-line);color:var(--ink-2);}
+.jump a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none;}
+.content{display:flex;flex-direction:column;gap:56px;padding:40px 0 32px;}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;}
+.card{display:flex;flex-direction:column;gap:10px;padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:#fff;}
+.card h3{margin:0;font-size:18px;font-weight:700;}
+.card p{margin:0;font-size:15px;line-height:1.6;color:var(--muted);flex:1;}
+.chips{display:flex;gap:6px;flex-wrap:wrap;}
+.chips span{font-family:var(--mono);font-size:12px;color:var(--ink-2);background:var(--badge);padding:3px 8px;border-radius:4px;}
+.card-links{display:flex;gap:16px;font-size:14px;font-weight:700;}
+.posts{display:flex;flex-direction:column;}
+.post{display:flex;gap:28px;padding:20px 4px;border-bottom:1px solid var(--line-2);}
+.post-date{flex:0 0 120px;font-family:var(--mono);font-size:14px;color:var(--accent);padding-top:3px;}
+.post-body{flex:1;display:flex;flex-direction:column;gap:6px;min-width:0;}
+.post-title{font-size:18px;font-weight:700;line-height:1.4;color:var(--ink);}
+.post-summary{margin:0;font-size:15px;line-height:1.6;color:var(--soft);}
+.misc{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;font-size:17px;line-height:1.6;color:var(--ink-2);}
+@media (max-width: 760px){
+  .cards{grid-template-columns:1fr;}
+  .post{flex-direction:column;gap:4px;}
+  .post-date{flex-basis:auto;}
+}
+{% endblock %}
+
+{% block content %}
+{% set sections = [
+  ('projects', 'Projects', pg.projects),
+  ('resources', 'Resources', pg.resources),
+  ('posts', 'Posts', posts),
+  ('misc', 'Misc', pg.misc),
+] %}
+<section class="pg-head">
+  <div class="wrap">
+    <div class="eyebrow">Beyond papers</div>
+    <h1>Playground</h1>
+    <p class="lede">Side projects, things you can reuse, occasional writing, and life off the clock.</p>
+    <div class="jump">{% for id, label, items in sections if items %}<a href="#{{ id }}">{{ label }}</a>{% endfor %}</div>
+  </div>
+</section>
+
+<div class="wrap content">
+  {% macro card(c) -%}
+  <article class="card">
+    <h3>{% set first = (c.links or {}).values() | list | first %}{% if first %}<a href="{{ first }}">{{ c.name }}</a>{% else %}{{ c.name }}{% endif %}</h3>
+    <p>{{ c.desc }}</p>
+    {% if c.tags %}<div class="chips">{% for t in c.tags %}<span>{{ t }}</span>{% endfor %}</div>{% endif %}
+    {% if c.links %}<div class="card-links">{% for label, url in c.links.items() %}<a href="{{ url }}">{{ label }} ↗</a>{% endfor %}</div>{% endif %}
+  </article>
+  {%- endmacro %}
+
+  {% if pg.projects %}
+  <section id="projects" class="sec">
+    <div class="sec-head"><div><span class="kicker">Built</span><h2>Projects</h2></div></div>
+    <div class="cards">{% for c in pg.projects %}{{ card(c) }}{% endfor %}</div>
+  </section>
+  {% endif %}
+
+  {% if pg.resources %}
+  <section id="resources" class="sec">
+    <div class="sec-head"><div><span class="kicker">Free to reuse</span><h2>Resources</h2></div></div>
+    <div class="cards">{% for c in pg.resources %}{{ card(c) }}{% endfor %}</div>
+  </section>
+  {% endif %}
+
+  {% if posts %}
+  <section id="posts" class="sec">
+    <div class="sec-head"><div><span class="kicker">Writing</span><h2>Posts</h2></div></div>
+    <div class="posts">
+      {% for p in posts %}
+      <article class="post">
+        <span class="post-date">{{ p.date_str }}</span>
+        <div class="post-body">
+          <a class="post-title" href="{{ p.url }}">{{ p.title }}</a>
+          {% if p.summary %}<p class="post-summary">{{ p.summary }}</p>{% endif %}
+          {% if p.tags %}<div class="chips">{% for t in p.tags %}<span>{{ t }}</span>{% endfor %}</div>{% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if pg.misc %}
+  <section id="misc" class="sec">
+    <div class="sec-head"><div><span class="kicker">Off the clock</span><h2>Misc</h2></div></div>
+    <ul class="misc">{% for m in pg.misc %}<li>{{ m }}</li>{% endfor %}</ul>
+  </section>
+  {% endif %}
+</div>
+{% endblock %}
