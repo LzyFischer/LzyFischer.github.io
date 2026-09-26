@@ -26,7 +26,7 @@
   year: 2026
   authors: "Zhenyu Lei, Mingjia Shi, Xingbo Fu, Haoyu He, Qi R. Wang, Jundong Li"
   topic: memory
-  tag: "Memory"
+  tag: "Memory (oral)"
 
 - title: "TeacherGRPO: Closing the Capacity Gap in Reasoning Distillation via Teacher Alignment"
   venue: "EMNLP 2026 Findings"
@@ -54,7 +54,7 @@
   year: 2026
   authors: "Zhenyu Lei, Patrick Soga, Yaochen Zhu, Yinhan He, Yushun Dong, Jundong Li"
   topic: edit
-  tag: "Oral"
+  tag: "Edit (oral)"
   links: { Paper: "https://arxiv.org/abs/2511.12770" }
 
 - title: "A Survey of Scaling in Large Language Model Reasoning"
@@ -101,7 +101,7 @@
   year: 2025
   authors: "Zhenyu Lei, Yushun Dong, Jundong Li, Chen Chen"
   topic: graph
-  tag: "Oral"
+  tag: "ST (oral)"
   links: { Paper: "https://arxiv.org/abs/2412.10912" }
 
 - title: "BrainMAP: Learning Multiple Activation Pathways in Brain Networks"
@@ -109,7 +109,7 @@
   year: 2025
   authors: "Song Wang*, Zhenyu Lei*, Zhen Tan, Jiaqi Ding, Xinyu Zhao, Yushun Dong, Guorong Wu, Tianlong Chen, Chen Chen, Aiying Zhang, Jundong Li"
   topic: brain
-  tag: "Oral"
+  tag: "Brain (oral)"
   links: { Paper: "https://arxiv.org/abs/2412.17404" }
 
 - title: "Deep Interactions for Multimodal Molecular Property Prediction"
