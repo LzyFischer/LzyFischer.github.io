@@ -36,6 +36,11 @@ resources:
 #   where       e.g. "Zhihu"
 #   summary     optional one-liner
 posts:
+  - title: "Post on X"
+    url: "https://x.com/FicsherLzy/status/1894123788574359635"
+    date: "Feb 2025"
+    where: "X"
+
   # - title: "Post title"
   #   url: "https://zhuanlan.zhihu.com/p/..."
   #   date: "Sep 2026"
