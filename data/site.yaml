@@ -32,6 +32,8 @@ about:
 
 # Newest first. Just add a line.
 news:
+  - { date: "Sep 2026", text: "One paper accepted at NeurIPS 2026 (AdaST)." }
+  - { date: "Sep 2026", text: "Two papers accepted at EMNLP 2026 (one Main, one Findings)." }
   - { date: "Jan 2026", text: "One paper accepted at ICLR 2026." }
   - { date: "Jan 2026", text: "One paper accepted at ISBI 2026." }
   - { date: "Oct 2025", text: "One paper accepted at WSDM 2026. See you in Idaho (maybe)!" }

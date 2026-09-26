@@ -13,6 +13,27 @@
 # Minimum is just `title`: missing venue/year/authors are looked up on
 # Semantic Scholar at build time and cached in data/cache.json.
 
+- title: "AdaST: Adaptive Coupling for Spatial-Temporal Forecasting"
+  venue: "NeurIPS 2026"
+  year: 2026
+  authors: "Zhenyu Lei, Chenghao Liu, Yushun Dong, Qi R. Wang, Jundong Li"
+  topic: graph
+  tag: "Spatial-temporal"
+
+- title: "Grounding Memory Summarization in Utility Intent"
+  venue: "EMNLP 2026"
+  year: 2026
+  authors: "Zhenyu Lei, Mingjia Shi, Xingbo Fu, Haoyu He, Qi R. Wang, Jundong Li"
+  topic: llm
+  tag: "Memory"
+
+- title: "TeacherGRPO: Closing the Capacity Gap in Reasoning Distillation via Teacher Alignment"
+  venue: "EMNLP 2026 Findings"
+  year: 2026
+  authors: "Zhenyu Lei, Zihan Chen, Yaochen Zhu, Shangbin Feng, Zaiyi Zheng, Ruocheng Guo, Yushun Dong, Jundong Li"
+  topic: llm
+  tag: "Distillation"
+
 - title: "Reforming the Mechanism: Editing Reasoning Patterns in LLMs with Circuit Reshaping"
   venue: "ICLR 2026"
   year: 2026
