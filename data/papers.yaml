@@ -7,7 +7,7 @@
 #   year     e.g. 2026                 -> year grouping
 #   authors  plain text; "Zhenyu Lei" is bolded automatically; use * for equal contribution
 #   topic    one topic or a list, e.g. reasoning  or  [distill, reasoning]   -> the filter buttons
-#            reasoning | memory | distill | edit (model editing) | graph (graph & time series) | brain (brain & science)
+#            reasoning | memory | distill | edit | llm (other LLM) | graph (graph & time series) | brain (brain & science)
 #   tag      short label under the badge, e.g. "Oral", "Reasoning"
 #   links    { Paper: url, Code: url, ... }  (only the ones you list are shown)
 #
@@ -75,7 +75,7 @@
 - title: "Uncovering Latent Communication Patterns in Brain Networks via Adaptive Flow Routing"
   venue: "arXiv 2026"
   year: 2026
-  authors: "Tianhao Huang, G. Min, Zhenyu Lei, Aiying Zhang, Chen Chen"
+  authors: "Tianhao Huang, Guanghui Min, Zhenyu Lei, Aiying Zhang, Chen Chen"
   topic: brain
   tag: "Brain"
 
@@ -173,7 +173,7 @@
   venue: "arXiv 2025"
   year: 2025
   authors: "Song Wang, Zhen Tan, Zihan Chen, …, Zhenyu Lei, …"
-  topic: reasoning
+  topic: llm
   tag: "Survey"
 
 - title: "IDEA: A Flexible Framework of Certified Unlearning for Graph Neural Networks"
@@ -211,7 +211,7 @@
   venue: "ACL 2023"
   year: 2023
   authors: "Shangbin Feng, Zhaoxuan Tan, Wenqian Zhang, Zhenyu Lei, Yulia Tsvetkov"
-  topic: reasoning
+  topic: llm
   tag: "Long document"
 
 - title: "HOFA: Twitter Bot Detection with Homophily-Oriented Augmentation and Frequency Adaptive Attention"

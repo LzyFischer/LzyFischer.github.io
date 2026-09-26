@@ -32,10 +32,11 @@ SITE_OWNER = "Zhenyu Lei"  # bolded in every author list
 
 # Filter buttons on publications.html: topic id -> label (in display order)
 TOPICS = {
-    "reasoning": "LLM reasoning",
-    "memory": "LLM memory",
+    "reasoning": "Reasoning",
+    "memory": "Memory",
     "distill": "Distillation",
-    "edit": "Model editing",
+    "edit": "Editing",
+    "llm": "Other LLM",
     "graph": "Graph & time series",
     "brain": "Brain & science",
 }
