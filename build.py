@@ -70,6 +70,46 @@ def fetch_from_semantic_scholar(title):
         return None
 
 
+def fetch_scholar_citations(scholar_id):
+    """Total citations from a Google Scholar profile, or None if Scholar can't be reached."""
+    try:
+        r = requests.get(
+            "https://scholar.google.com/citations",
+            params={"user": scholar_id, "hl": "en"},
+            headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                                   "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"},
+            timeout=10,
+        )
+        r.raise_for_status()
+        m = re.search(r'<td class="gsc_rsb_std">(\d+)</td>', r.text)
+        return int(m.group(1)) if m else None
+    except requests.RequestException:
+        return None
+
+
+def citation_count(stats, cache):
+    """Fresh Scholar count if reachable, else the last cached one, else the manual value."""
+    sid = stats.get("scholar_id")
+    fresh = fetch_scholar_citations(sid) if sid else None
+    if fresh is not None:
+        cache["_scholar"] = {"citations": fresh, "fetched": datetime.date.today().isoformat()}
+        return fresh
+    cached = cache.get("_scholar", {}).get("citations")
+    manual = stats.get("citations")
+    candidates = [c for c in (cached, manual) if isinstance(c, int)]
+    return max(candidates) if candidates else None
+
+
+def is_first_author(authors_text):
+    """True if the site owner is first author, or a co-first author marked with *."""
+    names = [n.strip() for n in authors_text.split(",")]
+    if not names:
+        return False
+    if names[0].rstrip("*") == SITE_OWNER:
+        return True
+    return names[0].endswith("*") and f"{SITE_OWNER}*" in names
+
+
 def bold_owner(authors_text):
     """Escape the author string and bold the site owner (keeps a trailing *)."""
     escaped = html.escape(authors_text)
@@ -111,6 +151,7 @@ def build_paper(raw, cache):
         "topic": topic,
         "tag": p.get("tag", ""),
         "links": p.get("links") or {},
+        "first_author": is_first_author(p.get("authors", "")),
     }
 
 
@@ -121,6 +162,13 @@ def main():
 
     cache = load_cache()
     papers = [build_paper(p, cache) for p in papers_raw]
+    stats_cfg = site.get("stats") or {}
+    sid = stats_cfg.get("scholar_id")
+    stats = {
+        "citations": citation_count(stats_cfg, cache),
+        "first_author": sum(p["first_author"] for p in papers),
+        "scholar_url": f"https://scholar.google.com/citations?user={sid}&hl=en" if sid else "",
+    }
     CACHE.write_text(json.dumps(cache, indent=2))
 
     by_title = {p["title"]: p for p in papers}
@@ -149,7 +197,7 @@ def main():
         year_now=datetime.date.today().year,
     )
     pages = [
-        ("index.html.j2", "index.html", "home", dict(selected=selected)),
+        ("index.html.j2", "index.html", "home", dict(selected=selected, stats=stats)),
         ("publications.html.j2", "publications.html", "publications",
          dict(groups=groups, total=len(papers), topics=topic_counts)),
     ]
@@ -158,6 +206,8 @@ def main():
         print(f"  wrote {out}")
 
     print(f"\nDone: {len(selected)} selected on the homepage, {len(papers)} papers on publications.html.")
+    print(f"      citations: {stats['citations'] if stats['citations'] is not None else 'unavailable'}, "
+          f"first-author papers: {stats['first_author']}")
 
 
 if __name__ == "__main__":

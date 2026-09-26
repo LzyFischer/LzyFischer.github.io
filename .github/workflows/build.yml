@@ -7,6 +7,8 @@ on:
       - "data/**"
       - "templates/**"
       - "build.py"
+  schedule:
+    - cron: "17 6 * * 1"   # weekly, to refresh the Google Scholar citation count
   workflow_dispatch: {}
 
 permissions:

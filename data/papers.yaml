@@ -53,7 +53,7 @@
   year: 2026
   authors: "Zhenyu Lei, Patrick Soga, Yaochen Zhu, Yinhan He, Yushun Dong, Jundong Li"
   topic: edit
-  tag: "Knowledge editing"
+  tag: "Oral"
   links: { Paper: "https://arxiv.org/abs/2511.12770" }
 
 - title: "A Survey of Scaling in Large Language Model Reasoning"

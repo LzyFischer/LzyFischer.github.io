@@ -16,6 +16,14 @@ profile:
     - { label: "GitHub", url: "https://github.com/LzyFischer" }
     - { label: "Twitter / X", url: "https://x.com/FicsherLzy" }
 
+# Stats shown next to "Selected Research".
+#   scholar_id  Google Scholar user id; the build tries to fetch the citation count from it
+#   citations   manual fallback, used when Scholar can't be reached (it often blocks CI)
+# The first-author count is computed from papers.yaml (first or co-first author).
+stats:
+  scholar_id: "y4uMsEIAAAAJ"
+  citations:
+
 # Paragraphs of the About section. HTML is allowed.
 about:
   - >
