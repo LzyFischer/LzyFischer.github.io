@@ -138,7 +138,7 @@ def main():
 
     cache = load_cache()
     papers = [build_paper(p, cache) for p in papers_raw]
-    stats = {"first_author": sum(p["first_author"] for p in papers)}
+    stats = {"total": len(papers), "first_author": sum(p["first_author"] for p in papers)}
     CACHE.write_text(json.dumps(cache, indent=2))
 
     by_title = {p["title"]: p for p in papers}
@@ -176,7 +176,7 @@ def main():
         print(f"  wrote {out}")
 
     print(f"\nDone: {len(selected)} selected on the homepage, {len(papers)} papers on publications.html.")
-    print(f"      first-author papers: {stats['first_author']}")
+    print(f"      first-author papers: {stats['first_author']} / {stats['total']}")
 
 
 if __name__ == "__main__":

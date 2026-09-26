@@ -57,6 +57,13 @@
   tag: "Oral"
   links: { Paper: "https://arxiv.org/abs/2511.12770" }
 
+- title: "Spatiotemporal Modeling of Social Capital and Infrastructure Mobility Resilience during Hurricane Harvey"
+  venue: "Natural Hazards Review 2026"
+  year: 2026
+  authors: "Rong Ding, Weiyu Li, Zhenyu Lei, Yushun Dong, Jundong Li, Qi R. Wang"
+  topic: brain
+  tag: "Disaster"
+
 - title: "A Survey of Scaling in Large Language Model Reasoning"
   venue: "SIGKDD Explor. 2026"
   year: 2026
@@ -65,6 +72,13 @@
   tag: "Survey"
   links: { Paper: "https://arxiv.org/abs/2504.02181" }
 
+- title: "Uncovering Latent Communication Patterns in Brain Networks via Adaptive Flow Routing"
+  venue: "arXiv 2026"
+  year: 2026
+  authors: "Tianhao Huang, G. Min, Zhenyu Lei, Aiying Zhang, Chen Chen"
+  topic: brain
+  tag: "Brain"
+
 - title: "MoCo: A One-Stop Shop for Model Collaboration Research"
   venue: "arXiv 2026"
   year: 2026
@@ -72,6 +86,13 @@
   topic: reasoning
   tag: "Model collaboration"
   links: { Paper: "https://arxiv.org/abs/2601.21257" }
+
+- title: "From Cross-Task Examples to In-Task Prompts: A Graph-Based Pseudo-Labeling Framework for In-context Learning"
+  venue: "EMNLP 2025 Findings"
+  year: 2025
+  authors: "Zihan Chen, Song Wang, Xingbo Fu, Chengshuai Shi, Zhenyu Lei, Cong Shen, Jundong Li"
+  topic: reasoning
+  tag: "In-context learning"
 
 - title: "Learning from Diverse Reasoning Paths with Routing and Collaboration"
   venue: "EMNLP 2025"
@@ -88,6 +109,20 @@
   topic: graph
   tag: "Graph prompting"
   links: { Paper: "https://arxiv.org/abs/2510.22451" }
+
+- title: "Graph Prompting for Graph Learning Models: Recent Advances and Future Directions"
+  venue: "KDD 2025"
+  year: 2025
+  authors: "Xingbo Fu, Zehong Wang, Zihan Chen, Jiazheng Li, Yaochen Zhu, Zhenyu Lei, Cong Shen, Yanfang Ye, Chuxu Zhang, Jundong Li"
+  topic: graph
+  tag: "Survey"
+
+- title: "Fairness-Aware Graph Learning: A Benchmark"
+  venue: "KDD 2025"
+  year: 2025
+  authors: "Yushun Dong, Song Wang, Zhenyu Lei, Zaiyi Zheng, Jing Ma, Chen Chen, Jundong Li"
+  topic: graph
+  tag: "Benchmark"
 
 - title: "Energy-Based Models for Predicting Mutational Effects on Proteins"
   venue: "KDD 2025"
@@ -127,6 +162,20 @@
   tag: "Survey"
   links: { Paper: "https://aclanthology.org/2025.findings-acl.750/" }
 
+- title: "Interpretable Neuropsychiatric Diagnosis via Concept-Guided Graph Neural Networks"
+  venue: "arXiv 2025"
+  year: 2025
+  authors: "Song Wang, Zhenyu Lei, Zhen Tan, Jundong Li, Javier Rasero, Aiying Zhang, Chirag Agarwal"
+  topic: brain
+  tag: "Brain"
+
+- title: "Large Language Models for Data Science: A Survey"
+  venue: "arXiv 2025"
+  year: 2025
+  authors: "Song Wang, Zhen Tan, Zihan Chen, …, Zhenyu Lei, …"
+  topic: reasoning
+  tag: "Survey"
+
 - title: "IDEA: A Flexible Framework of Certified Unlearning for Graph Neural Networks"
   venue: "KDD 2024"
   year: 2024
@@ -134,6 +183,13 @@
   topic: graph
   tag: "Unlearning"
   links: { Paper: "https://arxiv.org/abs/2407.19398" }
+
+- title: "PyGDebias: A Python Library for Debiasing in Graph Learning"
+  venue: "WWW 2024 Companion"
+  year: 2024
+  authors: "Yushun Dong, Zhenyu Lei, Zaiyi Zheng, Song Wang, Jing Ma, Alex Jing Huang, Chen Chen, Jundong Li"
+  topic: graph
+  tag: "Library"
 
 - title: "LMBot: Distilling Graph Knowledge into Language Model for Graph-less Deployment in Twitter Bot Detection"
   venue: "WSDM 2024"
@@ -151,6 +207,20 @@
   tag: "Graph + text"
   links: { Paper: "https://arxiv.org/abs/2208.08320" }
 
+- title: "KALM: Knowledge-Aware Integration of Local, Document, and Global Contexts for Long Document Understanding"
+  venue: "ACL 2023"
+  year: 2023
+  authors: "Shangbin Feng, Zhaoxuan Tan, Wenqian Zhang, Zhenyu Lei, Yulia Tsvetkov"
+  topic: reasoning
+  tag: "Long document"
+
+- title: "HOFA: Twitter Bot Detection with Homophily-Oriented Augmentation and Frequency Adaptive Attention"
+  venue: "arXiv 2023"
+  year: 2023
+  authors: "Sen Ye, Zhaoxuan Tan, Zhenyu Lei, Ruijie He, Hongrui Wang, Qinghua Zheng, Minnan Luo"
+  topic: graph
+  tag: "Bot detection"
+
 - title: "TwiBot-22: Towards Graph-Based Twitter Bot Detection"
   venue: "NeurIPS 2022 D&B"
   year: 2022
@@ -158,3 +228,10 @@
   topic: graph
   tag: "Benchmark"
   links: { Paper: "https://arxiv.org/abs/2206.04564" }
+
+- title: "KCD: Knowledge Walks and Textual Cues Enhanced Political Perspective Detection in News Media"
+  venue: "NAACL 2022"
+  year: 2022
+  authors: "Wenqian Zhang, Shangbin Feng, Zilong Chen, Zhenyu Lei, Jundong Li, Minnan Luo"
+  topic: graph
+  tag: "Graph + text"

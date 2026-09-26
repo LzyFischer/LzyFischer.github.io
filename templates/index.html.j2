@@ -25,9 +25,8 @@
 .misc{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;font-size:17px;line-height:1.6;color:var(--ink-2);}
 .note{font-size:14px;color:var(--soft);}
 .stats{display:flex;gap:12px;flex-wrap:wrap;}
-.stat{display:flex;align-items:baseline;gap:8px;padding:10px 16px;border:1px solid var(--line);border-radius:10px;background:var(--tint);color:var(--ink-2);font-size:15px;text-decoration:none;}
+.stat{display:flex;align-items:baseline;gap:8px;padding:10px 16px;border:1px solid var(--line);border-radius:10px;background:var(--tint);color:var(--ink-2);font-size:15px;}
 .stat b{font-family:var(--mono);font-size:22px;font-weight:700;color:var(--accent);}
-a.stat:hover{border-color:var(--accent);}
 
 #oneko{width:32px;height:32px;position:fixed;pointer-events:none;background-image:url('assets/oneko.gif');image-rendering:pixelated;z-index:9999;left:0;top:0;}
 .shuttle{position:fixed;width:22px;height:26px;pointer-events:none;z-index:9998;}
@@ -86,7 +85,8 @@ a.stat:hover{border-color:var(--accent);}
       <a class="more" href="publications.html">All publications →</a>
     </div>
     <div class="stats">
-      <a class="stat" href="publications.html"><b>{{ stats.first_author }}</b><span>first-author papers</span></a>
+      <div class="stat"><b>{{ stats.total }}</b><span>papers</span></div>
+      <div class="stat"><b>{{ stats.first_author }}</b><span>first-author papers</span></div>
     </div>
     <div class="papers">{% for p in selected %}{{ paper_row(p) }}{% endfor %}</div>
     <div class="note">* equal contribution</div>
