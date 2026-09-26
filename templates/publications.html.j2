@@ -60,7 +60,7 @@
       document.querySelectorAll('.year').forEach(function(y){
         var shown = 0;
         y.querySelectorAll('.paper').forEach(function(p){
-          var ok = f === 'all' || p.getAttribute('data-topic') === f;
+          var ok = f === 'all' || p.getAttribute('data-topic').split(' ').indexOf(f) !== -1;
           p.hidden = !ok; if (ok) shown++;
         });
         y.hidden = shown === 0;

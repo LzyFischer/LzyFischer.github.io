@@ -30,12 +30,15 @@ CACHE = DATA / "cache.json"
 
 SITE_OWNER = "Zhenyu Lei"  # bolded in every author list
 
-# Filter buttons on publications.html: topic id -> label
+# Filter buttons on publications.html: topic id -> label (in display order)
 TOPICS = {
-    "llm": "LLM reasoning & distillation",
+    "reasoning": "LLM reasoning",
+    "memory": "LLM memory",
+    "distill": "Distillation",
     "edit": "Knowledge editing",
+    "llm": "Other LLM",
+    "graph": "Graph & time series",
     "brain": "Brain & science",
-    "graph": "Graph learning",
 }
 
 
@@ -68,36 +71,6 @@ def fetch_from_semantic_scholar(title):
         }
     except requests.RequestException:
         return None
-
-
-def fetch_scholar_citations(scholar_id):
-    """Total citations from a Google Scholar profile, or None if Scholar can't be reached."""
-    try:
-        r = requests.get(
-            "https://scholar.google.com/citations",
-            params={"user": scholar_id, "hl": "en"},
-            headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
-                                   "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"},
-            timeout=10,
-        )
-        r.raise_for_status()
-        m = re.search(r'<td class="gsc_rsb_std">(\d+)</td>', r.text)
-        return int(m.group(1)) if m else None
-    except requests.RequestException:
-        return None
-
-
-def citation_count(stats, cache):
-    """Fresh Scholar count if reachable, else the last cached one, else the manual value."""
-    sid = stats.get("scholar_id")
-    fresh = fetch_scholar_citations(sid) if sid else None
-    if fresh is not None:
-        cache["_scholar"] = {"citations": fresh, "fetched": datetime.date.today().isoformat()}
-        return fresh
-    cached = cache.get("_scholar", {}).get("citations")
-    manual = stats.get("citations")
-    candidates = [c for c in (cached, manual) if isinstance(c, int)]
-    return max(candidates) if candidates else None
 
 
 def is_first_author(authors_text):
@@ -142,13 +115,17 @@ def build_paper(raw, cache):
         p.setdefault("venue", venue or "Preprint")
         p.setdefault("authors", ", ".join(authors) or SITE_OWNER)
 
-    topic = p.get("topic") or "llm"
+    topics = p.get("topic") or "llm"
+    topics = [topics] if isinstance(topics, str) else list(topics)
+    for t in topics:
+        if t not in TOPICS:
+            print(f"  WARNING: unknown topic '{t}' on: {title}")
     return {
         "title": title,
         "venue": p.get("venue", ""),
         "year": int(p["year"]) if str(p.get("year", "")).isdigit() else 0,
         "authors_html": bold_owner(p.get("authors", "")),
-        "topic": topic,
+        "topics": topics,
         "tag": p.get("tag", ""),
         "links": p.get("links") or {},
         "first_author": is_first_author(p.get("authors", "")),
@@ -162,13 +139,7 @@ def main():
 
     cache = load_cache()
     papers = [build_paper(p, cache) for p in papers_raw]
-    stats_cfg = site.get("stats") or {}
-    sid = stats_cfg.get("scholar_id")
-    stats = {
-        "citations": citation_count(stats_cfg, cache),
-        "first_author": sum(p["first_author"] for p in papers),
-        "scholar_url": f"https://scholar.google.com/citations?user={sid}&hl=en" if sid else "",
-    }
+    stats = {"first_author": sum(p["first_author"] for p in papers)}
     CACHE.write_text(json.dumps(cache, indent=2))
 
     by_title = {p["title"]: p for p in papers}
@@ -184,7 +155,7 @@ def main():
     years = sorted({p["year"] for p in papers}, reverse=True)
     groups = [{"year": y or "Other", "papers": [p for p in papers if p["year"] == y]} for y in years]
     topic_counts = [
-        {"id": tid, "label": label, "count": sum(p["topic"] == tid for p in papers)}
+        {"id": tid, "label": label, "count": sum(tid in p["topics"] for p in papers)}
         for tid, label in TOPICS.items()
     ]
     topic_counts = [t for t in topic_counts if t["count"]]
@@ -206,8 +177,7 @@ def main():
         print(f"  wrote {out}")
 
     print(f"\nDone: {len(selected)} selected on the homepage, {len(papers)} papers on publications.html.")
-    print(f"      citations: {stats['citations'] if stats['citations'] is not None else 'unavailable'}, "
-          f"first-author papers: {stats['first_author']}")
+    print(f"      first-author papers: {stats['first_author']}")
 
 
 if __name__ == "__main__":

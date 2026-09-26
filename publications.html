@@ -128,7 +128,7 @@
     <p class="lede">Full list in reverse chronological order. <b>*</b> denotes equal contribution. For the most up-to-date list, please see Google Scholar.</p>
     <div class="filters" role="group" aria-label="Filter by topic">
       <button type="button" class="chip on" data-filter="all" aria-pressed="true">All<span>19</span></button>
-      <button type="button" class="chip" data-filter="llm" aria-pressed="false">LLM reasoning & distillation<span>7</span></button><button type="button" class="chip" data-filter="edit" aria-pressed="false">Knowledge editing<span>1</span></button><button type="button" class="chip" data-filter="brain" aria-pressed="false">Brain & science<span>4</span></button><button type="button" class="chip" data-filter="graph" aria-pressed="false">Graph learning<span>7</span></button>
+      <button type="button" class="chip" data-filter="reasoning" aria-pressed="false">LLM reasoning<span>4</span></button><button type="button" class="chip" data-filter="memory" aria-pressed="false">LLM memory<span>1</span></button><button type="button" class="chip" data-filter="distill" aria-pressed="false">Distillation<span>3</span></button><button type="button" class="chip" data-filter="edit" aria-pressed="false">Knowledge editing<span>2</span></button><button type="button" class="chip" data-filter="llm" aria-pressed="false">Other LLM<span>2</span></button><button type="button" class="chip" data-filter="graph" aria-pressed="false">Graph & time series<span>7</span></button><button type="button" class="chip" data-filter="brain" aria-pressed="false">Brain & science<span>4</span></button>
     </div>
   </div>
 </section>
@@ -148,7 +148,7 @@
     <div class="paper-authors"><b>Zhenyu Lei</b>, Chenghao Liu, Yushun Dong, Qi R. Wang, Jundong Li</div>
     
   </div>
-</article><article class="paper" data-topic="llm">
+</article><article class="paper" data-topic="memory">
   <div class="paper-meta">
     <span class="venue">EMNLP 2026</span>
     <span class="tag">Memory</span>
@@ -159,7 +159,7 @@
     <div class="paper-authors"><b>Zhenyu Lei</b>, Mingjia Shi, Xingbo Fu, Haoyu He, Qi R. Wang, Jundong Li</div>
     
   </div>
-</article><article class="paper" data-topic="llm">
+</article><article class="paper" data-topic="distill reasoning">
   <div class="paper-meta">
     <span class="venue">EMNLP 2026 Findings</span>
     <span class="tag">Distillation</span>
@@ -170,7 +170,7 @@
     <div class="paper-authors"><b>Zhenyu Lei</b>, Zihan Chen, Yaochen Zhu, Shangbin Feng, Zaiyi Zheng, Ruocheng Guo, Yushun Dong, Jundong Li</div>
     
   </div>
-</article><article class="paper" data-topic="llm">
+</article><article class="paper" data-topic="reasoning edit">
   <div class="paper-meta">
     <span class="venue">ICLR 2026</span>
     <span class="tag">Reasoning</span>
@@ -203,7 +203,7 @@
     <div class="paper-authors"><b>Zhenyu Lei</b>, Patrick Soga, Yaochen Zhu, Yinhan He, Yushun Dong, Jundong Li</div>
     <div class="paper-links"><a href="https://arxiv.org/abs/2511.12770">Paper</a></div>
   </div>
-</article><article class="paper" data-topic="llm">
+</article><article class="paper" data-topic="reasoning">
   <div class="paper-meta">
     <span class="venue">SIGKDD Explor. 2026</span>
     <span class="tag">Survey</span>
@@ -230,7 +230,7 @@
   
   <section class="year">
     <div class="year-label">2025</div>
-    <div class="papers"><article class="paper" data-topic="llm">
+    <div class="papers"><article class="paper" data-topic="distill reasoning">
   <div class="paper-meta">
     <span class="venue">EMNLP 2025</span>
     <span class="tag">Distillation</span>
@@ -298,14 +298,14 @@
   </div>
 </article><article class="paper" data-topic="llm">
   <div class="paper-meta">
-    <span class="venue">arXiv 2025</span>
+    <span class="venue">ACL 2025 Findings</span>
     <span class="tag">Survey</span>
   </div>
   <div class="paper-body">
     
-    <a class="paper-title" href="https://arxiv.org/abs/2501.06932">Harnessing Large Language Models for Disaster Management: A Survey</a>
-    <div class="paper-authors"><b>Zhenyu Lei</b>, Yushun Dong, Weiyu Li, Rong Ding, Qi Wang, Jundong Li</div>
-    <div class="paper-links"><a href="https://arxiv.org/abs/2501.06932">Paper</a></div>
+    <a class="paper-title" href="https://aclanthology.org/2025.findings-acl.750/">Harnessing Large Language Models for Disaster Management: A Survey</a>
+    <div class="paper-authors"><b>Zhenyu Lei</b>, Yushun Dong, Weiyu Li, Rong Ding, Qi R. Wang, Jundong Li</div>
+    <div class="paper-links"><a href="https://aclanthology.org/2025.findings-acl.750/">Paper</a></div>
   </div>
 </article></div>
   </section>
@@ -323,7 +323,7 @@
     <div class="paper-authors">Yushun Dong, Binchi Zhang, <b>Zhenyu Lei</b>, Na Zou, Jundong Li</div>
     <div class="paper-links"><a href="https://arxiv.org/abs/2407.19398">Paper</a></div>
   </div>
-</article><article class="paper" data-topic="graph">
+</article><article class="paper" data-topic="distill graph">
   <div class="paper-meta">
     <span class="venue">WSDM 2024</span>
     <span class="tag">Distillation</span>
@@ -391,7 +391,7 @@
       document.querySelectorAll('.year').forEach(function(y){
         var shown = 0;
         y.querySelectorAll('.paper').forEach(function(p){
-          var ok = f === 'all' || p.getAttribute('data-topic') === f;
+          var ok = f === 'all' || p.getAttribute('data-topic').split(' ').indexOf(f) !== -1;
           p.hidden = !ok; if (ok) shown++;
         });
         y.hidden = shown === 0;

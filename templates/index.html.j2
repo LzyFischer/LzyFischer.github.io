@@ -86,7 +86,6 @@ a.stat:hover{border-color:var(--accent);}
       <a class="more" href="publications.html">All publications →</a>
     </div>
     <div class="stats">
-      {% if stats.citations is not none %}<a class="stat" href="{{ stats.scholar_url }}"><b>{{ stats.citations }}</b><span>citations · Google Scholar</span></a>{% endif %}
       <a class="stat" href="publications.html"><b>{{ stats.first_author }}</b><span>first-author papers</span></a>
     </div>
     <div class="papers">{% for p in selected %}{{ paper_row(p) }}{% endfor %}</div>

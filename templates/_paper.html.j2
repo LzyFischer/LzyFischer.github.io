@@ -1,5 +1,5 @@
 {% macro paper_row(p) -%}
-<article class="paper" data-topic="{{ p.topic }}">
+<article class="paper" data-topic="{{ p.topics | join(' ') }}">
   <div class="paper-meta">
     <span class="venue">{{ p.venue }}</span>
     {% if p.tag %}<span class="tag">{{ p.tag }}</span>{% endif %}
