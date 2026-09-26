@@ -58,8 +58,8 @@
   /* ---- paper row (homepage + publications) ---- */
   .papers{display:flex;flex-direction:column;}
   .paper{display:flex;gap:28px;padding:22px 4px;border-bottom:1px solid var(--line-2);}
-  .paper-meta{flex:0 0 172px;display:flex;flex-direction:column;align-items:flex-start;gap:6px;}
-  .venue{white-space:nowrap;font-family:var(--mono);font-size:13px;font-weight:500;color:var(--ink);background:var(--badge);padding:5px 10px;border-radius:4px;}
+  .paper-meta{flex:0 0 172px;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:6px;}
+  .venue{max-width:100%;font-family:var(--mono);font-size:13px;line-height:1.4;font-weight:500;color:var(--ink);background:var(--badge);padding:5px 10px;border-radius:4px;}
   .tag{font-size:12px;font-weight:700;color:var(--tag);}
   .paper-body{flex:1;display:flex;flex-direction:column;gap:6px;min-width:0;}
   .paper-title{font-size:18px;font-weight:700;line-height:1.4;color:var(--ink);}
