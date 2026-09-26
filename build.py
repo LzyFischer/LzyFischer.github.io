@@ -5,6 +5,7 @@ Builds index.html and publications.html from the files in data/.
   data/site.yaml      profile, about, news, education, honors, service, misc
   data/papers.yaml    the full publication list (publications.html)
   data/selected.yaml  which papers appear under "Selected Research" on the homepage
+  data/playground.yaml projects, resources, posts (external links) and misc on playground.html
 
 Any paper in papers.yaml that is missing venue / year / authors is looked up
 on Semantic Scholar and cached in data/cache.json, so the build still works
@@ -136,6 +137,7 @@ def main():
     site = load_yaml("site.yaml", {})
     papers_raw = load_yaml("papers.yaml", [])
     selected_raw = load_yaml("selected.yaml", [])
+    playground = load_yaml("playground.yaml", {})
 
     cache = load_cache()
     papers = [build_paper(p, cache) for p in papers_raw]
@@ -171,6 +173,7 @@ def main():
         ("index.html.j2", "index.html", "home", dict(selected=selected, stats=stats)),
         ("publications.html.j2", "publications.html", "publications",
          dict(groups=groups, total=len(papers), topics=topic_counts)),
+        ("playground.html.j2", "playground.html", "playground", dict(pg=playground)),
     ]
     for tpl, out, active, ctx in pages:
         (ROOT / out).write_text(env.get_template(tpl).render(active=active, **common, **ctx), encoding="utf-8")

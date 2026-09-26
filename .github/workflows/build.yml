@@ -7,6 +7,7 @@ on:
       - "data/**"
       - "templates/**"
       - "build.py"
+      - "requirements.txt"
   workflow_dispatch: {}
 
 permissions:
@@ -26,6 +27,6 @@ jobs:
         run: |
           git config user.name "site-bot"
           git config user.email "actions@github.com"
-          git add index.html publications.html data/cache.json
+          git add -- '*.html' data/cache.json
           git diff --staged --quiet || git commit -m "Rebuild site from data files"
           git push
