@@ -97,6 +97,7 @@
 .post-date{flex:0 0 120px;font-family:var(--mono);font-size:14px;color:var(--accent);padding-top:3px;}
 .post-body{flex:1;display:flex;flex-direction:column;gap:6px;min-width:0;}
 .post-title{font-size:18px;font-weight:700;line-height:1.4;color:var(--ink);}
+.post-where{font-family:var(--mono);font-size:13px;color:var(--soft);}
 .post-summary{margin:0;font-size:15px;line-height:1.6;color:var(--soft);}
 .misc{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;font-size:17px;line-height:1.6;color:var(--ink-2);}
 @media (max-width: 760px){
@@ -130,7 +131,7 @@
     <div class="eyebrow">Beyond papers</div>
     <h1>Playground</h1>
     <p class="lede">Side projects, things you can reuse, occasional writing, and life off the clock.</p>
-    <div class="jump"><a href="#resources">Resources</a><a href="#misc">Misc</a></div>
+    <div class="jump"><a href="#projects">Projects</a><a href="#resources">Resources</a><a href="#misc">Misc</a></div>
   </div>
 </section>
 
@@ -138,13 +139,28 @@
   
 
   
+  <section id="projects" class="sec">
+    <div class="sec-head"><div><span class="kicker">Built</span><h2>Projects</h2></div></div>
+    <div class="cards"><article class="card">
+    <h3><a href="https://github.com/BunsenFeng/model_collaboration">MoCo: Model Collaboration</a></h3>
+    <p>A one-stop shop for model collaboration research — methods, benchmarks and tooling for making multiple language models work together.</p>
+    <div class="chips"><span>Python</span><span>LLM</span></div>
+    <div class="card-links"><a href="https://github.com/BunsenFeng/model_collaboration">GitHub ↗</a><a href="https://arxiv.org/abs/2601.21257">Paper ↗</a></div>
+  </article><article class="card">
+    <h3><a href="https://github.com/yushundong/PyGDebias">PyGDebias</a></h3>
+    <p>Open-source library for fairness-aware graph learning: 13 debiasing methods, 26 graph datasets, and benchmarks under common fairness notions.</p>
+    <div class="chips"><span>Python</span><span>Graph learning</span><span>Fairness</span></div>
+    <div class="card-links"><a href="https://github.com/yushundong/PyGDebias">GitHub ↗</a></div>
+  </article></div>
+  </section>
+  
 
   
   <section id="resources" class="sec">
     <div class="sec-head"><div><span class="kicker">Free to reuse</span><h2>Resources</h2></div></div>
     <div class="cards"><article class="card">
     <h3><a href="https://github.com/LzyFischer/LzyFischer.github.io">This website</a></h3>
-    <p>Source of this homepage — a YAML + Jinja static site with publication filters and a Markdown blog. Fork it and edit the data/ folder to make your own.</p>
+    <p>Source of this homepage — a YAML + Jinja static site with publication filters and a playground page. Fork it and edit the data/ folder to make your own.</p>
     <div class="chips"><span>Template</span><span>Python</span><span>GitHub Pages</span></div>
     <div class="card-links"><a href="https://github.com/LzyFischer/LzyFischer.github.io">GitHub ↗</a></div>
   </article></div>

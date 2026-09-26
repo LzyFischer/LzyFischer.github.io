@@ -6,7 +6,6 @@ on:
     paths:
       - "data/**"
       - "templates/**"
-      - "posts/**"
       - "build.py"
       - "requirements.txt"
   workflow_dispatch: {}

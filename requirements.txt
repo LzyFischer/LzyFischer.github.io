@@ -1,4 +1,0 @@
-requests
-PyYAML
-Jinja2
-Markdown

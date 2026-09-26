@@ -1,4 +1,4 @@
-# Everything on playground.html except posts (posts live in posts/*.md).
+# Everything on playground.html.
 # Empty sections are hidden automatically.
 
 # Software, tools and GitHub projects.
@@ -8,6 +8,16 @@
 # Tip: a static web app in its own repo can be served for free at
 # https://lzyfischer.github.io/<repo>/ by turning on GitHub Pages for that repo.
 projects:
+  - name: "MoCo: Model Collaboration"
+    desc: "A one-stop shop for model collaboration research — methods, benchmarks and tooling for making multiple language models work together."
+    tags: ["Python", "LLM"]
+    links: { GitHub: "https://github.com/BunsenFeng/model_collaboration", Paper: "https://arxiv.org/abs/2601.21257" }
+
+  - name: "PyGDebias"
+    desc: "Open-source library for fairness-aware graph learning: 13 debiasing methods, 26 graph datasets, and benchmarks under common fairness notions."
+    tags: ["Python", "Graph learning", "Fairness"]
+    links: { GitHub: "https://github.com/yushundong/PyGDebias" }
+
   # - name: "My Tool"
   #   desc: "One sentence on what it does."
   #   tags: ["Python"]
@@ -16,9 +26,21 @@ projects:
 # Things other people can reuse: templates, reading lists, slides, advice.
 resources:
   - name: "This website"
-    desc: "Source of this homepage — a YAML + Jinja static site with publication filters and a Markdown blog. Fork it and edit the data/ folder to make your own."
+    desc: "Source of this homepage — a YAML + Jinja static site with publication filters and a playground page. Fork it and edit the data/ folder to make your own."
     tags: ["Template", "Python", "GitHub Pages"]
     links: { GitHub: "https://github.com/LzyFischer/LzyFischer.github.io" }
+
+# Writing elsewhere (Zhihu, Medium, Substack, ...), newest first.
+#   title, url  (required)
+#   date        free text, e.g. "Sep 2026"
+#   where       e.g. "Zhihu"
+#   summary     optional one-liner
+posts:
+  # - title: "Post title"
+  #   url: "https://zhuanlan.zhihu.com/p/..."
+  #   date: "Sep 2026"
+  #   where: "Zhihu"
+  #   summary: "One sentence."
 
 # Off the clock. HTML is allowed.
 misc:
