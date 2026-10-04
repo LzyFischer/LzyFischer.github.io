@@ -134,13 +134,7 @@
 .stat:hover{text-decoration:none;border-color:var(--accent);color:var(--accent);}
 .stat b{font-family:var(--mono);font-size:22px;font-weight:700;color:var(--accent);}
 
-/* ---- contact ---- */
-.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:40px;align-items:start;}
-.contact-grid.solo{grid-template-columns:minmax(0,680px);}
-.contact-grid h3{margin:0 0 4px;font-size:18px;font-weight:800;}
-.contact-grid .sub{margin:0 0 14px;font-size:14.5px;color:var(--soft);line-height:1.5;}
 .msg-form{display:flex;flex-direction:column;gap:10px;}
-.msg-form .row{display:flex;gap:10px;}
 .msg-form input,.msg-form textarea{width:100%;font:inherit;font-size:15px;color:var(--ink);padding:10px 12px;border:1px solid var(--btn-line);border-radius:6px;background:#fff;}
 .msg-form input:focus,.msg-form textarea:focus{outline:2px solid var(--accent);outline-offset:-1px;border-color:var(--accent);}
 .msg-form textarea{min-height:120px;resize:vertical;}
@@ -159,7 +153,7 @@
 
 @media (max-width: 900px){
   .hero{padding-top:32px;}
-  .hero-grid,.contact-grid{grid-template-columns:1fr;gap:28px;}
+  .hero-grid{grid-template-columns:1fr;gap:28px;}
   .hero-side{position:static;}
 }
 @media (max-width: 760px){
@@ -167,7 +161,6 @@
   .id-row img{width:120px;height:120px;}
   .hero h1{font-size:32px;}
   .two-col{grid-template-columns:1fr;gap:40px;}
-  .msg-form .row{flex-direction:column;}
   .edu-row{flex-wrap:wrap;}
   .edu-dates{width:100%;padding-left:88px;}
 }
@@ -184,7 +177,7 @@
       <a href="index.html#education">Experience</a>
       <a href="publications.html" class="">Publications</a>
       <a href="playground.html" class="">Playground</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="index.html#say-hi">Contact</a>
       <a class="cv" href="assets/CV_lzy_.pdf">CV ↓</a>
     </nav>
   </div>
@@ -230,7 +223,7 @@
         </div>
         <div class="chat-text">No need for a formal email. Ask me anything, pitch an idea, or just say hi. Anonymous is fine, and no question is too small.</div>
         <div class="chips"><button type="button" class="chip" data-starter="Hi Zhenyu, I have an idea we might work on together: ">💡 Collab idea</button><button type="button" class="chip" data-starter="Hi Zhenyu, I have a question about your paper ">📄 About a paper</button><button type="button" class="chip" data-starter="Hi Zhenyu, I&#39;m reaching out about an internship / position: ">💼 Internship / hiring</button><button type="button" class="chip" data-starter="Hi Zhenyu! Just wanted to say hi, ">☕ Just saying hi</button></div>
-        <form class="msg-form" action="https://formsubmit.co/ajax/vjd5zr@virginia.edu" method="POST">
+        <form class="msg-form" action="https://formsubmit.co/ajax/vjd5zr@outlook.com" method="POST">
           <textarea name="message" placeholder="Type a quick note…" required></textarea>
           <div class="send-row">
             <input name="email" type="email" placeholder="Email for a reply (optional)" autocomplete="email">
@@ -367,31 +360,6 @@
   </div>
 
 
-  
-  <section id="contact" class="sec">
-    <div class="sec-head"><div><span class="kicker">Get in touch</span><h2>Contact me</h2></div></div>
-    
-    <div class="contact-grid solo">
-      <div>
-        <h3>Send me a private message</h3>
-        <p class="sub">Questions about a paper, collaboration ideas, or internship opportunities. It goes straight to my inbox; leave your email if you'd like a reply.</p>
-        <form class="msg-form" action="https://formsubmit.co/ajax/vjd5zr@virginia.edu" method="POST">
-          <div class="row">
-            <input name="name" placeholder="Your name" autocomplete="name">
-            <input name="email" type="email" placeholder="Your email (optional)" autocomplete="email">
-          </div>
-          <textarea name="message" placeholder="Your message" required></textarea>
-          <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <input type="hidden" name="_subject" value="New message from your website">
-          <input type="hidden" name="_captcha" value="false">
-          <button class="btn primary" type="submit">Send message</button>
-          <div class="form-status" role="status"></div>
-        </form>
-      </div>
-      
-    </div>
-  </section>
-  
 
 </div>
 

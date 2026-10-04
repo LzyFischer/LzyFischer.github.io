@@ -16,9 +16,8 @@ profile:
     - { label: "GitHub", url: "https://github.com/LzyFischer" }
     - { label: "Twitter / X", url: "https://x.com/FicsherLzy" }
 
-# "Contact me" section on the homepage (and the blue box next to News).
+# Quick-chat message box on the homepage (first screen on desktop).
 contact:
-  # Quick-chat box next to News (first screen on desktop).
   chat_title: "Hi, I'm Zhenyu 👋"
   chat_status: "Open to chats, collabs & internships"
   chat_text: "No need for a formal email. Ask me anything, pitch an idea, or just say hi. Anonymous is fine, and no question is too small."
@@ -30,17 +29,9 @@ contact:
     - { label: "📄 About a paper", text: "Hi Zhenyu, I have a question about your paper " }
     - { label: "💼 Internship / hiring", text: "Hi Zhenyu, I'm reaching out about an internship / position: " }
     - { label: "☕ Just saying hi", text: "Hi Zhenyu! Just wanted to say hi, " }
-  # Private messages: FormSubmit forwards each message to this inbox (free, no account).
+  # FormSubmit forwards each message to this inbox (free, no account).
   # The first message triggers a confirmation email from FormSubmit; click it once to activate.
-  # After that, you can replace the email below with the random string FormSubmit gives you.
-  form_action: "https://formsubmit.co/ajax/vjd5zr@virginia.edu"
-  # Public comments via giscus (GitHub Discussions). Fill in the ids from https://giscus.app
-  # to turn the public guestbook on; it stays hidden while they are empty.
-  giscus:
-    repo: "LzyFischer/LzyFischer.github.io"
-    repo_id: ""
-    category: "Guestbook"
-    category_id: ""
+  form_action: "https://formsubmit.co/ajax/vjd5zr@outlook.com"
 
 # Paragraphs of the About section. HTML is allowed.
 about:
