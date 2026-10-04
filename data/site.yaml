@@ -6,6 +6,9 @@ profile:
   short_name: "Zhenyu Lei"
   initials: "ZL"
   eyebrow: "Ph.D. Student · Capital One Fellow"
+  # One-line summary used for link previews (X, Slack, WeChat…) and search results.
+  tagline: "Ph.D. student at UVA working on LLMs that keep learning: reasoning editing, memory, and distillation."
+  url: "https://lzyfischer.github.io/"
   avatar: "assets/prof_pic.jpg"
   favicon: "assets/oneko.gif"
   email: "vjd5zr [at] virginia [dot] edu"
@@ -36,21 +39,27 @@ contact:
 # Paragraphs of the About section. HTML is allowed.
 about:
   - >
-    I am a Ph.D. student in Electrical and Computer Engineering at the
+    I'm a Ph.D. student in Electrical and Computer Engineering at the
     <a href="https://www.virginia.edu/">University of Virginia</a>, advised by
-    Prof. <a href="https://jundongli.github.io/">Jundong Li</a>. Before that, I received my
-    B.S. in Physics from Xi'an Jiaotong University, where I was lucky to join the LUD Lab.
-    I have also interned at AT&amp;T as an Applied Scientist.
+    Prof. <a href="https://jundongli.github.io/">Jundong Li</a>, and a <b>Capital One PhD Fellow</b>.
+    I started out in physics (B.S., Xi'an Jiaotong University), and I still treat models the way a
+    physicist would: open them up, find the mechanism, then change it.
   - >
-    My research centers on LLM continual learning, with a broad interest in graph and time series.
-    <b>I am open to collaborations and discussions — feel free to reach out by email or the <a href="#say-hi">message box</a>!</b>
-    <b>Actively looking for intern!</b>
+    These days I work on <b>LLMs that keep learning after they ship</b>: editing <i>how</i> they reason
+    rather than what they say (REdit, ICLR 2026), giving them memory that knows what is worth keeping
+    (MemSuit, EMNLP 2026), and passing big-model reasoning down to small models (TeacherGRPO, EMNLP 2026).
+    On the side, I build forecasting models for graphs and time series (AdaST, NeurIPS 2026).
+    I've also shipped research as an Applied Scientist intern at AT&amp;T.
+  - >
+    <b>Open to collaborations, and actively looking for research internships.</b>
+    If anything here sparks an idea, drop me a line in the <a href="#say-hi">message box</a>.
+    (Bored? Click anywhere on this page and see what the cat does.)
 
 # Newest first. Just add a line.
 news:
   - { date: "Sep 2026", text: "One paper accepted at NeurIPS 2026 (AdaST)." }
   - { date: "Aug 2026", text: "Two papers accepted at EMNLP 2026 (one Main (MemSuit), one Findings (TeacherGRPO))." }
-  - { date: "June 2026", text: "Honored to recieve <b>Capital One Fellow</b>" }
+  - { date: "June 2026", text: "Honored to receive the <b>Capital One PhD Fellowship</b>." }
   - { date: "Jan 2026", text: "One paper accepted at ICLR 2026 (REdit)." }
   - { date: "Jan 2026", text: "One paper accepted at ISBI 2026 (BrainTAP)." }
   - { date: "Oct 2025", text: "One paper accepted at WSDM 2026 (MolEdit)." }

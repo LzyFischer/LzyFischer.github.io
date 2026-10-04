@@ -41,6 +41,7 @@
   authors: "Zhenyu Lei, Qiong Wu, Jianxiong Dong, Yinhan He, Emily Dodwell, Yushun Dong, Jundong Li"
   topic: [reasoning, edit]
   tag: "Reasoning"
+  links: { Paper: "https://arxiv.org/abs/2603.06923" }
 
 - title: "BrainTAP: Brain Disorder Prediction with Adaptive Distill and Selective Prior Integration"
   venue: "ISBI 2026"
