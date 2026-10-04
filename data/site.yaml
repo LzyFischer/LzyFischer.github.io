@@ -31,7 +31,7 @@ contact:
     - { label: "☕ Just saying hi", text: "Hi Zhenyu! Just wanted to say hi, " }
   # FormSubmit forwards each message to this inbox (free, no account).
   # The first message triggers a confirmation email from FormSubmit; click it once to activate.
-  form_action: "https://formsubmit.co/ajax/vjd5zr@outlook.com"
+  form_action: "https://formsubmit.co/ajax/vjd5zr@virginia.edu"
 
 # Paragraphs of the About section. HTML is allowed.
 about:
