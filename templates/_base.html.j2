@@ -4,7 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ profile.name }}{% if page_title %} — {{ page_title }}{% endif %}</title>
-<meta name="description" content="{{ profile.name }} — {{ profile.eyebrow }}">
+<meta name="description" content="{{ profile.tagline or profile.eyebrow }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ profile.name }}{% if page_title %} — {{ page_title }}{% endif %}">
+<meta property="og:description" content="{{ profile.tagline or profile.eyebrow }}">
+{% if profile.url %}<meta property="og:url" content="{{ profile.url }}">
+<meta property="og:image" content="{{ profile.url }}{{ profile.avatar }}">{% endif %}
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="{{ profile.favicon }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,7 +96,6 @@
       <a href="index.html#education">Experience</a>
       <a href="publications.html" class="{{ 'active' if active == 'publications' }}">Publications</a>
       <a href="playground.html" class="{{ 'active' if active == 'playground' }}">Playground</a>
-      {% if contact %}<a href="index.html#say-hi">Contact</a>{% endif %}
       <a class="cv" href="{{ profile.cv }}">CV ↓</a>
     </nav>
   </div>

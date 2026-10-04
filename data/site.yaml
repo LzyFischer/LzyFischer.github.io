@@ -6,6 +6,9 @@ profile:
   short_name: "Zhenyu Lei"
   initials: "ZL"
   eyebrow: "Ph.D. Student · Capital One Fellow"
+  # One-line summary used for link previews (X, Slack, WeChat…) and search results.
+  tagline: "Ph.D. student at UVA and Capital One PhD Fellow, working on LLM agents, memory, self-improvement and distillation."
+  url: "https://lzyfischer.github.io/"
   avatar: "assets/prof_pic.jpg"
   favicon: "assets/oneko.gif"
   email: "vjd5zr [at] virginia [dot] edu"
@@ -38,19 +41,20 @@ about:
   - >
     I am a Ph.D. student in Electrical and Computer Engineering at the
     <a href="https://www.virginia.edu/">University of Virginia</a>, advised by
-    Prof. <a href="https://jundongli.github.io/">Jundong Li</a>. Before that, I received my
-    B.S. in Physics from Xi'an Jiaotong University, where I was lucky to join the LUD Lab.
+    Prof. <a href="https://jundongli.github.io/">Jundong Li</a>, and a Capital One PhD Fellow.
+    Before that, I received my B.S. in Physics from Xi'an Jiaotong University, where I was lucky to join the LUD Lab.
     I have also interned at AT&amp;T as an Applied Scientist.
   - >
-    My research centers on LLM continual learning, with a broad interest in graph and time series.
+    I am interested in LLM agents, memory, recursive self-improvement (RSI), and distillation,
+    as well as graph and time series learning.
     <b>I am open to collaborations and discussions — feel free to reach out by email or the <a href="#say-hi">message box</a>!</b>
-    <b>Actively looking for intern!</b>
+    <b>Actively looking for research internships!</b>
 
 # Newest first. Just add a line.
 news:
   - { date: "Sep 2026", text: "One paper accepted at NeurIPS 2026 (AdaST)." }
   - { date: "Aug 2026", text: "Two papers accepted at EMNLP 2026 (one Main (MemSuit), one Findings (TeacherGRPO))." }
-  - { date: "June 2026", text: "Honored to recieve <b>Capital One Fellow</b>" }
+  - { date: "June 2026", text: "Honored to receive the <b>Capital One PhD Fellowship</b>." }
   - { date: "Jan 2026", text: "One paper accepted at ICLR 2026 (REdit)." }
   - { date: "Jan 2026", text: "One paper accepted at ISBI 2026 (BrainTAP)." }
   - { date: "Oct 2025", text: "One paper accepted at WSDM 2026 (MolEdit)." }
