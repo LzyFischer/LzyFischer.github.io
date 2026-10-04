@@ -166,6 +166,7 @@ def main():
     common = dict(
         site=site,
         profile=site.get("profile", {}),
+        contact=site.get("contact"),
         updated=datetime.date.today().strftime("%b %Y"),
         year_now=datetime.date.today().year,
     )

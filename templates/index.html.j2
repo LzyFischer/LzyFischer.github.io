@@ -2,18 +2,35 @@
 {% from "_paper.html.j2" import paper_row %}
 
 {% block extra_css %}
-.hero{padding:64px 0 8px;}
-.hero .wrap{display:flex;gap:48px;align-items:center;}
-.hero img{width:200px;height:200px;object-fit:cover;border-radius:12px;border:1px solid #d5dde8;flex-shrink:0;}
-.hero-text{display:flex;flex-direction:column;gap:12px;}
-.contact{display:flex;flex-direction:column;gap:4px;font-size:16px;color:var(--muted);}
+.hero{padding:36px 0 4px;}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);gap:40px;align-items:start;}
+.hero-main{display:flex;flex-direction:column;gap:18px;min-width:0;}
+.id-row{display:flex;gap:24px;align-items:center;}
+.id-row img{width:128px;height:128px;object-fit:cover;border-radius:12px;border:1px solid #d5dde8;flex-shrink:0;}
+.hero-text{display:flex;flex-direction:column;gap:8px;min-width:0;}
+.hero h1{font-size:38px;}
+.contact{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:15px;color:var(--muted);}
 .contact b{color:var(--ink);}
-.buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;}
-.content{display:flex;flex-direction:column;gap:56px;padding:56px 0 32px;}
+.buttons{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;}
+.buttons .btn{padding:8px 14px;font-size:13.5px;}
+.hero .prose p{font-size:16px;line-height:1.65;margin-bottom:10px;}
+.hero-side{display:flex;flex-direction:column;gap:14px;min-width:0;}
+.card{background:#f7f9fc;border:1px solid #e3e8ef;border-radius:10px;padding:16px 18px;}
+.card-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;}
+.card-head h2{margin:0;font-size:16px;font-weight:800;}
+.card-head span{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);}
+.hero .news-row{display:flex;gap:12px;padding:6px 0;font-size:14.5px;line-height:1.5;border-top:1px solid var(--line-2);}
+.hero .card-head + .news-row{border-top:0;}
+.hero .news-row .d{flex:0 0 68px;font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--accent);padding-top:2px;}
+.reach{background:var(--accent);border-color:var(--accent);color:#e9f0fa;font-size:14px;line-height:1.5;display:flex;flex-direction:column;gap:8px;}
+.reach b{color:#fff;font-size:16px;}
+.reach .btn{align-self:flex-start;background:#fff;border-color:#fff;color:var(--accent);font-weight:700;}
+.reach .btn:hover{color:var(--accent-dark);}
+.content{display:flex;flex-direction:column;gap:44px;padding:40px 0 32px;}
+.content .sec-head h2{font-size:26px;}
+.content .paper{padding:16px 4px;}
 .prose p{margin:0 0 14px;font-size:17px;line-height:1.75;color:var(--ink-2);}
 .prose p:last-child{margin-bottom:0;}
-.news-row{display:flex;gap:24px;padding:10px 0;font-size:17px;line-height:1.55;}
-.news-row .d{flex:0 0 96px;font-family:var(--mono);font-size:15px;font-weight:500;color:var(--accent);padding-top:1px;}
 .edu{display:flex;flex-direction:column;gap:22px;}
 .edu-row{display:flex;gap:24px;align-items:center;}
 .edu-mark{width:64px;height:64px;flex-shrink:0;border-radius:10px;border:1px solid var(--line);background:var(--tint);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:var(--accent);}
@@ -25,7 +42,24 @@
 .note{font-size:14px;color:var(--soft);}
 .stats{display:flex;gap:12px;flex-wrap:wrap;}
 .stat{display:flex;align-items:baseline;gap:8px;padding:10px 16px;border:1px solid var(--line);border-radius:10px;background:var(--tint);color:var(--ink-2);font-size:15px;}
+.stat:hover{text-decoration:none;border-color:var(--accent);color:var(--accent);}
 .stat b{font-family:var(--mono);font-size:22px;font-weight:700;color:var(--accent);}
+
+/* ---- contact ---- */
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:40px;align-items:start;}
+.contact-grid.solo{grid-template-columns:minmax(0,680px);}
+.contact-grid h3{margin:0 0 4px;font-size:18px;font-weight:800;}
+.contact-grid .sub{margin:0 0 14px;font-size:14.5px;color:var(--soft);line-height:1.5;}
+.msg-form{display:flex;flex-direction:column;gap:10px;}
+.msg-form .row{display:flex;gap:10px;}
+.msg-form input,.msg-form textarea{width:100%;font:inherit;font-size:15px;color:var(--ink);padding:10px 12px;border:1px solid var(--btn-line);border-radius:6px;background:#fff;}
+.msg-form input:focus,.msg-form textarea:focus{outline:2px solid var(--accent);outline-offset:-1px;border-color:var(--accent);}
+.msg-form textarea{min-height:120px;resize:vertical;}
+.msg-form button{align-self:flex-start;cursor:pointer;font-family:inherit;}
+.msg-form .hp{position:absolute;left:-9999px;}
+.form-status{font-size:14px;color:var(--soft);min-height:1.4em;}
+.form-status.ok{color:#1b7a3d;}
+.form-status.err{color:#b42318;}
 
 #oneko{width:32px;height:32px;position:fixed;pointer-events:none;background-image:url('assets/oneko.gif');image-rendering:pixelated;z-index:9999;left:0;top:0;}
 .shuttle{position:fixed;width:22px;height:26px;pointer-events:none;z-index:9998;}
@@ -34,12 +68,16 @@
 .shuttle.toss{animation:toss .6s ease-out;}
 .shuttle.fade{transition:opacity .3s;opacity:0;}
 
+@media (max-width: 900px){
+  .hero{padding-top:32px;}
+  .hero-grid,.contact-grid{grid-template-columns:1fr;gap:28px;}
+}
 @media (max-width: 760px){
-  .hero .wrap{flex-direction:column;align-items:flex-start;gap:24px;}
-  .hero img{width:140px;height:140px;}
+  .id-row{flex-direction:column;align-items:flex-start;gap:20px;}
+  .id-row img{width:120px;height:120px;}
+  .hero h1{font-size:32px;}
   .two-col{grid-template-columns:1fr;gap:40px;}
-  .news-row{flex-direction:column;gap:2px;}
-  .news-row .d{flex-basis:auto;}
+  .msg-form .row{flex-direction:column;}
   .edu-row{flex-wrap:wrap;}
   .edu-dates{width:100%;padding-left:88px;}
 }
@@ -47,45 +85,55 @@
 
 {% block content %}
 <section class="hero">
-  <div class="wrap">
-    <img src="{{ profile.avatar }}" alt="Portrait of {{ profile.short_name }}">
-    <div class="hero-text">
-      <div class="eyebrow">{{ profile.eyebrow }}</div>
-      <h1>{{ profile.name }}</h1>
-      <div class="contact">
-        <span><b>E-mail:</b> {{ profile.email }}</span>
-        {% if profile.address %}<span><b>Address:</b> {{ profile.address }}</span>{% endif %}
+  <div class="wrap hero-grid">
+    <div class="hero-main">
+      <div class="id-row">
+        <img src="{{ profile.avatar }}" alt="Portrait of {{ profile.short_name }}">
+        <div class="hero-text">
+          <div class="eyebrow">{{ profile.eyebrow }}</div>
+          <h1>{{ profile.name }}</h1>
+          <div class="contact">
+            <span><b>E-mail:</b> {{ profile.email }}</span>
+            {% if profile.address %}<span><b>Address:</b> {{ profile.address }}</span>{% endif %}
+          </div>
+          <div class="buttons">
+            <a class="btn primary" href="{{ profile.cv }}">CV</a>
+            {% for l in profile.links %}<a class="btn" href="{{ l.url }}">{{ l.label }}</a>{% endfor %}
+          </div>
+        </div>
       </div>
-      <div class="buttons">
-        <a class="btn primary" href="{{ profile.cv }}">CV</a>
-        {% for l in profile.links %}<a class="btn" href="{{ l.url }}">{{ l.label }}</a>{% endfor %}
+      <div id="about" class="prose">{% for p in site.about %}<p>{{ p }}</p>{% endfor %}</div>
+      <div class="stats">
+        <a class="stat" href="publications.html"><b>{{ stats.total }}</b><span>papers</span></a>
+        <a class="stat" href="publications.html"><b>{{ stats.first_author }}</b><span>first-author papers</span></a>
+        <a class="stat" href="#research"><span>Selected research ↓</span></a>
       </div>
     </div>
+
+    <aside class="hero-side">
+      {% if site.news %}
+      <div id="news" class="card">
+        <div class="card-head"><h2>News</h2><span>Latest</span></div>
+        {% for n in site.news[:6] %}<div class="news-row"><span class="d">{{ n.date }}</span><span>{{ n.text }}</span></div>{% endfor %}
+      </div>
+      {% endif %}
+      {% if contact %}
+      <div class="card reach">
+        <b>{{ contact.cta_title }}</b>
+        <span>{{ contact.cta_text }}</span>
+        <a class="btn" href="#contact">Leave a message →</a>
+      </div>
+      {% endif %}
+    </aside>
   </div>
 </section>
 
 <div class="wrap content">
 
-  <section id="about" class="sec">
-    <div class="sec-head"><div><span class="kicker">About</span><h2>About me</h2></div></div>
-    <div class="prose">{% for p in site.about %}<p>{{ p }}</p>{% endfor %}</div>
-  </section>
-
-  {% if site.news %}
-  <section id="news" class="sec">
-    <div class="sec-head"><div><span class="kicker">News &amp; notices</span><h2>News</h2></div></div>
-    <div>{% for n in site.news %}<div class="news-row"><span class="d">{{ n.date }}</span><span>{{ n.text }}</span></div>{% endfor %}</div>
-  </section>
-  {% endif %}
-
   <section id="research" class="sec">
     <div class="sec-head">
       <div><span class="kicker">Publications</span><h2>Selected Research</h2></div>
       <a class="more" href="publications.html">All publications →</a>
-    </div>
-    <div class="stats">
-      <div class="stat"><b>{{ stats.total }}</b><span>papers</span></div>
-      <div class="stat"><b>{{ stats.first_author }}</b><span>first-author papers</span></div>
     </div>
     <div class="papers">{% for p in selected %}{{ paper_row(p) }}{% endfor %}</div>
     <div class="note">* equal contribution</div>
@@ -118,10 +166,68 @@
   </div>
 
 
+  {% if contact %}
+  <section id="contact" class="sec">
+    <div class="sec-head"><div><span class="kicker">Get in touch</span><h2>Contact me</h2></div></div>
+    {% set has_giscus = contact.giscus and contact.giscus.repo_id and contact.giscus.category_id %}
+    <div class="contact-grid{{ '' if has_giscus else ' solo' }}">
+      <div>
+        <h3>Send me a private message</h3>
+        <p class="sub">Questions about a paper, collaboration ideas, or internship opportunities. It goes straight to my inbox; leave your email if you'd like a reply.</p>
+        <form class="msg-form" id="msg-form" action="{{ contact.form_action }}" method="POST">
+          <div class="row">
+            <input name="name" placeholder="Your name" autocomplete="name">
+            <input name="email" type="email" placeholder="Your email (optional)" autocomplete="email">
+          </div>
+          <textarea name="message" placeholder="Your message" required></textarea>
+          <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="_subject" value="New message from your website">
+          <input type="hidden" name="_captcha" value="false">
+          <button class="btn primary" type="submit">Send message</button>
+          <div class="form-status" id="form-status" role="status"></div>
+        </form>
+      </div>
+      {% if has_giscus %}
+      <div>
+        <h3>Or leave a public comment</h3>
+        <p class="sub">Sign in with GitHub to comment. Everyone can see these, and I reply here too.</p>
+        <script src="https://giscus.app/client.js"
+          data-repo="{{ contact.giscus.repo }}"
+          data-repo-id="{{ contact.giscus.repo_id }}"
+          data-category="{{ contact.giscus.category }}"
+          data-category-id="{{ contact.giscus.category_id }}"
+          data-mapping="specific" data-term="Guestbook" data-strict="1"
+          data-reactions-enabled="1" data-emit-metadata="0"
+          data-input-position="top" data-theme="light" data-lang="en" data-loading="lazy"
+          crossorigin="anonymous" async></script>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+  {% endif %}
+
 </div>
 {% endblock %}
 
 {% block scripts %}
+<script>
+// Private message form: posts to the form service in the background and shows the result inline.
+(function(){
+  var form = document.getElementById('msg-form');
+  if (!form) return;
+  var status = document.getElementById('form-status');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button');
+    btn.disabled = true; status.className = 'form-status'; status.textContent = 'Sending…';
+    fetch(form.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
+      .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(){ form.reset(); status.className = 'form-status ok'; status.textContent = 'Thanks! Your message was sent.'; })
+      .catch(function(){ status.className = 'form-status err'; status.textContent = 'Sorry, that did not go through. Please email me instead.'; })
+      .finally(function(){ btn.disabled = false; });
+  });
+})();
+</script>
 <script>
 // Easter egg: click anywhere and the cat fetches a badminton shuttlecock.
 // Cat animation adapted from oneko.js (MIT) by adryd325: https://github.com/adryd325/oneko.js
