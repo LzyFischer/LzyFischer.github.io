@@ -14,18 +14,31 @@
 .buttons{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;}
 .buttons .btn{padding:8px 14px;font-size:13.5px;}
 .hero .prose p{font-size:16px;line-height:1.65;margin-bottom:10px;}
-.hero-side{display:flex;flex-direction:column;gap:14px;min-width:0;}
+.hero-side{display:flex;flex-direction:column;gap:14px;min-width:0;position:sticky;top:96px;}
 .card{background:#f7f9fc;border:1px solid #e3e8ef;border-radius:10px;padding:16px 18px;}
 .card-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;}
 .card-head h2{margin:0;font-size:16px;font-weight:800;}
 .card-head span{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);}
-.hero .news-row{display:flex;gap:12px;padding:6px 0;font-size:14.5px;line-height:1.5;border-top:1px solid var(--line-2);}
+.hero .news-row{display:flex;gap:14px;padding:5px 0;font-size:14.5px;line-height:1.5;border-top:1px solid var(--line-2);}
 .hero .card-head + .news-row{border-top:0;}
 .hero .news-row .d{flex:0 0 68px;font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--accent);padding-top:2px;}
-.reach{background:var(--accent);border-color:var(--accent);color:#e9f0fa;font-size:14px;line-height:1.5;display:flex;flex-direction:column;gap:8px;}
-.reach b{color:#fff;font-size:16px;}
-.reach .btn{align-self:flex-start;background:#fff;border-color:#fff;color:var(--accent);font-weight:700;}
-.reach .btn:hover{color:var(--accent-dark);}
+.chat{background:#fff;border:1.5px solid var(--accent);border-radius:12px;padding:16px 18px;box-shadow:0 6px 20px rgba(29,79,145,.10);display:flex;flex-direction:column;gap:10px;}
+.chat-head{display:flex;gap:12px;align-items:center;}
+.chat-head img{width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0;}
+.chat-head b{display:block;font-size:16px;font-weight:800;color:var(--ink);}
+.chat-head span{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--soft);}
+.chat-head span::before{content:"";width:8px;height:8px;border-radius:50%;background:#22a05a;}
+.chat-text{font-size:14px;line-height:1.5;color:var(--ink-2);}
+.chips{display:flex;flex-wrap:wrap;gap:6px;}
+.chip{font:inherit;font-size:13px;font-weight:600;padding:5px 10px;border-radius:999px;border:1px solid var(--btn-line);background:var(--tint);color:var(--ink-2);cursor:pointer;}
+.chip:hover,.chip.on{border-color:var(--accent);color:var(--accent);background:#fff;}
+.chat .msg-form{gap:8px;}
+.chat .msg-form textarea{min-height:78px;font-size:14.5px;}
+.chat .msg-form input{font-size:14px;padding:8px 10px;}
+.chat .send-row{display:flex;gap:8px;}
+.chat .send-row input{flex:1;min-width:0;}
+.chat .send-row button{flex-shrink:0;}
+.chat .fine{font-size:12px;color:var(--soft);}
 .content{display:flex;flex-direction:column;gap:44px;padding:40px 0 32px;}
 .content .sec-head h2{font-size:26px;}
 .content .paper{padding:16px 4px;}
@@ -57,7 +70,7 @@
 .msg-form textarea{min-height:120px;resize:vertical;}
 .msg-form button{align-self:flex-start;cursor:pointer;font-family:inherit;}
 .msg-form .hp{position:absolute;left:-9999px;}
-.form-status{font-size:14px;color:var(--soft);min-height:1.4em;}
+.form-status{font-size:13px;color:var(--soft);min-height:1.4em;}
 .form-status.ok{color:#1b7a3d;}
 .form-status.err{color:#b42318;}
 
@@ -71,6 +84,7 @@
 @media (max-width: 900px){
   .hero{padding-top:32px;}
   .hero-grid,.contact-grid{grid-template-columns:1fr;gap:28px;}
+  .hero-side{position:static;}
 }
 @media (max-width: 760px){
   .id-row{flex-direction:column;align-items:flex-start;gap:20px;}
@@ -103,25 +117,34 @@
         </div>
       </div>
       <div id="about" class="prose">{% for p in site.about %}<p>{{ p }}</p>{% endfor %}</div>
-      <div class="stats">
-        <a class="stat" href="publications.html"><b>{{ stats.total }}</b><span>papers</span></a>
-        <a class="stat" href="publications.html"><b>{{ stats.first_author }}</b><span>first-author papers</span></a>
-        <a class="stat" href="#research"><span>Selected research ↓</span></a>
-      </div>
-    </div>
-
-    <aside class="hero-side">
       {% if site.news %}
       <div id="news" class="card">
         <div class="card-head"><h2>News</h2><span>Latest</span></div>
-        {% for n in site.news[:6] %}<div class="news-row"><span class="d">{{ n.date }}</span><span>{{ n.text }}</span></div>{% endfor %}
+        {% for n in site.news[:5] %}<div class="news-row"><span class="d">{{ n.date }}</span><span>{{ n.text }}</span></div>{% endfor %}
       </div>
       {% endif %}
+    </div>
+
+    <aside class="hero-side">
       {% if contact %}
-      <div class="card reach">
-        <b>{{ contact.cta_title }}</b>
-        <span>{{ contact.cta_text }}</span>
-        <a class="btn" href="#contact">Leave a message →</a>
+      <div class="chat" id="say-hi">
+        <div class="chat-head">
+          <img src="{{ profile.avatar }}" alt="">
+          <div><b>{{ contact.chat_title }}</b><span>{{ contact.chat_status }}</span></div>
+        </div>
+        <div class="chat-text">{{ contact.chat_text }}</div>
+        <div class="chips">{% for c in contact.starters %}<button type="button" class="chip" data-starter="{{ c.text | e }}">{{ c.label }}</button>{% endfor %}</div>
+        <form class="msg-form" action="{{ contact.form_action }}" method="POST">
+          <textarea name="message" placeholder="{{ contact.chat_placeholder }}" required></textarea>
+          <div class="send-row">
+            <input name="email" type="email" placeholder="Email for a reply (optional)" autocomplete="email">
+            <button class="btn primary" type="submit">Send ➜</button>
+          </div>
+          <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="_subject" value="New message from your website (quick chat)">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="form-status fine" role="status">{{ contact.chat_fine }}</div>
+        </form>
       </div>
       {% endif %}
     </aside>
@@ -134,6 +157,10 @@
     <div class="sec-head">
       <div><span class="kicker">Publications</span><h2>Selected Research</h2></div>
       <a class="more" href="publications.html">All publications →</a>
+    </div>
+    <div class="stats">
+      <a class="stat" href="publications.html"><b>{{ stats.total }}</b><span>papers</span></a>
+      <a class="stat" href="publications.html"><b>{{ stats.first_author }}</b><span>first-author papers</span></a>
     </div>
     <div class="papers">{% for p in selected %}{{ paper_row(p) }}{% endfor %}</div>
     <div class="note">* equal contribution</div>
@@ -174,7 +201,7 @@
       <div>
         <h3>Send me a private message</h3>
         <p class="sub">Questions about a paper, collaboration ideas, or internship opportunities. It goes straight to my inbox; leave your email if you'd like a reply.</p>
-        <form class="msg-form" id="msg-form" action="{{ contact.form_action }}" method="POST">
+        <form class="msg-form" action="{{ contact.form_action }}" method="POST">
           <div class="row">
             <input name="name" placeholder="Your name" autocomplete="name">
             <input name="email" type="email" placeholder="Your email (optional)" autocomplete="email">
@@ -184,7 +211,7 @@
           <input type="hidden" name="_subject" value="New message from your website">
           <input type="hidden" name="_captcha" value="false">
           <button class="btn primary" type="submit">Send message</button>
-          <div class="form-status" id="form-status" role="status"></div>
+          <div class="form-status" role="status"></div>
         </form>
       </div>
       {% if has_giscus %}
@@ -211,20 +238,30 @@
 
 {% block scripts %}
 <script>
-// Private message form: posts to the form service in the background and shows the result inline.
+// Message forms: post to the form service in the background and show the result inline.
 (function(){
-  var form = document.getElementById('msg-form');
-  if (!form) return;
-  var status = document.getElementById('form-status');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var btn = form.querySelector('button');
-    btn.disabled = true; status.className = 'form-status'; status.textContent = 'Sending…';
-    fetch(form.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
-      .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(function(){ form.reset(); status.className = 'form-status ok'; status.textContent = 'Thanks! Your message was sent.'; })
-      .catch(function(){ status.className = 'form-status err'; status.textContent = 'Sorry, that did not go through. Please email me instead.'; })
-      .finally(function(){ btn.disabled = false; });
+  document.querySelectorAll('.msg-form').forEach(function(form){
+    var status = form.querySelector('.form-status');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var btn = form.querySelector('button[type=submit]');
+      btn.disabled = true; status.className = 'form-status'; status.textContent = 'Sending…';
+      fetch(form.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
+        .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function(){ form.reset(); status.className = 'form-status ok'; status.textContent = 'Got it, thank you! Your message is in my inbox.'; })
+        .catch(function(){ status.className = 'form-status err'; status.textContent = 'Sorry, that did not go through. Please email me instead.'; })
+        .finally(function(){ btn.disabled = false; });
+    });
+  });
+  // Conversation starters: one click fills the box so nobody has to face a blank page.
+  document.querySelectorAll('.chip').forEach(function(chip){
+    chip.addEventListener('click', function(){
+      var box = chip.closest('.chat').querySelector('textarea');
+      document.querySelectorAll('.chip.on').forEach(function(c){ c.classList.remove('on'); });
+      chip.classList.add('on');
+      box.value = chip.dataset.starter; box.focus();
+      box.setSelectionRange(box.value.length, box.value.length);
+    });
   });
 })();
 </script>

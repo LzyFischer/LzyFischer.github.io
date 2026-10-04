@@ -18,8 +18,18 @@ profile:
 
 # "Contact me" section on the homepage (and the blue box next to News).
 contact:
-  cta_title: "Want to chat?"
-  cta_text: "Collaborations, questions about my papers, or internship opportunities. Leave me a message right here, no email needed."
+  # Quick-chat box next to News (first screen on desktop).
+  chat_title: "Hi, I'm Zhenyu 👋"
+  chat_status: "Open to chats, collabs & internships"
+  chat_text: "No need for a formal email. Ask me anything, pitch an idea, or just say hi. Anonymous is fine, and no question is too small."
+  chat_placeholder: "Type a quick note…"
+  chat_fine: "Goes straight to my inbox. Leave an email if you'd like a reply."
+  # Buttons that pre-fill the box with a first sentence.
+  starters:
+    - { label: "💡 Collab idea", text: "Hi Zhenyu, I have an idea we might work on together: " }
+    - { label: "📄 About a paper", text: "Hi Zhenyu, I have a question about your paper " }
+    - { label: "💼 Internship / hiring", text: "Hi Zhenyu, I'm reaching out about an internship / position: " }
+    - { label: "☕ Just saying hi", text: "Hi Zhenyu! Just wanted to say hi, " }
   # Private messages: FormSubmit forwards each message to this inbox (free, no account).
   # The first message triggers a confirmation email from FormSubmit; click it once to activate.
   # After that, you can replace the email below with the random string FormSubmit gives you.
@@ -42,7 +52,7 @@ about:
     I have also interned at AT&amp;T as an Applied Scientist.
   - >
     My research centers on LLM continual learning, with a broad interest in graph and time series.
-    <b>I am open to collaborations and discussions — feel free to reach out by email or the <a href="#contact">message box</a>!</b>
+    <b>I am open to collaborations and discussions — feel free to reach out by email or the <a href="#say-hi">message box</a>!</b>
     <b>Actively looking for intern!</b>
 
 # Newest first. Just add a line.
