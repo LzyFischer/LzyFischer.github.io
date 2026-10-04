@@ -58,13 +58,7 @@
 .stat:hover{text-decoration:none;border-color:var(--accent);color:var(--accent);}
 .stat b{font-family:var(--mono);font-size:22px;font-weight:700;color:var(--accent);}
 
-/* ---- contact ---- */
-.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:40px;align-items:start;}
-.contact-grid.solo{grid-template-columns:minmax(0,680px);}
-.contact-grid h3{margin:0 0 4px;font-size:18px;font-weight:800;}
-.contact-grid .sub{margin:0 0 14px;font-size:14.5px;color:var(--soft);line-height:1.5;}
 .msg-form{display:flex;flex-direction:column;gap:10px;}
-.msg-form .row{display:flex;gap:10px;}
 .msg-form input,.msg-form textarea{width:100%;font:inherit;font-size:15px;color:var(--ink);padding:10px 12px;border:1px solid var(--btn-line);border-radius:6px;background:#fff;}
 .msg-form input:focus,.msg-form textarea:focus{outline:2px solid var(--accent);outline-offset:-1px;border-color:var(--accent);}
 .msg-form textarea{min-height:120px;resize:vertical;}
@@ -83,7 +77,7 @@
 
 @media (max-width: 900px){
   .hero{padding-top:32px;}
-  .hero-grid,.contact-grid{grid-template-columns:1fr;gap:28px;}
+  .hero-grid{grid-template-columns:1fr;gap:28px;}
   .hero-side{position:static;}
 }
 @media (max-width: 760px){
@@ -91,7 +85,6 @@
   .id-row img{width:120px;height:120px;}
   .hero h1{font-size:32px;}
   .two-col{grid-template-columns:1fr;gap:40px;}
-  .msg-form .row{flex-direction:column;}
   .edu-row{flex-wrap:wrap;}
   .edu-dates{width:100%;padding-left:88px;}
 }
@@ -193,45 +186,6 @@
   </div>
 
 
-  {% if contact %}
-  <section id="contact" class="sec">
-    <div class="sec-head"><div><span class="kicker">Get in touch</span><h2>Contact me</h2></div></div>
-    {% set has_giscus = contact.giscus and contact.giscus.repo_id and contact.giscus.category_id %}
-    <div class="contact-grid{{ '' if has_giscus else ' solo' }}">
-      <div>
-        <h3>Send me a private message</h3>
-        <p class="sub">Questions about a paper, collaboration ideas, or internship opportunities. It goes straight to my inbox; leave your email if you'd like a reply.</p>
-        <form class="msg-form" action="{{ contact.form_action }}" method="POST">
-          <div class="row">
-            <input name="name" placeholder="Your name" autocomplete="name">
-            <input name="email" type="email" placeholder="Your email (optional)" autocomplete="email">
-          </div>
-          <textarea name="message" placeholder="Your message" required></textarea>
-          <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <input type="hidden" name="_subject" value="New message from your website">
-          <input type="hidden" name="_captcha" value="false">
-          <button class="btn primary" type="submit">Send message</button>
-          <div class="form-status" role="status"></div>
-        </form>
-      </div>
-      {% if has_giscus %}
-      <div>
-        <h3>Or leave a public comment</h3>
-        <p class="sub">Sign in with GitHub to comment. Everyone can see these, and I reply here too.</p>
-        <script src="https://giscus.app/client.js"
-          data-repo="{{ contact.giscus.repo }}"
-          data-repo-id="{{ contact.giscus.repo_id }}"
-          data-category="{{ contact.giscus.category }}"
-          data-category-id="{{ contact.giscus.category_id }}"
-          data-mapping="specific" data-term="Guestbook" data-strict="1"
-          data-reactions-enabled="1" data-emit-metadata="0"
-          data-input-position="top" data-theme="light" data-lang="en" data-loading="lazy"
-          crossorigin="anonymous" async></script>
-      </div>
-      {% endif %}
-    </div>
-  </section>
-  {% endif %}
 
 </div>
 {% endblock %}
@@ -248,7 +202,11 @@
       btn.disabled = true; status.className = 'form-status'; status.textContent = 'Sending…';
       fetch(form.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
         .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
-        .then(function(){ form.reset(); status.className = 'form-status ok'; status.textContent = 'Got it, thank you! Your message is in my inbox.'; })
+        .then(function(d){
+          // FormSubmit answers 200 with success "false" (e.g. form not activated yet), so check the body too.
+          if (String(d.success) !== 'true') throw new Error(d.message || 'not sent');
+          form.reset(); status.className = 'form-status ok'; status.textContent = 'Got it, thank you! Your message is in my inbox.';
+        })
         .catch(function(){ status.className = 'form-status err'; status.textContent = 'Sorry, that did not go through. Please email me instead.'; })
         .finally(function(){ btn.disabled = false; });
     });
