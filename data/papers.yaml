@@ -29,7 +29,7 @@
   tag: "Memory (oral)"
 
 - title: "TeacherGRPO: Closing the Capacity Gap in Reasoning Distillation via Teacher Alignment"
-  venue: "EMNLP 2026 Findings"
+  venue: "EMNLP 2026"
   year: 2026
   authors: "Zhenyu Lei, Zihan Chen, Yaochen Zhu, Shangbin Feng, Zaiyi Zheng, Ruocheng Guo, Yushun Dong, Jundong Li"
   topic: [distill, reasoning]
@@ -49,6 +49,7 @@
   authors: "Zhenyu Lei, Aiying Zhang, Song Wang, Han Fan, Jundong Li"
   topic: brain
   tag: "Brain"
+  links: { Paper: "https://arxiv.org/abs/2602.09294" }
 
 - title: "MolEdit: Knowledge Editing for Multimodal Molecule Language Models"
   venue: "WSDM 2026"
@@ -74,11 +75,12 @@
   links: { Paper: "https://arxiv.org/abs/2504.02181" }
 
 - title: "Uncovering Latent Communication Patterns in Brain Networks via Adaptive Flow Routing"
-  venue: "arXiv 2026"
+  venue: "ICML 2026"
   year: 2026
   authors: "Tianhao Huang, Guanghui Min, Zhenyu Lei, Aiying Zhang, Chen Chen"
   topic: brain
   tag: "Brain"
+  links: { Paper: "https://arxiv.org/abs/2602.00561" }
 
 - title: "MoCo: A One-Stop Shop for Model Collaboration Research"
   venue: "arXiv 2026"
@@ -89,11 +91,12 @@
   links: { Paper: "https://arxiv.org/abs/2601.21257" }
 
 - title: "From Cross-Task Examples to In-Task Prompts: A Graph-Based Pseudo-Labeling Framework for In-context Learning"
-  venue: "EMNLP 2025 Findings"
+  venue: "EMNLP 2025"
   year: 2025
   authors: "Zihan Chen, Song Wang, Xingbo Fu, Chengshuai Shi, Zhenyu Lei, Cong Shen, Jundong Li"
   topic: reasoning
   tag: "In-context learning"
+  links: { Paper: "https://arxiv.org/abs/2510.24528", Code: "https://github.com/Chen-1031/Cross-Task-ICL" }
 
 - title: "Learning from Diverse Reasoning Paths with Routing and Collaboration"
   venue: "EMNLP 2025"
@@ -117,6 +120,7 @@
   authors: "Xingbo Fu, Zehong Wang, Zihan Chen, Jiazheng Li, Yaochen Zhu, Zhenyu Lei, Cong Shen, Yanfang Ye, Chuxu Zhang, Jundong Li"
   topic: graph
   tag: "Survey"
+  links: { Paper: "https://arxiv.org/abs/2506.08326" }
 
 - title: "Fairness-Aware Graph Learning: A Benchmark"
   venue: "KDD 2025"
@@ -124,6 +128,7 @@
   authors: "Yushun Dong, Song Wang, Zhenyu Lei, Zaiyi Zheng, Jing Ma, Chen Chen, Jundong Li"
   topic: graph
   tag: "Benchmark"
+  links: { Paper: "https://arxiv.org/abs/2407.12112" }
 
 - title: "Energy-Based Models for Predicting Mutational Effects on Proteins"
   venue: "KDD 2025"
@@ -131,6 +136,7 @@
   authors: "Patrick Soga, Zhenyu Lei, Yinhan He, Camille L. Bilodeau, Jundong Li"
   topic: brain
   tag: "AI for science"
+  links: { Paper: "https://arxiv.org/abs/2508.10629" }
 
 - title: "ST-FiT: Inductive Spatial-Temporal Forecasting with Limited Training Data"
   venue: "AAAI 2025"
@@ -156,7 +162,7 @@
   tag: "AI for science"
 
 - title: "Harnessing Large Language Models for Disaster Management: A Survey"
-  venue: "ACL 2025 Findings"
+  venue: "ACL 2025"
   year: 2025
   authors: "Zhenyu Lei, Yushun Dong, Weiyu Li, Rong Ding, Qi R. Wang, Jundong Li"
   topic: brain
@@ -169,6 +175,7 @@
   authors: "Song Wang, Zhenyu Lei, Zhen Tan, Jundong Li, Javier Rasero, Aiying Zhang, Chirag Agarwal"
   topic: brain
   tag: "Brain"
+  links: { Paper: "https://arxiv.org/abs/2510.03351" }
 
 - title: "Large Language Models for Data Science: A Survey"
   venue: "arXiv 2025"
@@ -191,6 +198,7 @@
   authors: "Yushun Dong, Zhenyu Lei, Zaiyi Zheng, Song Wang, Jing Ma, Alex Jing Huang, Chen Chen, Jundong Li"
   topic: graph
   tag: "Library"
+  links: { Code: "https://github.com/yushundong/PyGDebias" }
 
 - title: "LMBot: Distilling Graph Knowledge into Language Model for Graph-less Deployment in Twitter Bot Detection"
   venue: "WSDM 2024"
@@ -214,6 +222,7 @@
   authors: "Shangbin Feng, Zhaoxuan Tan, Wenqian Zhang, Zhenyu Lei, Yulia Tsvetkov"
   topic: llm
   tag: "Long document"
+  links: { Paper: "https://aclanthology.org/2023.acl-long.118/" }
 
 - title: "HOFA: Twitter Bot Detection with Homophily-Oriented Augmentation and Frequency Adaptive Attention"
   venue: "arXiv 2023"
@@ -221,6 +230,7 @@
   authors: "Sen Ye, Zhaoxuan Tan, Zhenyu Lei, Ruijie He, Hongrui Wang, Qinghua Zheng, Minnan Luo"
   topic: graph
   tag: "Bot detection"
+  links: { Paper: "https://arxiv.org/abs/2306.12870" }
 
 - title: "TwiBot-22: Towards Graph-Based Twitter Bot Detection"
   venue: "NeurIPS 2022 D&B"
@@ -236,3 +246,4 @@
   authors: "Wenqian Zhang, Shangbin Feng, Zilong Chen, Zhenyu Lei, Jundong Li, Minnan Luo"
   topic: graph
   tag: "Graph + text"
+  links: { Paper: "https://aclanthology.org/2022.naacl-main.304/" }
