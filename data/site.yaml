@@ -53,7 +53,7 @@ about:
 # Newest first. Just add a line.
 news:
   - { date: "Sep 2026", text: "One paper accepted at NeurIPS 2026 (AdaST)." }
-  - { date: "Aug 2026", text: "Two papers accepted at EMNLP 2026 (one Main (MemSuit), one Findings (TeacherGRPO))." }
+  - { date: "Aug 2026", text: "Two papers accepted at EMNLP 2026 (MemSuit and TeacherGRPO)." }
   - { date: "June 2026", text: "Honored to receive the <b>Capital One PhD Fellowship</b>." }
   - { date: "Jan 2026", text: "One paper accepted at ICLR 2026 (REdit)." }
   - { date: "Jan 2026", text: "One paper accepted at ISBI 2026 (BrainTAP)." }

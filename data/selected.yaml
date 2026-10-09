@@ -3,6 +3,7 @@
 - title: "Reforming the Mechanism: Editing Reasoning Patterns in LLMs with Circuit Reshaping"
 - title: "Grounding Memory Summarization in Utility Intent"
 - title: "Learning from Diverse Reasoning Paths with Routing and Collaboration"
+- title: "TeacherGRPO: Closing the Capacity Gap in Reasoning Distillation via Teacher Alignment"
 - title: "MolEdit: Knowledge Editing for Multimodal Molecule Language Models"
 - title: "AdaST: Adaptive Coupling for Spatial-Temporal Forecasting"
 - title: "ST-FiT: Inductive Spatial-Temporal Forecasting with Limited Training Data"
