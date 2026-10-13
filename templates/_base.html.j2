@@ -9,7 +9,9 @@
 <meta property="og:title" content="{{ profile.name }}{% if page_title %} — {{ page_title }}{% endif %}">
 <meta property="og:description" content="{{ profile.tagline or profile.eyebrow }}">
 {% if profile.url %}<meta property="og:url" content="{{ profile.url }}">
-<meta property="og:image" content="{{ profile.url }}{{ profile.avatar }}">{% endif %}
+<meta property="og:image" content="{{ profile.url }}{{ profile.avatar }}">
+<meta name="twitter:image" content="{{ profile.url }}{{ profile.avatar }}">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"{{ profile.short_name }}","url":"{{ profile.url }}","image":"{{ profile.url }}{{ profile.avatar }}","sameAs":[{% for l in profile.links %}"{{ l.url }}"{% if not loop.last %},{% endif %}{% endfor %}]}</script>{% endif %}
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="{{ profile.favicon }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
