@@ -47,11 +47,13 @@ about:
   - >
     I am interested in LLM agents, memory, recursive self-improvement (RSI), and distillation,
     as well as graph and time series learning.
+    I also built <a href="https://www.goodpapers.org">Good Papers</a>, a site where readers and AI reviewers rate which ML papers are worth reading.
     <b>I am open to collaborations and discussions — feel free to reach out by email or the <a href="#say-hi">message box</a>!</b>
     <b>Actively looking for research internships!</b>
 
 # Newest first. Just add a line.
 news:
+  - { date: "Oct 2026", text: "Launched <a href=\"https://www.goodpapers.org\">Good Papers</a>, a site to find which ML papers are worth reading, with reader votes and AI reviewers. Covers all NeurIPS 2026 papers." }
   - { date: "Sep 2026", text: "One paper accepted at NeurIPS 2026 (AdaST)." }
   - { date: "Aug 2026", text: "Two papers accepted at EMNLP 2026 (MemSuit and TeacherGRPO)." }
   - { date: "June 2026", text: "Honored to receive the <b>Capital One PhD Fellowship</b>." }
