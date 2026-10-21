@@ -422,8 +422,8 @@
         }
       }
       // FormSubmit delivers the email right away but can take a long time to answer the request,
-      // so after a few seconds without an error, treat the message as sent instead of hanging on "Sending…".
-      var timer = setTimeout(done, 6000);
+      // so after 2 seconds without an error, treat the message as sent instead of hanging on "Sending…".
+      var timer = setTimeout(done, 2000);
       fetch(form.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
         .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
         .then(function(d){
