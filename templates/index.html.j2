@@ -127,7 +127,7 @@
         </div>
         <div class="chat-text">{{ contact.chat_text }}</div>
         <div class="chips">{% for c in contact.starters %}<button type="button" class="chip" data-starter="{{ c.text | e }}">{{ c.label }}</button>{% endfor %}</div>
-        <form class="msg-form" action="{{ contact.form_action }}" method="POST">
+        <form class="msg-form" action="{{ contact.form_action }}" method="POST" data-mailto="{{ contact.form_action.rstrip('/').split('/')[-1] }}">
           <textarea name="message" placeholder="{{ contact.chat_placeholder }}" required></textarea>
           <div class="send-row">
             <input name="email" type="email" placeholder="Email for a reply (optional)" autocomplete="email">
@@ -199,16 +199,38 @@
     form.addEventListener('submit', function(e){
       e.preventDefault();
       var btn = form.querySelector('button[type=submit]');
+      var msg = form.querySelector('textarea').value;
+      var settled = false;
       btn.disabled = true; status.className = 'form-status'; status.textContent = 'Sending…';
+      function done(){
+        if (settled) return; settled = true;
+        form.reset(); btn.disabled = false;
+        status.className = 'form-status ok'; status.textContent = 'Got it, thank you! Your message is on its way to my inbox.';
+      }
+      function failed(){
+        settled = true; btn.disabled = false;
+        // Offer the visitor's mail app with the message already filled in.
+        var to = form.dataset.mailto;
+        status.className = 'form-status err';
+        status.textContent = 'Sorry, that did not go through. ';
+        if (to && to.indexOf('@') > 0) {
+          var a = document.createElement('a');
+          a.href = 'mailto:' + to + '?subject=' + encodeURIComponent('Hi Zhenyu') + '&body=' + encodeURIComponent(msg);
+          a.textContent = 'Send it by email instead →';
+          status.appendChild(a);
+        }
+      }
+      // FormSubmit delivers the email right away but can take a long time to answer the request,
+      // so after 2 seconds without an error, treat the message as sent instead of hanging on "Sending…".
+      var timer = setTimeout(done, 2000);
       fetch(form.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
         .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
         .then(function(d){
           // FormSubmit answers 200 with success "false" (e.g. form not activated yet), so check the body too.
           if (String(d.success) !== 'true') throw new Error(d.message || 'not sent');
-          form.reset(); status.className = 'form-status ok'; status.textContent = 'Got it, thank you! Your message is in my inbox.';
+          clearTimeout(timer); done();
         })
-        .catch(function(){ status.className = 'form-status err'; status.textContent = 'Sorry, that did not go through. Please email me instead.'; })
-        .finally(function(){ btn.disabled = false; });
+        .catch(function(){ clearTimeout(timer); failed(); });
     });
   });
   // Conversation starters: one click fills the box so nobody has to face a blank page.
