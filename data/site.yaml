@@ -20,6 +20,10 @@ profile:
     - { label: "Twitter / X", url: "https://x.com/FicsherLzy" }
 
 # Quick-chat message box on the homepage (first screen on desktop).
+# Visitor stats (GoatCounter): dashboard at https://<code>.goatcounter.com. Remove the line to turn it off.
+analytics:
+  goatcounter: "lzyfischer"
+
 contact:
   chat_title: "Hi, I'm Zhenyu 👋"
   chat_status: "Open to chats, collabs & internships"
