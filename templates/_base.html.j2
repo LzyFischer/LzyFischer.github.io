@@ -116,5 +116,6 @@
 </footer>
 
 {% block scripts %}{% endblock %}
-</body>
+{% if site.analytics and site.analytics.goatcounter %}<script data-goatcounter="https://{{ site.analytics.goatcounter }}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+{% endif %}</body>
 </html>
