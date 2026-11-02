@@ -8,6 +8,11 @@
 # Tip: a static web app in its own repo can be served for free at
 # https://lzyfischer.github.io/<repo>/ by turning on GitHub Pages for that repo.
 projects:
+  - name: "Good Papers"
+    desc: "A site to find which ML papers are worth reading, with reader votes and AI reviewers. Covers all NeurIPS 2026 papers."
+    tags: ["Web app", "ML papers", "AI reviewers"]
+    links: { Website: "https://www.goodpapers.org" }
+
   - name: "MoCo: Model Collaboration"
     desc: "A one-stop shop for model collaboration research — methods, benchmarks and tooling for making multiple language models work together."
     tags: ["Python", "LLM"]
