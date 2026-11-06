@@ -13,6 +13,11 @@ projects:
     tags: ["Web app", "ML papers", "AI reviewers"]
     links: { Website: "https://www.goodpapers.org" }
 
+  - name: "NeurIPS Quest"
+    desc: "A pixel-art game on Good Papers: walk the NeurIPS 2026 poster halls to the best-rated posters on your topics, earn XP and badges, duel other attendees on which poster is rated higher, and chat with players in the same hall."
+    tags: ["Game", "Pixel art", "NeurIPS 2026"]
+    links: { Play: "https://www.goodpapers.org/neurips/quest" }
+
   - name: "MoCo: Model Collaboration"
     desc: "A one-stop shop for model collaboration research — methods, benchmarks and tooling for making multiple language models work together."
     tags: ["Python", "LLM"]
