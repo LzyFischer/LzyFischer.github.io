@@ -18,6 +18,11 @@ projects:
     tags: ["Game", "Pixel art", "NeurIPS 2026"]
     links: { Play: "https://www.goodpapers.org/neurips/quest" }
 
+  - name: "Jixia Distillation (稷下蒸馏)"
+    desc: "A small browser game about my research: a 1B student catches bamboo-slip reasoning tokens from an ever-larger teacher (the Gap Curse), dodges hallucinations, and summarizes when its 12-slip context fills up. Ranks follow Shang Yang's Warring States merit titles. In Chinese."
+    tags: ["Game", "Distillation", "Memory"]
+    links: { Play: "https://lzyfischer.github.io/jixia/" }
+
   - name: "MoCo: Model Collaboration"
     desc: "A one-stop shop for model collaboration research — methods, benchmarks and tooling for making multiple language models work together."
     tags: ["Python", "LLM"]
