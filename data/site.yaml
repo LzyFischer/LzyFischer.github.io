@@ -57,6 +57,7 @@ about:
 
 # Newest first. Just add a line.
 news:
+  - { date: "Nov 2026", text: "<a href=\"https://www.goodpapers.org\">Good Papers</a> accepted to the <b>WSDM 2027</b> Demo Track. See you in Hong Kong!" }
   - { date: "Oct 2026", text: "Launched <a href=\"https://www.goodpapers.org\">Good Papers</a>, a site to find which ML papers are worth reading, with reader votes and AI reviewers. Covers all NeurIPS 2026 papers." }
   - { date: "Sep 2026", text: "One paper accepted at NeurIPS 2026 (AdaST)." }
   - { date: "Aug 2026", text: "Two papers accepted at EMNLP 2026 (MemSuit and TeacherGRPO)." }
@@ -71,6 +72,10 @@ education:
     place: "<b>University of Virginia</b>, USA"
     detail: "Ph.D. in Electrical and Computer Engineering · Advisor: Prof. Jundong Li"
     dates: "2023.08 – present"
+  - mark: "C1"
+    place: "<b>Capital One</b>, USA"
+    detail: "Capital One PhD Fellow"
+    dates: "2026.06 – present"
   - mark: "XJTU"
     place: "<b>Xi'an Jiaotong University</b>, China"
     detail: "B.S. in Physics (Honor) · GPA 89.5/100 · Advisor: Prof. Minnan Luo"
