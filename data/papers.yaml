@@ -14,6 +14,14 @@
 # Minimum is just `title`: missing venue/year/authors are looked up on
 # Semantic Scholar at build time and cached in data/cache.json.
 
+- title: "Good Papers: Telling Which Research Papers Are Worth Reading"
+  venue: "WSDM 2027 Demo"
+  year: 2027
+  authors: "Zhenyu Lei, Jundong Li"
+  topic: llm
+  tag: "Paper discovery"
+  links: { Website: "https://www.goodpapers.org" }
+
 - title: "AdaST: Adaptive Coupling for Spatial-Temporal Forecasting"
   venue: "NeurIPS 2026"
   year: 2026
